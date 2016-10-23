@@ -1,5 +1,11 @@
 <?php
+
+
   #constantes
+
+  session_start();
+
+  #fecha de la pag
   define('YEAR_APLICACION', 'Derchos Reservados '.date('Y',time()).' - Repositorio');
   #constantes de conexion
   define('DB_HOST','localhost');

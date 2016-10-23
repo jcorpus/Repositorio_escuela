@@ -29,6 +29,7 @@ function go_login(){
       resultado += '<strong>Conectado - </strong> Redirecionando...!<a href="#" class="alert-link"></a>';
       resultado += '</div>';
       __("ajax_login").innerHTML = resultado;
+      location.href = 'home.php';
 
 
 
