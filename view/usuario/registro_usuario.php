@@ -1,7 +1,7 @@
 
 <section class="content-header cabecera">
       <h1>
-        Registro de Alumnos
+        Registro de Usuarios
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -18,7 +18,7 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Alumno</h3>
+              <h3 class="box-title">Datos del Usuario</h3>
             </div>
 
             <!-- /.box-header -->
@@ -216,14 +216,14 @@
                 <br>
                 <hr>
                 <div class="form-group">
-                  <label>Imágen del Alumno</label>
+                  <label>Imágen de Usuario</label>
                   <input type="file" data-target="preview_image" class="file-input" id="imagen_alumno" name="imagen_alumno" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
                     <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno" class="btn btn-default "><span class="glyphicon glyphicon-folder-open "></span> Escoger Imágen</label>
                     </span>
                     </div>
                     <br>
                     <img id="preview_image" class="imagenpreview" width="200" src="site_media/img/imagenpreview.png" alt="imagen" />
-                    <input type="button" value="enviarr" onclick="enviarimage()">
+
                 </div>
               </div>
             </form>
@@ -236,7 +236,7 @@
     <!-- /.content -->
 
  <script>
- 
+
 $('.file-input').on('change', function() {
     previewImage(this);
 });
