@@ -17,5 +17,10 @@
 
   #estructura
   require('core/models/classConexion.php');
+  require('core/bin/funciones/get_users.php');
+
+  #obtener toda la info del usuario, nombre, email, etc
+ //$_usuarios = ver_usuarios();
+
 
  ?>

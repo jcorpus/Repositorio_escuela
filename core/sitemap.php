@@ -2,7 +2,7 @@
 
 if(!isset($_GET['p'])){
 	$titulo = 'Iniciooo';
-	$contenido = 'html/admin/admin.php';
+	$contenido = 'view/admin/admin-home.php';
 
 }
 else if($_GET['p'] == 'registrar'){

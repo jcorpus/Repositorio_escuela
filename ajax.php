@@ -8,11 +8,11 @@
         break;
 
       default:
-        header('location: index.php');
+        header('Location: index.php');
         break;
     }
   }else{
-    header('location: index.php');
+    header('Location: index.php');
   }
 
 

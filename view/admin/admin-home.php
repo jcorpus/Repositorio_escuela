@@ -1,11 +1,11 @@
-
+<!--  PAGINA DE INIIO DEL ADMIN -->
 <section class="content-header cabecera">
       <h1>
         Pagina de Inicio
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li class="active">Heree</li>
       </ol>
 
 </section>
@@ -27,7 +27,7 @@
           </div>
           <!-- /.box -->
           <!-- /.box -->
-        </div><!--fin col-md8-->    
+        </div><!--fin col-md8-->
     </div><!--row-->
 
 </section>

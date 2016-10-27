@@ -1,5 +1,5 @@
 <?php
-class conexion extends mysqli{
+class Conexion extends mysqli{
   public function __construct(){
     parent::__construct(DB_HOST,DB_USER,DB_PASS,DB_NAME);
     $this->connect_errno ? die('ERROR EN LA CONEXION A LA DB') : null;
@@ -15,23 +15,9 @@ class conexion extends mysqli{
   }
 
   public function recorrer($query){
-    return mysqli_free_array($query);
+    return mysqli_fetch_array($query);
   }
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  ?>

@@ -1,3 +1,14 @@
+<?php require('core/core.php');
+
+if (isset($_SESSION['app_id'])) { //esta definida app_id
+  echo '<script> window.location="home.php"; </script>';
+}else{
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,9 +24,7 @@
   <!-- mi script-->
   <!-- jQuery 2.2.3 -->
   <script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>
-
   <script src="html/javascript/v_login.js"></script>
-
 </head>
 <body class="login-page">
   <div class="login-box">
@@ -44,7 +53,7 @@
             </div><!-- /card-container -->
 
   </div>
-
+<?php printf(YEAR_APLICACION);  ?>
 
 
 <!-- Bootstrap 3.3.6 -->
@@ -194,3 +203,7 @@ body, html {
 </style>
 </body>
 </html>
+
+<?php
+}
+ ?>

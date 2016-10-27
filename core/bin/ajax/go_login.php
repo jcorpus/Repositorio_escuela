@@ -7,6 +7,12 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
     $pass = $_POST['pass'];
     $sql = $db->query("SELECT id_usuario from usuarios WHERE (usuario='$user' OR email='$user') AND password='$pass' LIMIT 1 ");
     if($db->rows($sql)>0){
+
+    //  ini_set('session_cookie_lifetime', time() + (60*60*24)); //un dia entero
+      if($_POST['sesion']){
+        ini_set('session.cookie_lifetime', time() + (60*60*24));
+      }
+      $_SESSION['app_id'] = $db->recorrer($sql)[0];
       echo 1;
     }else{
 
@@ -17,7 +23,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
 
     }
-
+    $db->liberar($sql);
   $db->close();
 }else{
 
@@ -29,6 +35,10 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
 
 }
+
+
+
+
 
 
 
