@@ -14,6 +14,10 @@ else if($_GET['p'] == 'listar'){
 	$titulo = 'Listar';
 	$contenido = 'view/usuario/lista_usuario.php';
 }
+else if($_GET['p'] == 'registro_tesis'){
+	$titulo = 'Registro tesis';
+	$contenido = 'view/tesis/registro_tesis.php';
+}
 else{
 	$titulo = 'ERROR 404';
 	$contenido = 'html/error/error404.html';

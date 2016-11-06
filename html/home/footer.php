@@ -14,8 +14,9 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>
-
+<script src="site_media/js/no-recargar.js"></script>
+<script src="site_media/js/preview_img.js"></script>
+<script src="site_media/js/mensaje_consola.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="site_media/bootstrap/js/bootstrap.min.js"></script>
 

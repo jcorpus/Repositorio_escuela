@@ -7,12 +7,15 @@
         require('core/bin/ajax/go_login.php');
         break;
 
+      case 'reg_user':
+        require ('core/bin/ajax/reg_user.php');
+        break;
       default:
-        header('Location: index.php');
+        //header('Location: index.php');
         break;
     }
   }else{
-    header('Location: index.php');
+    //header('Location: index.php');
   }
 
 

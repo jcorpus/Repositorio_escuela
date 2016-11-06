@@ -1,7 +1,7 @@
 
 <section class="content-header cabecera">
       <h1>
-        Registro de Usuarios
+        Registro de Tesis
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -14,55 +14,56 @@
 <section class="content">
 
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Usuario</h3>
+              <h3 class="box-title">Datos del Tesis</h3>
             </div>
 
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" id="formulario_usuario">
+            <form class="form-horizontal" id="formulario_alumno">
               <div class="box-body">
                 <!--Mensaje de registro-->
-                <div class="" id="resp_user">
-
+                <div class="alert alert-success alert-dismissible" style="display:none" id="correcto">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Tesis Correctamente &nbsp;<i class="icon fa fa-check"></i>
                 </div>
                 <!--Mensaje de registro-->
                 <div class="form-group">
-                  <label  class="col-sm-2 control-label">Nombres</label>
+                  <label  class="col-sm-2 control-label">Titulo</label>
+
                   <div class="col-sm-4">
-                    <input type="text" name="nombre_user" class="form-control" value="bakuryo" id="nombre_user" placeholder="nombres">
+                    <input type="text" name="nombre_alumno" class="form-control" value="bakuryo" id="nombre_alumno" placeholder="nombres">
                   </div>
-                  <label  class="col-sm-2 control-label">DNI</label>
+                  <label  class="col-sm-2 control-label">Autor</label>
+
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="dni_user" value="12345678" id="dni_user" maxlength="8" size="8" placeholder="DNI">
+                    <input type="text" class="form-control" name="dni_alumno" value="12345678" id="dni_alumno" maxlength="8" size="8" placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label  class="col-sm-2 control-label">Ape Paterno</label>
+                  <label  class="col-sm-2 control-label">Fuente</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apep_user" value="corpus" id="apep_user" placeholder="apellido paterno">
+                    <input type="text" class="form-control" name="ape_paterno" value="corpus" id="ape_paterno" placeholder="apellido paterno">
                   </div>
-                  <label  class="col-sm-2 control-label">Ape Materno</label>
+                  <label  class="col-sm-2 control-label">Tipo de Doc</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apem_user" value="mechato" id="apem_user" placeholder="apellido materno">
+                    <input type="text" class="form-control" name="ape_materno" value="mechato" id="ape_materno" placeholder="apellido materno">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label  class="col-sm-2 control-label">Domicilio</label>
-
+                  <label  class="col-sm-2 control-label">Resumen</label>
                   <div class="col-sm-4">
-                    <textarea name="domicilio_user" placeholder="domicilio"  style="resize: vertical;"  class="form-control" id="domicilio_user" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_alumno" placeholder="domicilio"  style="resize: vertical;"  class="form-control" id="domicilio_alumno" cols="3" rows="3">Saturno</textarea>
                   </div>
-                  <label  class="col-sm-2 control-label">Teléfono</label>
-
+                  <label  class="col-sm-2 control-label">Obetivos</label>
                   <div class="col-sm-3">
-                    <input type="text" name="telefono_user" class="form-control" value="767675" id="telefono_user" placeholder="telefono">
+                    <textarea name="objetivos" style="resize: vertical;" class="form-control" placeholder="Objetivos del Documento" id="objetivos_doc" cols="3" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
@@ -154,43 +155,33 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_user" class="form-control" id="edad_user"  placeholder="Edad" disabled>
+                        <input type="text" name="edad" class="form-control" id="edad"  placeholder="Edad" disabled>
                         <b>Edad</b>
                      </div>
                 </div>
 
                 <div class="form-group">
-                <label  class="col-sm-2 control-label">Email</label>
-                  <div class="col-sm-4">
-                    <input type="email" name="email_user" class="form-control" value="doombakuryo@gmail.com" id="email_user" placeholder="email">
-                  </div>
-                  <label  class="col-sm-2 control-label">Imágen</label>
-                  <div class="col-sm-4">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
-                      </span>
-                      </div>
+                  <label  class="col-sm-2 control-label">Email</label>
+
+                  <div class="col-sm-5">
+                    <input type="email" name="email_alumno" class="form-control" value="doombakuryo@gmail.com" id="email_alumno" placeholder="email">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label  class="col-sm-2 control-label">Sexo</label>
-
-                  <div class="col-sm-5">
-                    <label class="miradio ">
-                      <input type="radio" id="masculino" class="form-control sexo"  name="sexo_user" value="M"><!-- por defecto checked-->
-                      <span> Masculino </span>
-                    </label>
-                    <label class="miradio ">
-                      <input type="radio" id="femenino" class="form-control sexo"  name="sexo_user" value="F">
-                      <span>Femenino </span>
-                    </label>
-                  </div>
+                  <label class="col-sm-2 control-label">Archivo</label>
+                  <div class="col-sm-4">
+                      <input type="file" onchange="seleccionar_archivo(this.value)"  class="file-input" id="archivo_alumno" name="archivo_alumno" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="archivo_alumno" class="btn btn-primary "><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>&ensp;Escoger Archivo</label>
+                      </span>
+                      </div>
+                      <p id="nombre_archivo"></p>
+                    </div>
                 </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
-                <button type="button" onclick="registrar_usuario()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
+                <button type="button" onclick="registrar_alumno()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -198,51 +189,20 @@
           <!-- /.box -->
           <!-- /.box -->
         </div>
-         <div class="col-md-3">
-          <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Otros datos</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" id="otraforma">
-            <p id="respuesta"></p>
-              <div class="box-body">
-                <div class="form-group">
-                 <div class="col-xs-5">
-                  <label for="">Codigo</label>
-                  <input type="text" class="form-control" value="jjcm" name="codigo_alumno" id="codigo_alumno" placeholder="codigo">
-                  </div>
-                </div>
-                <br>
-                <br>
-                <hr>
-                <div class="form-group">
-                  <label>Imágen de Usuario</label>
-                    </div>
-                    <br>
-                    <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/imagenpreview.png" alt="imagen" />
-
-                </div>
-              </div>
-            </form>
-          </div>
-
-        </div>
     </div><!--row-->
 
 </section>
     <!-- /.content -->
 
-
-<script src="html/javascript/reg_usuario.js"></script>
-
  <script>
 
-$('.file-input').on('change', function() {
-    previewImage(this);
-});
+/********MOSTRAR NOMBRE DE ARCHIVO SELECCIONADO******/
+function seleccionar_archivo(valor){
+  valor = valor.split('\\');
+  //alert(valor[valor.length-1]);
+  $("#nombre_archivo").html(valor[valor.length-1]);
+
+}
 
 
 /** cumpleaños **/

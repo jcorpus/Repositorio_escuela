@@ -5,116 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Error 404</title>
-<style>
+  <style type="text/css">
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
-  background-color: #2F3242;
+  font-family: 'Open Sans';
+  padding: 0;
+  margin: 0;
 }
-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  margin-left: -400px;
-}
-.message-box {
-  height: 200px;
-  width: 380px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: 50px;
-  color: #FFF;
-  font-family: Roboto;
-  font-weight: 300;
-}
-.message-box h1 {
-  font-size: 160px;
-  line-height: 46px;
-  margin-bottom: 40px;
-}
-.buttons-con .action-link-wrap {
-  margin-top: 40px;
-}
-.buttons-con .action-link-wrap a {
-  background: #68c950;
-  padding: 8px 25px;
-  border-radius: 4px;
-  color: #FFF;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s linear;
-  cursor: pointer;
+
+a,
+a:visited {
+  color: #fff;
+  outline: none;
   text-decoration: none;
-  margin-right: 10px
 }
-.buttons-con .action-link-wrap a:hover {
-  background: #5A5C6C;
+
+a:hover,
+a:focus,
+a:visited:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+* {
+  paading: 0;
+  margin: 0;
+}
+
+#oopss {
+  background: #222;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  line-height: 1.5em;
+  z-index: 9999;
+  left: 0px;
+}
+
+#error-text {
+  top: 30%;
+  position: relative;
+  font-size: 40px;
+  color: #eee;
+}
+
+#error-text a {
+  color: #eee;
+}
+
+#error-text a:hover {
   color: #fff;
 }
 
-#Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
-  animation: float 1s infinite ease-in-out alternate;
-}
-#Polygon-2 {
-  animation-delay: .2s;
-}
-#Polygon-3 {
-  animation-delay: .4s;
-}
-#Polygon-4 {
-  animation-delay: .6s;
-}
-#Polygon-5 {
-  animation-delay: .8s;
+#error-text p {
+  color: #eee;
+  margin: 70px 0 0 0;
 }
 
-@keyframes float {
-	100% {
-    transform: translateY(20px);
-  }
+#error-text i {
+  margin-left: 10px;
 }
-@media (max-width: 450px) {
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -190px;
+
+#error-text p.hmpg {
+  margin: 40px 0 0 0;
+}
+
+#error-text span {
+  position: relative;
+  background: #ef4824;
+  color: #fff;
+  font-size: 300%;
+  padding: 0 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  transition: all .5s;
+  cursor: pointer;
+  margin: 0 0 40px 0;
+}
+
+#error-text span:hover {
+  background: #d7401f;
+  color: #fff;
+  -webkit-animation: jelly .5s;
+  -moz-animation: jelly .5s;
+  -ms-animation: jelly .5s;
+  -o-animation: jelly .5s;
+  animation: jelly .5s;
+}
+
+#error-text span:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #ef4824;
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+@-webkit-keyframes jelly {
+  from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
   }
-  .message-box {
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -190px;
-    text-align: center;
+  25% {
+    -webkit-transform: scale(.9, 1.1);
+    transform: scale(.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, .9);
+    transform: scale(1.1, .9);
+  }
+  75% {
+    -webkit-transform: scale(.95, 1.05);
+    transform: scale(.95, 1.05);
   }
 }
 
-</style>
+@keyframes jelly {
+  from, to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(.9, 1.1);
+    transform: scale(.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, .9);
+    transform: scale(1.1, .9);
+  }
+  75% {
+    -webkit-transform: scale(.95, 1.05);
+    transform: scale(.95, 1.05);
+  }
+}
+/* CSS Error Page Responsive */
+
+@media only screen and (max-width:640px) {
+  #error-text span {
+    font-size: 200%;
+  }
+  #error-text a:hover {
+    color: #fff;
+  }
+}
+
+.back:active {
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  transform: scale(0.95);
+  background: #f53b3b;
+  color: #fff;
+}
+
+.back:hover {
+  background: #4c4c4c;
+  color: #fff;
+}
+
+.back {
+  text-decoration: none;
+  background: #5b5a5a;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.5s ease-out;
+}
+
+  </style>
+
 
 </head>
 <body>
 
-
-<svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z" id="Polygon-1" stroke="#007FB2" stroke-width="6" sketch:type="MSShapeGroup"></path>
-        <path d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z" id="Polygon-2" stroke="#EF4A5B" stroke-width="6" sketch:type="MSShapeGroup"></path>
-        <path d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z" id="Polygon-3" stroke="#795D9C" stroke-width="6" sketch:type="MSShapeGroup"></path>
-        <path d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z" id="Polygon-4" stroke="#F2773F" stroke-width="6" sketch:type="MSShapeGroup"></path>
-        <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z" id="Polygon-5" stroke="#36B455" stroke-width="6" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
-<div class="message-box">
-  <h1>404</h1>
-  <p>Pagina no Encontrada</p>
-  <div class="buttons-con">
-    <div class="action-link-wrap">
-      <a onclick="history.back(-1)" class="link-button link-back-button">Go Back</a>
-      <a href="" class="link-button">Go to Home Page</a>
+  <div id='oopss'>
+    <div id='error-text'>
+      <span>404</span>
+      <p>Pagina No Encontrada</p>
+      <p class='hmpg'><a href='home.php' class="back">Regresar al Inicio</a></p>
     </div>
   </div>
-</div>
 </body>
 </html>

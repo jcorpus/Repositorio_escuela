@@ -112,47 +112,36 @@
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-users fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Alumnos</span>
+          <a href="#"><i class="fa fa-users fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Usuarios</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="?p=registrar"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Alumnos</a></li>
+            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Usuarios</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-male fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Apoderado</span>
+          <a href="#"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Tesis</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/padre_registro.php');" ><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Padres</a></li>
+            <li><a href="?p=registro_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href="javascript:void(0)"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-calculator fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Matricula</span>
+          <a href="#"><i class="fa fa-calculator fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Otra cosa</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/matricula_registro.php');"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/matricula_lista.php');"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Matriculas</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-usd fa-lg" aria-hidden="true" onclick="load_div('contenido','Views/matricula_registro.php');"></i>&ensp;&ensp; <span>Pensiones</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Registrar</a></li>
-            <li><a href="#">Listar Pensiones</a></li>
+            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/matricula_lista.php');"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -161,7 +150,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-  
+
 
 
           <ul class="treeview-menu">
@@ -188,7 +177,3 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-
-
-
- 

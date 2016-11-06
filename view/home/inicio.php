@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <!-- Third Blog Post -->
                 <h2>
-                    <a href="#">Blog Post Title</a>
+                    <a href="#">Titulo Post Title</a>
                 </h2>
                 <p class="lead">
                     by <a href="index.php">Start Bootstrap</a>

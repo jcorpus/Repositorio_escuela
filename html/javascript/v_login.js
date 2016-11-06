@@ -10,11 +10,9 @@ function __(id) {
   return document.getElementById(id);
 }
 
-
 function go_login(){
   var conectar, form, respuesta, resultado, user, pass, sesion;
-
-
+  
   user = __("user_email").value;
   pass = __("user_password").value;
   sesion = __("sesion_login").checked ? true : false; //if compacto
@@ -29,7 +27,7 @@ function go_login(){
       resultado += '<strong>Conectado - </strong> Redirecionando...!<a href="#" class="alert-link"></a>';
       resultado += '</div>';
       __("ajax_login").innerHTML = resultado;
-      location.href = 'home.php';
+      location.href = 'home.php';  //al home
 
 
 

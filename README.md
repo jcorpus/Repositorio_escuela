@@ -1,2 +1,2 @@
 # Repositorio_escuela
-Repositorio de Tesis
+Repositorio de Tesis - Practicas PRE 1

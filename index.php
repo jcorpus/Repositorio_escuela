@@ -4,11 +4,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
   echo '<script> window.location="home.php"; </script>';
 }else{
 
-
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,7 +49,13 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
             </div><!-- /card-container -->
 
   </div>
-<?php printf(YEAR_APLICACION);  ?>
+  <div class="">
+    <p class="text-center">
+      <?php printf(YEAR_APLICACION);  ?>
+    </p>
+
+  </div>
+
 
 
 <!-- Bootstrap 3.3.6 -->

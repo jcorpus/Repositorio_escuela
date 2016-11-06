@@ -1,5 +1,4 @@
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -52,7 +51,7 @@
                     <li class="dropdown">
                       <?php
                       if (isset($_SESSION['app_id'])) {
-                            echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['usuario']).'<b class="caret"></b></a>';
+                            echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['usuario']).'&nbsp;<b class="caret"></b></a>';
                       }
                        ?>
                        <ul class="dropdown-menu">
@@ -65,7 +64,7 @@
                        </ul>
                     </li>
                     <li>
-                        <a href="admin.php">Administrar</a>
+                        <a href="admin.php" target="_blank">Administrar</a>
                     </li>
                     <li>
                         <a href="?view=salir">Salir</a>

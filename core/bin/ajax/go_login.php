@@ -18,7 +18,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
         echo '<div class="alert alert-dismissible alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>ERROR! - Los datos no coinciden</strong>
+          <strong>Los datos no coinciden</strong>
       </div>';
 
 
@@ -29,7 +29,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
   echo '<div class="alert alert-dismissible alert-danger">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>ERROR! Datos vacios</strong>
+    <strong>Datos vacios</strong>
 </div>';
 
 
