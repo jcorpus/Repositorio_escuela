@@ -7,15 +7,15 @@ class Conexion extends mysqli{
 
   }
   public function rows($query){
-    return mysqli_num_rows($query);
+    return mysqli_num_rows($query);//Obtiene el número de filas de un resultado
   }
 
   public function liberar($query){
-    return mysqli_free_result($query);
+    return mysqli_free_result($query);//Libera la memoria asociada a un resultado
   }
 
   public function recorrer($query){
-    return mysqli_fetch_array($query);
+    return mysqli_fetch_array($query);//Obtiene una fila de resultados como un array asociativo, numérico, o ambos
   }
 
 }
