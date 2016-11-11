@@ -26,7 +26,7 @@ edad = (ahora_ano + 1900) - ano;
 
     //alert("¡Tienes " + edad + " años!");
     //console.log("la edad es: "+edad);
-    document.getElementById("edad").value = edad;
+    document.getElementById("edad_user").value = edad;
     //document.getElementById("edad_padre").value = edad;
 }
 

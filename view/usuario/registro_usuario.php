@@ -154,7 +154,7 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_user" class="form-control" id="edad_user"  placeholder="Edad" disabled>
+                        <input type="text" name="edad_user" class="form-control" id="edad_user"  placeholder="Edad" >
                         <b>Edad</b>
                      </div>
                 </div>
@@ -164,19 +164,16 @@
                   <div class="col-sm-4">
                     <input type="email" name="email_user" class="form-control" value="doombakuryo@gmail.com" id="email_user" placeholder="email">
                   </div>
-                  <label  class="col-sm-2 control-label">Imágen</label>
+                  <label  class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-4">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
-                      </span>
-                      </div>
+                    <input type="password" name="password_user" class="form-control" value="" id="password_user" placeholder="password">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Sexo</label>
 
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
                     <label class="miradio ">
                       <input type="radio" id="masculino" class="form-control sexo"  name="sexo_user" value="M"><!-- por defecto checked-->
                       <span> Masculino </span>
@@ -185,6 +182,13 @@
                       <input type="radio" id="femenino" class="form-control sexo"  name="sexo_user" value="F">
                       <span>Femenino </span>
                     </label>
+                  </div>
+                  <label  class="col-sm-2 control-label">Imágen</label>
+                  <div class="col-sm-4">
+                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                      </span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -222,7 +226,7 @@
                   <label>Imágen de Usuario</label>
                     </div>
                     <br>
-                    <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/imagenpreview.png" alt="imagen" />
+                    <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/avatar.png" alt="imagen" />
 
                 </div>
               </div>

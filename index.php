@@ -43,7 +43,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
                     </div>
                     <button type="button"class="btn btn-lg btn-primary btn-block btn-signin" onclick="go_login();">Ingresar</button>
                 </form><!-- /form -->
-                <a href="#" class="forgot-password">
+                <a href="#" data-toggle="modal" data-target=".bd-example-modal-sm" class="forgot-password">
                     Olvidaste tu clave?
                 </a>
             </div><!-- /card-container -->
@@ -54,6 +54,36 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
       <?php printf(YEAR_APLICACION);  ?>
     </p>
 
+  </div>
+
+  <!-- modal olvido password-->
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="exampleModalLabel">Recuperar Contraseña</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="form-control-label">Tu email:</label>
+              <input type="mail" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="form-control-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Enviarme un correo</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
