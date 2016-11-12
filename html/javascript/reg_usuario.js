@@ -6,13 +6,42 @@
 4	Completo (se han recibido todos los datos de la respuesta del servidor)
 */
 
+/****************Validar campos vacios*************/
+function validate () {
+    var campos, valido;
+
+    // todos los campos .form-control en #campos
+    campos = document.querySelectorAll('#formulario_usuario input.validacion');
+    valido = true; // es valido hasta demostrar lo contrario
+
+    // recorremos todos los campos
+    [].slice.call(campos).forEach(function(campo) {
+        console.log(campo.value.trim());
+        // el campo esta vacio?
+        if (campo.value.trim() === '') {
+            valido = false;
+        }
+    });
+
+    if (valido) {
+        // es valido! procedemos?
+      alert("valido");
+    } else {
+        // es invalido, que hacemos?
+      alert("faltan datos");
+        // alert('invalido! te falta completar campos');
+    }
+}
+
+/********************************************************/
+
+
 function __(id) {
   return document.getElementById(id);
 }
 
 function registrar_usuario(){
-
-
+validate();
       var formuser = new FormData($("#formulario_usuario")[0]);
 
       $.ajax({

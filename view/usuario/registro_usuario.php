@@ -27,29 +27,28 @@
               <div class="box-body">
                 <!--Mensaje de registro-->
                 <div class="" id="resp_user">
-
                 </div>
                 <!--Mensaje de registro-->
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Nombres</label>
                   <div class="col-sm-4">
-                    <input type="text" name="nombre_user" class="form-control" value="bakuryo" id="nombre_user" placeholder="nombres">
+                    <input type="text" name="nombre_user" class="form-control validacion" value="bakuryo" id="nombre_user" placeholder="nombres">
                   </div>
                   <label  class="col-sm-2 control-label">DNI</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="dni_user" value="12345678" id="dni_user" maxlength="8" size="8" placeholder="DNI">
+                    <input type="text" class="form-control validacion" name="dni_user" value="12345678" id="dni_user" maxlength="8" size="8" placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Ape Paterno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apep_user" value="corpus" id="apep_user" placeholder="apellido paterno">
+                    <input type="text" class="form-control validacion" name="apep_user" value="corpus" id="apep_user" placeholder="apellido paterno">
                   </div>
                   <label  class="col-sm-2 control-label">Ape Materno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apem_user" value="mechato" id="apem_user" placeholder="apellido materno">
+                    <input type="text" class="form-control validacion" name="apem_user" value="mechato" id="apem_user" placeholder="apellido materno">
                   </div>
                 </div>
 
@@ -57,12 +56,12 @@
                   <label  class="col-sm-2 control-label">Domicilio</label>
 
                   <div class="col-sm-4">
-                    <textarea name="domicilio_user" placeholder="domicilio"  style="resize: vertical;"  class="form-control" id="domicilio_user" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_user" placeholder="domicilio"  style="resize: vertical;"  class="form-control validacion" id="domicilio_user" cols="3" rows="3">Saturno</textarea>
                   </div>
                   <label  class="col-sm-2 control-label">Teléfono</label>
 
                   <div class="col-sm-3">
-                    <input type="text" name="telefono_user" class="form-control" value="767675" id="telefono_user" placeholder="telefono">
+                    <input type="text" name="telefono_user" class="form-control validacion" value="767675" id="telefono_user" placeholder="telefono">
                   </div>
                 </div>
                 <div class="form-group">
@@ -154,7 +153,7 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_user" class="form-control" id="edad_user"  placeholder="Edad" >
+                        <input type="text" name="edad_user" class="form-control validacion" id="edad_user"  placeholder="Edad" >
                         <b>Edad</b>
                      </div>
                 </div>
@@ -162,11 +161,11 @@
                 <div class="form-group">
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_user" class="form-control" value="doombakuryo@gmail.com" id="email_user" placeholder="email">
+                    <input type="email" name="email_user" class="form-control validacion" value="doombakuryo@gmail.com" id="email_user" placeholder="email">
                   </div>
                   <label  class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-4">
-                    <input type="password" name="password_user" class="form-control" value="" id="password_user" placeholder="password">
+                    <input type="password" name="password_user" class="form-control validacion" value="" id="password_user" placeholder="password">
                   </div>
                 </div>
 
@@ -175,17 +174,17 @@
 
                   <div class="col-sm-4">
                     <label class="miradio ">
-                      <input type="radio" id="masculino" class="form-control sexo"  name="sexo_user" value="M"><!-- por defecto checked-->
+                      <input type="radio" id="masculino" class="form-control sexo validacion"  name="sexo_user" value="M"><!-- por defecto checked-->
                       <span> Masculino </span>
                     </label>
                     <label class="miradio ">
-                      <input type="radio" id="femenino" class="form-control sexo"  name="sexo_user" value="F">
+                      <input type="radio" id="femenino" class="form-control sexo validacion"  name="sexo_user" value="F">
                       <span>Femenino </span>
                     </label>
                   </div>
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" accept="image/*" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
                       <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
                       </div>

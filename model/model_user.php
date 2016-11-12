@@ -1,7 +1,5 @@
 <?php
 
-
-
 ////EJEMPLO
 //http://www.apoyoti.com/clase-simple-en-php-para-conexion-a-base-de-datos-mysql/
 
