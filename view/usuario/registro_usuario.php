@@ -185,7 +185,7 @@
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
                     <input type="file" data-target="preview_image" class="file-input" id="imagen_user" accept="image/*"  name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
                       </div>
                   </div>

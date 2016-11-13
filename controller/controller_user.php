@@ -35,12 +35,14 @@ $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			  <i class="icon fa fa-times"></i>&nbsp;el tamaño permitido es 5Mb
 				</div>';
+				$valor = false;
 		}
 		else if($width > 2500 || $height > 2500){
 			echo '<div class="alert alert-danger alert-dismissible" id="correcto">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			  <i class="icon fa fa-times"></i>&nbsp;La altura y anchura maxima es de 2500 px
 				</div>';
+				$valor = false;
 
 		}
 		else if($width < 10 || $height < 10){
@@ -48,6 +50,7 @@ $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			  <i class="icon fa fa-times"></i>&nbsp;Error la anchura y la altura mínima permitida es 10px
 				</div>';
+				$valor = false;
 		}
 		else{
 			$ruta_copia = '../html/img_server/'.$nombre;
@@ -58,7 +61,7 @@ $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 
 	}
 	else{
-	    $ruta_registro = "NO ARCHIVO ";
+	    $ruta_registro = "html/img_server/user-default.png";
 	    $valor = true;
 			echo "no enviaste una imagen";
 	}
@@ -118,12 +121,13 @@ function datos_usuario(){
 
 
 	///datos al modelo
-	/*
+
 	$datos_user = datos_usuario();
 	$instancia = new usuario();
 	$consulta = $instancia->registro_user($nombre_user,$dni_user,$apep_user,$apem_user,$domicilio_user,$telefono_user,$edad_user,
   $email_user,$sexo_user,$password_user,$nacimiento_user,$ruta_registro);
-	*/
+
+	echo $consulta;
 
 
 

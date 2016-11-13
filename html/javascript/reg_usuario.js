@@ -85,12 +85,13 @@ function registrar_usuario(){
                   alert("enviando");
 
                },
-               success: function(datos)
+               success: function(data)
                {
-                     __("resp_user").innerHTML = datos;
-                  if(datos=='1'){
-                    console.log("datos: "+datos);
-                    resultado = '<div class="alert alert-success alert-dismissible" id="correcto">';
+                     __("resp_user").innerHTML = data;
+                  if(data === 'ok'){
+
+                    console.log("datos: "+data);
+                    resultado = '<div class="alert alert-success alert-dismissible" id="">';
                     resultado += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
                     resultado += 'Alumno Registrado Correctamente &nbsp;<i class="icon fa fa-check"></i>';
                     resultado += '</div>';
