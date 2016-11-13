@@ -26,7 +26,7 @@
             <form class="form-horizontal" id="formulario_usuario">
               <div class="box-body">
                 <!--Mensaje de registro-->
-                <div class="" id="resp_user">
+                <div class="resp_c" id="resp_user">
                 </div>
                 <!--Mensaje de registro-->
                 <div class="form-group">
@@ -184,7 +184,7 @@
                   </div>
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" accept="image/*" name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                    <input type="file" data-target="preview_image" class="file-input" id="imagen_user" accept="image/*"  name="imagen_user" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
                       <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
                       </div>

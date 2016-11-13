@@ -12,7 +12,7 @@ require("../model/model_user.php");
 //http://php.net/manual/es/function.array-merge.php
 $verificar =$_FILES["imagen_user"]['name'];
 if (!empty($verificar)){
-$comodin = false;
+$valor = false;
 $nombre =uniqid()."-".$_FILES['imagen_user']['name']; //archivo que subi
 $tipo = $_FILES['imagen_user']['type']; // tipo de archivo
 $ruta_imagen = $_FILES['imagen_user']['tmp_name']; //donde esta almacenado el archivo
@@ -29,7 +29,7 @@ $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 		  <i class="icon fa fa-times"></i>&nbsp;Archivo no permitido
 			</div>';
-			$comodin = false;
+			$valor = false;
 		}else if($tamano > 5242880){
 			echo '<div class="alert alert-danger alert-dismissible" id="correcto">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -53,14 +53,14 @@ $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 			$ruta_copia = '../html/img_server/'.$nombre;
 			$ruta_registro = 'html/img_server/'.$nombre;
 			move_uploaded_file($ruta_imagen,$ruta_copia);
-			$comodin = true;
+			$valor = true;
 		}
 
 	}
 	else{
 	    $ruta_registro = "NO ARCHIVO ";
-	    $comodin = true;
-			echo "no file";
+	    $valor = true;
+			echo "no enviaste una imagen";
 	}
 
 
