@@ -29,7 +29,7 @@ $email_user,$sexo_user,$password_user,$nacimiento_user,$ruta_registro){
   				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
   			  <i class="icon fa fa-check"></i>&nbsp;Usuario registrado correctamente
   				</div>';
-          
+
       return 'ok';
     }else{
       return 0;
@@ -74,9 +74,30 @@ function editar_user($nombre_user,$apep_user,$apem_user){
 */
 }
 
-function listar_user(){
+/*
+SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+WHERE p.ape_paterno LIKE '%k%' OR p.dni LIKE '%h%' ORDER BY p.id_persona DESC LIMIT 0,2
 
+SELECT * FROM persona ORDER BY persona.id_persona DESC
 
+*/
+
+function listar_user($valor, $inicio=FALSE,$limite=FALSE){
+  if ($inicio!==FALSE && $limite!==FALSE) {
+    $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+    WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC LIMIT $inicio,$limite";
+  }else{
+    $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+    WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC";
+  }
+  $resultado = $this->db->query($sql);
+  $arreglo = array();
+  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+    $arreglo[] = $re;
+  }
+  return $arreglo;
+  $this->db->liberar($sql);
+  $this->db->close();
 
 }
 
@@ -87,6 +108,12 @@ function borrar_user(){
 }
 
 }
+
+/*
+$instancia = new Usuario();
+$resp = $instancia->listar_user("",0,1);
+print_r($resp);
+*/
 /*
 $instancia = new Usuario();
 if ($instancia->registro_user('julio','45456756','corpus','mechato','ppao','456464','12','julio@gmal.com','m','julio','2015/12/12','prueba.png')) {

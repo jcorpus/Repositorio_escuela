@@ -106,9 +106,10 @@ function registrar_usuario(){
                     resultado += '</div>';
                     __("resp_user").innerHTML = resultsado;
                   }
-               },error: function(jqXHR, textStatus, errorThrown)
+               },error: function(XMLHttpRequest,jqXHR, textStatus, errorThrown)
               {
                 // Handle errors here
+                alert("ocurrio un ERROR");
                 console.log('ERRORRR: ' + textStatus);
                 console.log('ERRORRR: ' + jqXHR);
                 console.log('ERRORRR: ' + errorThrown);

@@ -13,62 +13,186 @@
 <section class="content">
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Alumno</h3>
+              <h3 class="box-title">Datos del Usuario</h3>
             </div>
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Buscar</label>
+                    <div class="col-sm-4">
+                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_usuario" placeholder="buscar usuario por Apellido o DNI">
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" onclick="buscar_user();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                    </div>
+              </div>
+            <br>
+            <br>
+          <!-- /.box -->
+          <div class="box-body">
+              <div id="listar" class="icon-loading">
+                <i id="loading_user" style="margin:auto;display:block; margin-top:60px;"></i>
+                <div id="nodatos"></div>
+              </div>
+              <p id="paginador_usuarios" class="mi_paginador"></p>
+            </div>
+          <!-- /.box -->
+          </div>
+        </div>
 
-            <!-- /.box-header -->
-            <!-- form start -->
+    </div><!--row-->
 
+</section>
+<!--MODAL MODIFICAR ALUMNO-->
+  <div class="modal fade " id="myModal_modificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modificar Usuario</h4>
+        </div>
+          <!--AQUI DATOS DEL MODAL-->
+<section class="content">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Datos del Usuario</h3>
+        </div>
+        <form class="form-horizontal" id="mod_alumno">
+            <div class="box-body">
+                <!--Mensaje de registro-->
+                <div class="alert alert-success alert-dismissible" style="display:none" id="correcto">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Alumno Modificado Correctamente &nbsp;<i class="icon fa fa-check"></i>
+                </div>
+                <!--Mensaje de registro-->
+                <div class="alert alert-warning alert-dismissible" style="display:none" id="error">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <i class="icon fa fa-warning"></i>&nbsp;Faltan Datos...
+                </div>
+                <div class="form-group">
+                  <label  class="col-sm-2 control-label">Nombres</label>
+
+                  <div class="col-sm-4">
+                    <input type="hidden" id="id_persona2" name="id_persona2">
+                    <input type="hidden" id="id_alumno2" name="id_alumno2">
+                    <input type="text" name="nombre_alumno2" onkeypress="return solo_letras(event);" class="form-control" id="nombre_alumno2" placeholder="nombres">
+                  </div>
+                  <label  class="col-sm-2 control-label">DNI</label>
+
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" onkeypress="return solo_numeros(event);"  maxlength="8"  name="dni_alumno2" id="dni_alumno2"  placeholder="DNI">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label  class="col-sm-2 control-label">Ape Paterno</label>
+
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" name="ape_paterno2" onkeypress="return solo_letras(event);" id="ape_paterno2" placeholder="apellido paterno">
+                  </div>
+                  <label  class="col-sm-2 control-label">Ape Materno</label>
+
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" name="ape_materno2" onkeypress="return solo_letras(event);" id="ape_materno2" placeholder="apellido materno">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  class="col-sm-2 control-label">Domicilio</label>
+
+                  <div class="col-sm-4">
+                    <textarea name="domicilio_alumno2" placeholder="domicilio"  style="resize: none;"  class="form-control" id="domicilio_alumno2" maxlength="85" cols="3" rows="3">Saturno</textarea>
+                  </div>
+                  <label  class="col-sm-2 control-label">Teléfono</label>
+
+                  <div class="col-sm-4">
+                    <input type="text" name="telefono_alumno2" maxlength="9" class="form-control" onkeypress="return solo_numeros(event);"  id="telefono_alumno2" placeholder="telefono">
+                  </div>
+                </div>
+
+              <div class="form-group">
+                <label  class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-4">
+                    <input type="email" name="email_alumno2" class="form-control" id="email_alumno2" placeholder="email">
+                  </div>
+                  <label  class="col-sm-2 control-label">Imágen</label>
+                  <div class="col-sm-4">
+                  <input type="hidden" id="image_oculta" name="imagen_oculta">
+                    <input type="file" data-target="preview_image" class="file-input" id="imagen_alumno2" name="imagen_alumno2" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno2" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                      </span>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Sexo</label>
+                  <div class="col-sm-4">
+                    <label class="miradio "><!--checked-->
+                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_alumno2" value="M" >
+                    <span> Masculino </span>
+                    </label>
+                    <label class="miradio ">
+                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_alumno2" value="F">
+                    <span>Femenino </span>
+                    </label>
+                    <input style="display:none" type="text" name="fecha_registro" class="form-control" id="fecha_registro">
+                  </div>
+                  <label  class="col-sm-2 control-label">Codigo</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control"  name="codigo_alumno2" id="codigo_alumno2" placeholder="codigo">
+                  </div>
+              </div>
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer text-center">
+                <button type="button" onclick="mod_alumno()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;Modificar</button>
+              </div>
+              <p id="respuesta2"></p>
+              <!-- /.box-footer -->
+            </form>
           </div>
           <!-- /.box -->
           <!-- /.box -->
-        </div>
-         <div class="col-md-4">
+        </div><!--fin col-md8-->
+        <div class="col-md-3">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Otros datos</h3>
+              <h3 class="box-title">Imágen Alumno</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-
+            <form role="form" id="">
+            <p id="respuesta"></p>
+              <div class="box-body">
+                <div class="form-group">
+                    <img id="preview_image"  class="imagenpreview" width="170" src="" alt="imagen" />
+                </div>
+              </div>
+            </form>
           </div>
 
         </div>
     </div><!--row-->
 
 </section>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close <span class="glyphicon glyphicon-remove"></span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--MODAL MODIFICAR ALUMNO-->
     <!-- /.content -->
+<style type="text/css">
 
- <script>
-$('.file-input').on('change', function() {
-    previewImage(this);
-});
+</style>
 
-
-/** cumpleaños **/
-$(".cumple").change(function(){
-
-
-   var dia = $("#dia option:selected").val();
-  var mes = $("#mes option:selected").val();
-  var year = $("#year option:selected").val();
-
-  if((dia=='') || (mes=='') ||( year=='')){
-    //alert("faltan datos");
-
-  }else{
-    var valor = dia+"/"+mes+"/"+year;
-    console.log("el cumpleaños es: "+dia+"/"+mes+"/"+year);
-    calcularedad(valor);
-  }
-
-});
-
-
-
-</script>
+  <script src="html/javascript/usuario_list.js"></script>
