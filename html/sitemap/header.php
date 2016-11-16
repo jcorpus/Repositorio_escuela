@@ -123,6 +123,17 @@
           </ul>
         </li>
         <li class="treeview">
+          <a href="#"><i class="fa fa-users fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Alumnos</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="?p=registrar"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Usuarios</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
           <a href="#"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Tesis</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

@@ -30,19 +30,19 @@ function listar_usuarios(valor,pagina){
 			//alert("los valores son: "+valores.length); //son 5
 
 			var cadena = "";
-			cadena += "<table class='table table-bordered table-hover table-striped'>";
-			cadena += "<thead>";
+			cadena += "<table class='table table-bordered table-hover '>";
+			cadena += "<thead class=''>";
 			cadena += "<tr>";
 			cadena += "<th>#</th>";
 			cadena += "<th>Nombres</th>";
 			cadena += "<th>Ape P</th>";
 			cadena += "<th>Ape M</th>";
 			cadena += "<th>DNI</th>";
-			cadena += "<th>Domicilio</th>";
+			cadena += "<th>Email</th>";
 			cadena += "<th>Telefono</th>";
-			cadena += "<th>Edad</th>";
 			cadena += "<th>Sexo</th>";
-			cadena += "<th>Codigo</th>";
+			cadena += "<th>Edad</th>";
+			cadena += "<th>Clave</th>";
 			cadena += "<th>Fecha R.</th>";
 			cadena += "<th>Acción</th>";
 			cadena += "</tr>";
@@ -58,10 +58,10 @@ function listar_usuarios(valor,pagina){
 				cadena += "<td>"+valores[i][2]+"</td>";
 				cadena += "<td>"+valores[i][3]+"</td>";
 				cadena += "<td>"+valores[i][4]+"</td>";
-				cadena += "<td>"+valores[i][5]+"</td>";
+				cadena += "<td>"+valores[i][7]+"</td>";
 				cadena += "<td>"+valores[i][6]+"</td>";
 				cadena += "<td>"+valores[i][8]+"</td>";
-				cadena += "<td>"+valores[i][9]+"</td>";
+				cadena += "<td>"+valores[i][10]+"</td>";
 				cadena += "<td>"+valores[i][11]+"</td>";
 				cadena += "<td>"+valores[i][12]+"</td>";
 				cadena += "<td><div class='btn-group'> <button type='button' class='btn btn-success ' data-toggle='dropdown' aria-expanded='false'>Acción <span class='glyphicon glyphicon-cog'></span></button> <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-expanded='false'> <span class='caret'></span></button> <ul class='dropdown-menu' role='menu'> <li><a href='#' data-toggle='modal' data-target='#myModal_modificar' onclick='mostrar_usuario("+'"'+datos_array+'"'+");'>Modificar</a></li> <li class='divider'></li> <li><a href='#' data-toggle='modal' data-target='#myModal_eliminar'  onclick='eliminar_alumno("+'"'+datos_array+'"'+");' >Eliminar</a></li> </ul> </div></td>";
@@ -174,11 +174,11 @@ function listar_usuarios(valor,pagina){
 
 
 
-function eliminar_alumno(datos){
+function eliminar_usuario(datos){
 	var valores=datos.split("*");
 	var id_cliente2 = valores[0];
-	$("#idalumno").val(valores[0]);
-	$("#ealumno").text(valores[1]+" "+valores[2]);
+	$("#idusuario").val(valores[0]);
+	$("#eusuario").text(valores[1]+" "+valores[2]);
 	//alert("el id de la fila es:"+id_cliente2);
 	//data:'email='+email+'&password='+password+"&boton=ingresar"
 	/*

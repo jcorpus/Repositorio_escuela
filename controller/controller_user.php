@@ -118,10 +118,7 @@ function datos_usuario(){
 }
 
 //print_r(datos_usuario());
-
-
 	///datos al modelo
-
 	$datos_user = datos_usuario();
 	$instancia = new usuario();
 	$consulta = $instancia->registro_user($nombre_user,$dni_user,$apep_user,$apem_user,$domicilio_user,$telefono_user,$edad_user,

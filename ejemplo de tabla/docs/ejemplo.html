@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+ <html lang="en" class="no-js"> <!--<![endif]-->
+	<head>
+      <meta charset="utf-8" />
+		 
+      <title>Responsive tables</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, minimal-ui">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="description" content="An awesome solution for responsive tables with complex data.">
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="../../site_media/bootstrap/css/bootstrap.css">
+      <script src="../../site_media/bootstrap/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="css/rwd-table.min.css?v=5.0.3">
+		  <link rel="stylesheet" href="css/docs.min.css?v=5.0.3">
+		
+
+	</head>
+
+   <body data-spy="scroll" data-target="#navbar" data-offset="50">
+      
+               <div class="table-responsive" data-pattern="priority-columns">
+                   <table cellspacing="0" id="tech-companies-1" class="table table-small-font table-bordered table-striped">
+                      <thead>
+                         <tr>
+                            <th>Company</th>
+                            <th data-priority="1">Last Trade</th>
+                            <th data-priority="3">Trade Time</th>
+            
+                         </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>uno</td>
+                          <td>dos</td>
+                          <td>tres</td>
+                        </tr>
+                        <tr>
+                          <td>uno</td>
+                          <td>dos</td>
+                          <td>tres</td>
+                        </tr>
+                        <tr>
+                          <td>uno</td>
+                          <td>dos</td>
+                          <td>tres</td>
+                        </tr>
+                        <tr>
+                          <td>uno</td>
+                          <td>dos</td>
+                          <td>tres</td>
+                        </tr>
+                        <tr>
+                          <td>uno</td>
+                          <td>dos</td>
+                          <td>tres</td>
+                        </tr>
+                      </tbody>
+                   </table>
+                </div>  
+
+
+          </div> <!-- end container -->
+    
+     
+
+      <script src="js/rwd-table.min.js?v=5.0.3"></script>
+      <script>
+      $(function() {
+          $('#bs-deps').on('hide.bs.collapse show.bs.collapse', function () {
+              $('#bs-deps-toggle').children('span').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+          })
+      });
+      </script>
+		
+	</body>
+</html>
