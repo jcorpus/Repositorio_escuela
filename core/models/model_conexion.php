@@ -1,12 +1,11 @@
 
 <?php
-
+///http://php.net/manual/es/mysqli.construct.php
 #constantes de conexion
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','repositorio01');
-
 
 class Conexion2 extends mysqli{
 
@@ -27,7 +26,7 @@ class Conexion2 extends mysqli{
   public function recorrer($query){
     return mysqli_fetch_array($query); //Obtiene una fila de resultados como un array asociativo, numérico, o ambos
   }
-  
+
   public function recorrer2($query){
     return fetch_array($query);
   }
