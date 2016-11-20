@@ -13,7 +13,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
       if($_POST['sesion']){
         ini_set('session.cookie_lifetime', time() + (60*60*24));
       }
-      $_SESSION['app_id'] = $db->recorrer($sql)[0];
+      $_SESSION['app_id'] = $db->recorrer($sql)[0]; //le asigno la sesion al usuario que ingresa en la consulta de arriba.
       echo 1;
     }else{
 

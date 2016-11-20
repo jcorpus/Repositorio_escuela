@@ -20,6 +20,7 @@
 
     <!-- Custom Fonts -->
     <link href="site_media/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="site_media/css/home_style.css" rel="stylesheet" type="text/css">
     <script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

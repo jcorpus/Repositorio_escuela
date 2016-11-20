@@ -46,9 +46,9 @@ if (!empty($email_rec2)) {
     //Tenemos que usar gmail autenticados, así que esto a TRUE
     $mail->SMTPAuth   = true;
     //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-    $mail->Username   = "miemail@gmail.com";
+    $mail->Username   = "mail@aqui.com";
     //Introducimos nuestra contraseña de gmail
-    $mail->Password   = "contraseñaaqui";
+    $mail->Password   = "contraaqui";
     //Definimos el remitente (dirección y, opcionalmente, nombre)
     $mail->SetFrom($email_rec2, 'Repositorio - contraseña olvidada');
     //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)
@@ -62,18 +62,29 @@ if (!empty($email_rec2)) {
     //Enviamos el correo
     if(!$mail->Send()) {
       echo "Error aqui: " . $mail->ErrorInfo;
+      echo '<div class="alert alert-dismissible alert-danger">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <p>Ocurrió un ERROR, revisa tu conección.</p>
+         </div>';
     } else {
-      echo "Revisa tu correo Electronico";
+      echo '<div class="alert alert-dismissible alert-success">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <p>Correcto!.. Revisa tu correo Electrónico </p>
+         </div>';
     }
 
 
   /*************** PHP MAILER ******************/
 
   }else{
-
-    echo "El email <strong>".$email_rec2."</strong> no se ecuentra en el sistema";
+    echo '<div class="alert alert-dismissible alert-danger">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       <p> El email <strong>'.$email_rec2.' no se encuentra en el sistema </strong></p>
+       </div>';
 
   }
+  $db->liberar($sql);
+  $db->close();
 
 }else{
   echo '<div class="alert alert-dismissible alert-danger">
@@ -81,8 +92,6 @@ if (!empty($email_rec2)) {
      <p> Ingresa Tu email</p>
      </div>';
 }
-$db->liberar($sql);
-$db->close();
 
 
 

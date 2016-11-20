@@ -129,8 +129,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?p=registrar"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Usuarios</a></li>
+            <li><a href="?p=reg_alumno"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href="?p=list_alumno"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Alumnos</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -140,7 +140,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?p=registro_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href="?p=reg_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
             <li><a href="javascript:void(0)"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
           </ul>
         </li>

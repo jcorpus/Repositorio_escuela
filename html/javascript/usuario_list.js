@@ -77,7 +77,7 @@ function listar_usuarios(valor,pagina){
 			//alert("total de datos"+totaldatos);
 			var numero_paginas = Math.ceil(totaldatos/5); //el Math.ceil acerca el resultado al próximo entero
 			//alert("total de paginas"+numero_paginas);
-			var buscar_alumno = $("#buscar_alumno").val();
+			var buscar_alumno = $("#buscar_usuario").val();
 
 
 			var paginar = "<ul class='pagination'>";

@@ -74,16 +74,16 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
           <div class="" id="msj_get_pass">
 
           </div>
-          <div class="form-group">
-            <p>
-              La contraseña se enviará a tu Correo Electrónico
-            </p>
-          </div>
           <div onkeypress="return run_rec_password(event);">
             <div class="form-group">
               <label for="recipient-name" class="form-control-label">Tu email:</label>
               <input type="mail" class="form-control" id="get_pass_user">
             </div>
+          </div>
+          <div class="form-group">
+            <p>
+              La contraseña se enviará a tu Correo Electrónico
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

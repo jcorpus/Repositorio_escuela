@@ -17,7 +17,7 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <!-- Third Blog Post -->
                 <h2>
                     <a href="#">Titulo Post Title</a>
@@ -49,7 +49,7 @@
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <div class="col-md-3">
 
                 <!-- Blog Search Well -->
                 <div class="well">

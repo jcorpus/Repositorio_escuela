@@ -2,11 +2,11 @@
 </div>
 
 <!-- Footer -->
-<div class="container">
+<div class="container footer_rp">
 <footer>
 <div class="row">
     <div class="col-lg-12">
-        <p>Copyright &copy; Your Website 2014</p>
+        <p>Copyright &copy; Repositorio Epiiys &nbsp;<i class="fa fa-graduation-cap" aria-hidden="true"></i> USP 2016</p>
     </div>
 </div>
 </footer>
