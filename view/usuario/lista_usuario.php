@@ -62,7 +62,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">Datos del Usuario</h3>
         </div>
-        <form class="form-horizontal" id="mod_alumno">
+        <form class="form-horizontal" id="mod_user">
             <div class="box-body">
                 <!--Mensaje de registro-->
                 <div class="alert alert-success alert-dismissible" style="display:none" id="correcto">
@@ -78,26 +78,26 @@
                   <label  class="col-sm-2 control-label">Nombres</label>
 
                   <div class="col-sm-4">
-                    <input type="hidden" id="id_persona2" name="id_persona2">
-                    <input type="hidden" id="id_alumno2" name="id_alumno2">
-                    <input type="text" name="nombre_alumno2" onkeypress="return solo_letras(event);" class="form-control" id="nombre_alumno2" placeholder="nombres">
+                    <input type="hidden" id="id_user" name="id_user">
+                    <input type="hidden" id="id_user2" name="user">
+                    <input type="text" name="nombre_user2" onkeypress="return solo_letras(event);" class="form-control" id="nombre_user2" placeholder="nombres">
                   </div>
                   <label  class="col-sm-2 control-label">DNI</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" onkeypress="return solo_numeros(event);"  maxlength="8"  name="dni_alumno2" id="dni_alumno2"  placeholder="DNI">
+                    <input type="text" class="form-control" onkeypress="return solo_numeros(event);"  maxlength="8"  name="dni_user2" id="dni_user2"  placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Ape Paterno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="ape_paterno2" onkeypress="return solo_letras(event);" id="ape_paterno2" placeholder="apellido paterno">
+                    <input type="text" class="form-control" name="apep_user2" onkeypress="return solo_letras(event);" id="apep_user2" placeholder="apellido paterno">
                   </div>
                   <label  class="col-sm-2 control-label">Ape Materno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="ape_materno2" onkeypress="return solo_letras(event);" id="ape_materno2" placeholder="apellido materno">
+                    <input type="text" class="form-control" name="apem_user2" onkeypress="return solo_letras(event);" id="apem_user2" placeholder="apellido materno">
                   </div>
                 </div>
 
@@ -105,25 +105,25 @@
                   <label  class="col-sm-2 control-label">Domicilio</label>
 
                   <div class="col-sm-4">
-                    <textarea name="domicilio_alumno2" placeholder="domicilio"  style="resize: none;"  class="form-control" id="domicilio_alumno2" maxlength="85" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_user2" placeholder="domicilio"  style="resize: none;"  class="form-control" id="domicilio_user2" maxlength="230" cols="3" rows="3">Saturno</textarea>
                   </div>
                   <label  class="col-sm-2 control-label">Teléfono</label>
 
                   <div class="col-sm-4">
-                    <input type="text" name="telefono_alumno2" maxlength="9" class="form-control" onkeypress="return solo_numeros(event);"  id="telefono_alumno2" placeholder="telefono">
+                    <input type="text" name="telefono_user2" maxlength="9" class="form-control" onkeypress="return solo_numeros(event);"  id="telefono_user2" placeholder="telefono">
                   </div>
                 </div>
 
               <div class="form-group">
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_alumno2" class="form-control" id="email_alumno2" placeholder="email">
+                    <input type="email" name="email_user2" class="form-control" id="email_user2" placeholder="email">
                   </div>
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
                   <input type="hidden" id="image_oculta" name="imagen_oculta">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_alumno2" name="imagen_alumno2" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno2" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                    <!-- <input type="file" data-target="preview_image" class="file-input" id="imagen_user2" name="imagen_user2" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />  -->
+                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_user" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
                       </div>
 
@@ -134,11 +134,11 @@
                   <label class="col-sm-2 control-label">Sexo</label>
                   <div class="col-sm-4">
                     <label class="miradio "><!--checked-->
-                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_alumno2" value="M" >
+                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_user" value="M" >
                     <span> Masculino </span>
                     </label>
                     <label class="miradio ">
-                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_alumno2" value="F">
+                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_user" value="F">
                     <span>Femenino </span>
                     </label>
                     <input style="display:none" type="text" name="fecha_registro" class="form-control" id="fecha_registro">
@@ -173,7 +173,7 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                    <img id="preview_image"  class="imagenpreview" width="170" src="" alt="imagen" />
+                    <img id="preview_image2"  class="imagenpreview" width="170" src="" alt="imagen" />
                 </div>
               </div>
             </form>

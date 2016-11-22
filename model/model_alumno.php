@@ -45,6 +45,35 @@ $apep_alumno,$apem_alumno,$domicilio_alumno,$telefono_alumno,$edad_alumno,$sexo_
 }
 
 
+function listar_alumno($valor, $inicio=FALSE,$limite=FALSE){
+  if ($inicio!==FALSE && $limite!==FALSE) {
+    $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo,p.edad, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+    WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC LIMIT $inicio,$limite";
+  }else{
+    $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+    WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC";
+  }
+  $resultado = $this->db->query($sql);
+  $arreglo = array();
+  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+    $arreglo[] = $re;
+  }
+  return $arreglo;
+  $this->db->liberar($sql);
+  $this->db->close();
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

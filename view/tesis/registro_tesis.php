@@ -23,62 +23,64 @@
 
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" id="formulario_alumno">
+            <form class="form-horizontal" id="formulario_tesis">
               <div class="box-body">
                 <!--Mensaje de registro-->
-                <div class="alert alert-success alert-dismissible" style="display:none" id="correcto">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    Tesis Correctamente &nbsp;<i class="icon fa fa-check"></i>
+                <div class="" id="msj_res_tesis">
                 </div>
                 <!--Mensaje de registro-->
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Titulo</label>
-
                   <div class="col-sm-4">
-                    <input type="text" name="nombre_alumno" class="form-control" value="" id="nombre_alumno" placeholder="Titulo">
+                    <input type="text" name="nombre_tesis" class="form-control validacion"  id="nombre_tesis" placeholder="Titulo">
                   </div>
-                  <label  class="col-sm-2 control-label">Autor</label>
+                  <label  class="col-sm-1 control-label">Autor</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="dni_alumno" value="" id="dni_alumno" maxlength="8" size="8" placeholder="Autor">
+                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="8" size="8" placeholder="Autor">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label  class="col-sm-1 control-label">Fuente</label>
+                  <label  class="col-sm-1 control-label">Tipo de Tesis</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="ape_paterno" value="" id="ape_paterno" placeholder="Fuente">
+                    <select class="form-control" id="tipotesis_datos" name="tipotesis_datos">
+                    </select>
                   </div>
-                  <label  class="col-sm-2 control-label">Tipo de Doc</label>
+                  <label  class="col-sm-1 control-label">Tipo de Doc</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="ape_materno" value="" id="ape_materno" placeholder="apellido materno">
+                    <input type="text" class="form-control validacion" name=""  id="" placeholder="tipo de doc">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Resumen</label>
                   <div class="col-sm-4">
-                    <textarea name="domicilio_alumno" placeholder="domicilio"  style="resize: vertical;"  class="form-control" id="domicilio_alumno" cols="6" rows="6">Saturno</textarea>
+                    <textarea name="resumen_tesis" placeholder="Resumen de tesis"  style="resize: vertical;"  class="form-control validacion" id="resumen_tesis" cols="6" rows="6">Saturno</textarea>
                   </div>
-                  <label  class="col-sm-2 control-label">Obetivos</label>
-                  <div class="col-sm-3">
-                    <textarea name="objetivos" style="resize: vertical;" class="form-control" placeholder="Objetivos del Documento" id="objetivos_doc" cols="3" rows="3"></textarea>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label  class="col-sm-1 control-label">Email</label>
-
-                  <div class="col-sm-5">
-                    <input type="email" name="email_alumno" class="form-control" value="" id="email_alumno" placeholder="email">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Archivo</label>
+                  <label  class="col-sm-1 control-label">Obetivos</label>
                   <div class="col-sm-4">
-                      <input type="file" onchange="seleccionar_archivo(this.value)"  class="file-input" id="archivo_alumno" name="archivo_alumno" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="archivo_alumno" class="btn btn-primary "><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>&ensp;Escoger Archivo</label>
+                    <textarea name="objetivos_tesis" style="resize: vertical;" class="form-control validacion" placeholder="Objetivos del Documento" id="objetivos_tesis" cols="3" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label  class="col-sm-1 control-label">Filial</label>
+                  <div class="col-sm-3">
+                    <select class="form-control" name="filial_datos" id="filial_datos">
+                    </select>
+                  </div>
+                  <label  class="col-sm-2 control-label">Etiquetas</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control validacion" name="etiquetas_tesis" id="etiquetas_tesis" value="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-1 control-label">Archivo</label>
+                  <div class="col-sm-4">
+                      <input type="file" onchange="seleccionar_archivo(this.value)"  class="file-input" id="archivo_tesis" name="archivo_tesis" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                      <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="archivo_tesis" class="btn btn-primary "><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>&ensp;Escoger Archivo</label>
                       </span>
                       </div>
                       <p id="nombre_archivo"></p>
@@ -87,7 +89,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
-                <button type="button" onclick="registrar_alumno()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
+                <button type="button" onclick="reg_tesis()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -99,7 +101,8 @@
 
 </section>
     <!-- /.content -->
-
+ <script src="html/javascript/reg_tesis.js"></script>
+ <script src="html/javascript/list_filial.js"></script>
  <script>
 
 /********MOSTRAR NOMBRE DE ARCHIVO SELECCIONADO******/

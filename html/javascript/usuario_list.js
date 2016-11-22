@@ -50,7 +50,7 @@ function listar_usuarios(valor,pagina){
 			cadena += "<tbody>";
 
 			for(var i = 0 ; i<valores.length; i++){
-				datos_array =valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9]+"*"+valores[i][10]+"*"+valores[i][11]+"*"+valores[i][12]+"*"+valores[i][13];
+				datos_array =valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9]+"*"+valores[i][10]+"*"+valores[i][11]+"*"+valores[i][12]+"*"+valores[i][13]+"*"+valores[i][14];
 				cadena += "<tr>";
 				/*cadena += "<td>"+(i+1)+"</td>";*/
 				cadena += "<td>"+valores[i][0]+"</td>";
@@ -199,23 +199,27 @@ function mostrar_usuario(datos){
 
 	var valores=datos.split("*");
 	//alert(d.length);
-	$("#id_alumno2").val(valores[0]);
-	$("#nombre_alumno2").val(valores[1]);
-	$("#ape_paterno2").val(valores[2]);
-	$("#ape_materno2").val(valores[3]);
-	$("#dni_alumno2").val(valores[4]);
-	$("#domicilio_alumno2").val(valores[5]);
-	$("#telefono_alumno2").val(valores[6]);
-	$("#email_alumno2").val(valores[7]);
-	$("#codigo_alumno2").val(valores[11]);
+	$("#id_user2").val(valores[0]);
+	$("#nombre_user2").val(valores[1]);
+	$("#apep_user2").val(valores[2]);
+	$("#apem_user2").val(valores[3]);
+	$("#dni_user2").val(valores[4]);
+	$("#domicilio_user2").val(valores[5]);
+	$("#telefono_user2").val(valores[6]);
+	$("#email_user2").val(valores[7]);
+	$("#edad_user2").val(valores[9]);
+	$("#id_usuario2").val(valores[10]);
+	$("#nombre_usuario2").val(valores[11]);
+	$("#imagen_user2").val(valores[14]);
   	//document.getElementById('preview_image').src = valores[13];
   	//$("#imagen").attr("src","http://i.imgur.com/nTfaQnw.png");
-  $("#preview_image").attr("src",valores[13]);
-  $("#image_oculta").val(valores[13]);
+  $("#preview_image2").attr("src",valores[14]);
+  //$("#image_oculta").val(valores[11]);
 
   $("#id_persona2").val(valores[10]);
   	//document.getElementById("year2").selectedIndex = 2; //2016-08-15
   	var sexo2 = valores[8];
+		console.log("el sexo es: "+valores[8]);
 	if(sexo2==='F'){
 	  document.getElementById('femenino2').checked = true;
 	}

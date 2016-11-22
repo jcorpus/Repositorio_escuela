@@ -141,7 +141,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="?p=reg_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
+            <li><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -151,8 +151,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/matricula_registro.php');"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/matricula_lista.php');"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar </a></li>
+            <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -161,12 +161,9 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-
-
-
           <ul class="treeview-menu">
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/reportes_pdf.php');"><i class="fa fa-file-text-o" aria-hidden="true"></i>&ensp;Reportes PDF</a></li>
-            <li><a href="javascript:void(0)" onclick="load_div('contenido','Views/reporte_graficos.php');" ><i class="fa fa-bar-chart" aria-hidden="true"></i>&ensp;Gráficos</a></li>
+            <li><a href="?p=reportes"><i class="fa fa-file-text-o" aria-hidden="true"></i>&ensp;Reportes PDF</a></li>
+            <li><a href="?p=graficos"><i class="fa fa-bar-chart" aria-hidden="true"></i>&ensp;Gráficos</a></li>
           </ul>
         </li>
         <li class="treeview">

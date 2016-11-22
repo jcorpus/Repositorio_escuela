@@ -8,7 +8,7 @@
       Todo lo que quieras
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">IEP</a>.</strong> Derechos Reservados.
+    <strong>Copyright &copy; 2016 <a href="#">Escuela Ing USP</a>.</strong> Derechos Reservados.
     <?php printf(YEAR_APLICACION);  ?>
   </footer>
 

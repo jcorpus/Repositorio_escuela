@@ -75,7 +75,7 @@ class Usuario {
   }
 
 /*
-SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
+SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email,p.sexo, p.edad, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
 WHERE p.ape_paterno LIKE '%k%' OR p.dni LIKE '%h%' ORDER BY p.id_persona DESC LIMIT 0,2
 
 SELECT * FROM persona ORDER BY persona.id_persona DESC
@@ -103,9 +103,10 @@ SELECT * FROM persona ORDER BY persona.id_persona DESC
 
 function borrar_user(){
 
-
-
 }
+
+
+
 
 }
 

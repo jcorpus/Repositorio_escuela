@@ -25,6 +25,14 @@ else if ($_GET['p'] == 'list_alumno') {
 	$titulo = 'Lista de Alumnos';
 	$contenido = 'view/alumno/lista_alumno.php';
 }
+else if ($_GET['p'] == 'reportes') {
+	$titulo = 'Reportes PDF';
+	$contenido = 'view/reporte-pdf/report_alumno.php';
+}
+else if ($_GET['p'] == 'graficos') {
+	$titulo = 'Gráficos';
+	$contenido = 'view/alumno/lista_alumno.php';
+}
 else{
 	$titulo = 'ERROR 404';
 	$contenido = 'html/error/error404.html';
