@@ -22,7 +22,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
   <!-- jQuery 2.2.3 -->
   <script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="html/javascript/v_login.js"></script>
-  <script src="html/javascript/Recuperar_pass.js">
+  <script src="html/javascript/recuperar_pass.js">
 
   </script>
 </head>
@@ -85,11 +85,22 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
               La contraseña se enviará a tu Correo Electrónico
             </p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" onclick="rec_password();" class="btn btn-primary">Enviarme un correo</button>
+          <div class="form-group">
+              <div class="col-sm-4">
+              <img src="captcha2.php" alt="">  
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" id="valor_captcha" maxlength="5" name="valor_captcha">
+              </div>
           </div>
-
+          <br>
+      </div>
+      <br>
+      <div class="modal-footer">
+        <div class="form-group">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" onclick="rec_password();" class="btn btn-primary">Enviarme un correo</button>
+        </div>
       </div>
     </div>
   </div>

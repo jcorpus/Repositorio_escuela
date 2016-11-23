@@ -1,9 +1,19 @@
 <?php
 include '../core/models/model_conexion.php';
 require('../core/bin/funciones/rec_pass_template.php');
-
+session_start();
 $email_rec = $_POST['emaill'];
+$valor_captcha = trim($_POST['valor_captcha']);
 $email_rec2 = trim($email_rec);
+
+if ($valor_captcha != $_SESSION['key']) {
+  echo "captcha erroneo";
+}else{
+  echo "captcha correcto";
+}
+
+
+
 if (!empty($email_rec2)) {
   $db = new Conexion2;
   $sql = $db->query("SELECT p.nombre, p.ape_paterno, u.password, p.email FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona WHERE  p.email= '$email_rec2' LIMIT 1 ");

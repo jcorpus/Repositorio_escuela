@@ -7,7 +7,6 @@ public function __construct(){
   $this->db = new Conexion2;
   }
 
-
   function registro_tesis($nombre_tesis,$autor_tesis,$tipotesis_datos,$resumen_tesis,
   $objetivos_tesis,$filial_datos,$etiquetas_tesis,$archivo_tesis,$codigo_tesis,$tipo,$id_usuario){
     $verificar = $this->db->query("SELECT titulo FROM tesis WHERE titulo='$nombre_tesis' LIMIT 1");
@@ -43,7 +42,6 @@ public function __construct(){
 
 
 function list_repositorio(){
-
 
 
 

@@ -7,12 +7,16 @@ function run_rec_password(e){
 }
 
 function rec_password(){
+  
   var emaill = document.getElementById("get_pass_user").value;
+  
+  var valor_captcha = document.getElementById("valor_captcha").value;  
+  
   var msjpass;
 	$.ajax({
 		url:'controller/controller_rec_pass.php',
 		type: 'POST',
-    data:'emaill='+emaill,
+    data:'emaill='+emaill+'&valor_captcha='+valor_captcha,
 		beforeSend: function(){
     msjpass = '<div class="alert alert-dismissible alert-warning"> ';
     msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
