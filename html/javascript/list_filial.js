@@ -11,7 +11,6 @@ function cargar_filial(){
 		type:'POST',
 		data:{}
 	}).done(function(data){
-		//Convierte una cadena de la notación de objetos de JavaScript (JSON) en un objeto.
 		var valores = JSON.parse(data);
 		//alert(valores.length);
 		if(valores.length>0){

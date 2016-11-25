@@ -22,9 +22,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
   <!-- jQuery 2.2.3 -->
   <script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="html/javascript/v_login.js"></script>
-  <script src="html/javascript/recuperar_pass.js">
-
-  </script>
+  <script src="html/javascript/recuperar_pass.js"></script>
 </head>
 <body class="login-page">
   <div class="login-box">
@@ -86,8 +84,9 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
             </p>
           </div>
           <div class="form-group">
-              <div class="col-sm-4">
-              <img src="captcha2.php" alt="">  
+              <div class="col-sm-5">
+              <img src="captcha2.php" id="valor"alt="">
+              <a href="javascript:void(0)" onclick="document.getElementById('valor').src='captcha2.php'" ><img src="site_media/img/refresh.png" alt=""></a>
               </div>
               <div class="col-sm-3">
                 <input type="text" class="form-control" id="valor_captcha" maxlength="5" name="valor_captcha">

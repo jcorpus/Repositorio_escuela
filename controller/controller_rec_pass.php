@@ -6,15 +6,27 @@ $email_rec = $_POST['emaill'];
 $valor_captcha = trim($_POST['valor_captcha']);
 $email_rec2 = trim($email_rec);
 
-if ($valor_captcha != $_SESSION['key']) {
-  echo "captcha erroneo";
-}else{
-  echo "captcha correcto";
-}
+
+  if (!empty($valor_captcha) && !empty($email_rec2)) {
+    if ($valor_captcha == $_SESSION['key']) {  
+      enviar_datos($email_rec2);
+    }else{
+      echo '<div class="alert alert-dismissible alert-danger">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <p> Captcha Erroneo</p>
+         </div>';
+    }
+  }else{
+    echo '<div class="alert alert-dismissible alert-danger">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       <p> Faltan Datos...</p>
+       </div>';
+  }  
 
 
 
-if (!empty($email_rec2)) {
+function enviar_datos($email_rec2){
+  
   $db = new Conexion2;
   $sql = $db->query("SELECT p.nombre, p.ape_paterno, u.password, p.email FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona WHERE  p.email= '$email_rec2' LIMIT 1 ");
   if ($db->rows($sql) > 0) {
@@ -56,9 +68,9 @@ if (!empty($email_rec2)) {
     //Tenemos que usar gmail autenticados, así que esto a TRUE
     $mail->SMTPAuth   = true;
     //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-    $mail->Username   = "mail@aqui.com";
+    $mail->Username   = "@gmail.com";
     //Introducimos nuestra contraseña de gmail
-    $mail->Password   = "contraaqui";
+    $mail->Password   = "contraqui";
     //Definimos el remitente (dirección y, opcionalmente, nombre)
     $mail->SetFrom($email_rec2, 'Repositorio - contraseña olvidada');
     //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)
@@ -96,11 +108,7 @@ if (!empty($email_rec2)) {
   $db->liberar($sql);
   $db->close();
 
-}else{
-  echo '<div class="alert alert-dismissible alert-danger">
-     <button type="button" class="close" data-dismiss="alert">&times;</button>
-     <p> Ingresa Tu email</p>
-     </div>';
+  
 }
 
 

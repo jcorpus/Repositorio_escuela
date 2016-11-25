@@ -50,6 +50,13 @@
                        ?>
                        <ul class="dropdown-menu">
                          <li>
+                           <?php
+                           if (isset($_SESSION['app_id'])) {
+                                 echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['nombre_tipo_user']).'</a>';
+                           }
+                            ?>
+                         </li>
+                         <li>
                            <a href="?view=perfil">Perfil</a>
                          </li>
                          <li>

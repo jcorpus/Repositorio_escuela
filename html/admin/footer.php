@@ -30,7 +30,7 @@
                     //Get the Context 2D or 3D
                     contextt = clock.getContext("2d");
                     contextt.clearRect(0, 0, 90, 50);
-                    contextt.font = "20px Arial";
+                    contextt.font = "17px Arial";
                     contextt.fillStyle = "#abcdef";
                     contextt.fillText(strr, 0, 21);
                 }

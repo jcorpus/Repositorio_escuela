@@ -190,6 +190,12 @@
                       </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label  class="col-sm-2 control-label">Codigo</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control validacion" name="codigo_alumno" value="1112101346" id="codigo_alumno" maxlength="10">
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
@@ -212,14 +218,6 @@
             <form role="form" id="otraforma">
             <p id="respuesta"></p>
               <div class="box-body">
-                <div class="form-group">
-                 <div class="col-xs-5">
-                  <label for="">Codigo</label>
-                  <input type="text" class="form-control" value="jjcm" name="codigo_alumno" id="codigo_alumno" placeholder="codigo">
-                  </div>
-                </div>
-                <br>
-                <br>
                 <hr>
                 <div class="form-group">
                   <label>Imágen de Alumno</label>

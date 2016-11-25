@@ -1,13 +1,24 @@
 <?php
 require('core/core.php');
 
-require 'core/sitemap.php';
-require 'html/sitemap/topnav.php';
-require 'html/sitemap/header.php';
-require $contenido;
 
-require 'html/sitemap/footer.php';
+$usuarios = ver_usuarios();
+$tipo_user = $usuarios[$_SESSION['app_id']]['nombre_tipo_user'];
 
+if ($_SESSION['app_id'] && $tipo_user == "Administrador") {
+  
+  require 'core/sitemap.php';
+  require 'html/admin/topnav.php';
+  require 'html/admin/header.php';
+  require $contenido;
+  
+  require 'html/admin/footer.php';  
+  
+}else{
+  
+  header('Location: index.php');
+
+}
 
 
  ?>

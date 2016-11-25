@@ -8,11 +8,11 @@
         <li class="active">Here</li>
       </ol>
 
-</section>
+  </section>
 
     <!-- Main content -->
 <section class="content">
-
+  
     <div class="row">
         <div class="col-md-9">
           <!-- Horizontal Form -->
@@ -190,6 +190,18 @@
                       </div>
                   </div>
                 </div>
+                <div class="form-group">
+                <label  class="col-sm-2 control-label">Tipo de Rol</label>
+                  <div class="col-sm-4">
+                    <select class="form-control"id="tipousuario_datos" name="">
+                      
+                    </select>
+                  </div>
+                  <label  class="col-sm-2 control-label">Otracosa</label>
+                  <div class="col-sm-4">
+                    <input type="password" name="" class="form-control validacion" value="" id="" placeholder="password" maxlength="50">
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
@@ -213,15 +225,6 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                 <div class="col-xs-5">
-                  <label for="">Codigo</label>
-                  <input type="text" class="form-control" value="jjcm" name="codigo_alumno" id="codigo_alumno" placeholder="codigo">
-                  </div>
-                </div>
-                <br>
-                <br>
-                <hr>
-                <div class="form-group">
                   <label>Imágen de Usuario</label>
                     </div>
                     <br>
@@ -240,6 +243,7 @@
 
 
 <script src="html/javascript/reg_usuario.js"></script>
+<script src="html/javascript/tipo_usuario.js"></script>
 
  <script>
 

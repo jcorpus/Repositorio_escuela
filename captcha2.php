@@ -6,6 +6,14 @@ $image_captcha = imagecreatefrompng('site_media/img/captcha.png');
 //fondo
 $texto_color = imagecolorallocate($image_captcha,255,255,255);
 
+
+/*
+Las llaves sirven para acceder a los caracteres de la cadena como si fuera un array.
+$string = 'hello';
+echo $string{0}; // h
+echo $string[0]; // h
+*/
+
 function generar_captcha(){
   $k = '';
   $valores = '123456789abcdefghijklmnopqrstuvwxyz';
