@@ -49,7 +49,7 @@ function list_repositorio(){
 
 /***************lista de filial***************/
 function listar_filial(){
-  $sql = "SELECT id_filial, descripcion FROM filial";
+  $sql = "SELECT idFilial, DesFilial FROM filial";
   $consulta = $this->db->query($sql);
   $arreglo = array();
   if($this->db->rows($consulta) > 0){
@@ -67,7 +67,7 @@ function listar_filial(){
 }
 /***************lista de tipo de tesis***************/
 function listar_tipotesis(){
-  $sql = "SELECT * FROM tipo_tesis";
+  $sql = "SELECT 	idTipoTesis,DesTipoTesis FROM tipotesis";
   $consulta = $this->db->query($sql);
   $arreglo = array();
   if($this->db->rows($consulta) > 0){

@@ -3,12 +3,29 @@ function __(id){
   return document.getElementById(id);
 }
 
+/******************validar radio*********************/
+function radio_validate_trab(){
+  var opciones = document.getElementsByName("sexo_trabajador");
+  radioo = false;
+  for (var i = 0; i < opciones.length; i++) {
+    if(opciones[i].checked){
+      radioo = true;
+      break;
+    }
+  }
+  if (!radioo){
+      //alert("falta el sexo");
+      radioo = false;
+  }
+    return radioo;
+}
+
 /****************Validar campos vacios*************/
-function validate () {
+function validate_trab () {
     var campos, valido, resp, radioo;
 
     // todos los campos .form-control en #campos
-    campos = document.querySelectorAll('#formulario_tesis input.validacion');
+    campos = document.querySelectorAll('#formulario_trabajador input.validacion');
 
     valido = true; // es valido hasta demostrar lo contrario
     // recorremos todos los campos
@@ -28,7 +45,7 @@ function validate () {
       resp += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
       resp += 'Faltan Datos &nbsp;<i class="icon fa fa-times"></i>';
       resp += '</div>';
-      //__("msj_res_tesis").innerHTML = resp;
+      //__("msj_res_alumno").innerHTML = resp;
       valido = false;
       //document.getElementsByClassName("resp_c") = resp;
     }
@@ -37,22 +54,24 @@ function validate () {
 
 /********************************************************/
 
-function reg_tesis(){
+function reg_trabajador(){
 
-  var respuesta = validate();
+  var respuesta2 = radio_validate_trab();
+  var respuesta = validate_trab();
+  console.log("respuesta2 "+respuesta2);
   console.log("respuesta "+respuesta);
 
-  if (respuesta) {
+  if (respuesta && respuesta2) {
 
   //var emaill = document.getElementById("get_pass_user").value;
-  var formtesis = new FormData($("#formulario_tesis")[0]);
+  var formalumno = new FormData($("#formulario_trabajador")[0]);
 
   var msjpass;
   /// metodos de ajax aqui http://www.w3schools.com/jquery/ajax_ajaxsetup.asp
 	$.ajax({
-		url:'controller/controller_tesis.php',
+		url:'controller/controller_trabajador.php',
 		type: 'POST',
-    data: formtesis,
+    data: formalumno,
     cache:false,  //si el navegador debe almacenar en cache la pagina solicitada
     contentType: false, //"application / x-www-form-urlencoded"
     processData: false, //
@@ -61,7 +80,7 @@ function reg_tesis(){
     msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     msjpass += ' <p> Enviando .....</p>'
     msjpass += '</div>';
-    document.getElementById('msj_res_tesis').innerHTML = msjpass;
+    document.getElementById('msj_res_trabajador').innerHTML = msjpass;
 
 		},
     complete: function(){
@@ -70,7 +89,7 @@ function reg_tesis(){
     },
 		success: function(data){
 
-    document.getElementById('msj_res_tesis').innerHTML = data;
+    document.getElementById('msj_res_trabajador').innerHTML = data;
 
     /*
 
@@ -101,111 +120,7 @@ function reg_tesis(){
   msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
   msjpass += ' <p> Faltan Datos </p>'
   msjpass += '</div>';
-  document.getElementById('msj_res_tesis').innerHTML = msjpass;
+  document.getElementById('msj_res_trabajador').innerHTML = msjpass;
 }
 
 }
-
-
-
-
-
-/**combos**/
-
-
-$(document).ready(function(){
-
-cargar_grado_academico();
-cargar_estado_publicacion();
-cargar_categoria_tesis();
-
-});
-
-function cargar_grado_academico(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
-
-
-}
-
-/**estado de publicacion**/
-function cargar_estado_publicacion(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
-
-
-}
-
-/**categoria de tesis**/
-function cargar_categoria_tesis(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
-
-
-}
-
-
-
-
-
-

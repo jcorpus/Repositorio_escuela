@@ -1,54 +1,54 @@
 
 <section class="content-header cabecera">
       <h1>
-        Registro de Alumnos
+        Registro de Trabajadores
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
       </ol>
 
-</section>
+  </section>
 
     <!-- Main content -->
 <section class="content">
-
+  
     <div class="row">
         <div class="col-md-9">
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Alumno</h3>
+              <h3 class="box-title">Datos del Trabajador</h3>
             </div>
 
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" id="formulario_alumno">
+            <form class="form-horizontal" id="formulario_trabajador">
               <div class="box-body">
                 <!--Mensaje de registro-->
-                <div class="" id="msj_res_alumno">
+                <div class="resp_trabajador" id="msj_res_trabajador">
                 </div>
                 <!--Mensaje de registro-->
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Nombres</label>
                   <div class="col-sm-4">
-                    <input type="text" name="nombre_alumno" onkeypress="return solo_letras(event);" class="form-control validacion" value="bakuryo" id="nombre_alumno" placeholder="nombres" maxlength="40">
+                    <input type="text" name="nombre_trabajador" onkeypress="return solo_letras(event);" class="form-control validacion" value="bakuryo" id="nombre_trabajador" placeholder="nombres" maxlength="40">
                   </div>
                   <label  class="col-sm-2 control-label">DNI</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" onkeypress="return solo_numeros(event);" name="dni_alumno" value="12345678" id="dni_alumno" maxlength="8" size="8" placeholder="DNI">
+                    <input type="text" class="form-control validacion" onkeypress="return solo_numeros(event);" name="dni_trabajador" value="12345678" id="dni_trabajador" maxlength="8" size="8" placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Ape Paterno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="apep_alumno" value="corpus" onkeypress="return solo_letras(event);" id="apep_alumno" maxlength="40"  placeholder="apellido paterno">
+                    <input type="text" class="form-control validacion" name="apep_trabajador" value="corpus" onkeypress="return solo_letras(event);" id="apep_trabajador" maxlength="40"  placeholder="apellido paterno">
                   </div>
                   <label  class="col-sm-2 control-label">Ape Materno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="apem_alumno" value="mechato" onkeypress="return solo_letras(event);" id="apem_alumno" maxlength="40" placeholder="apellido materno">
+                    <input type="text" class="form-control validacion" name="apem_trabajador" value="mechato" onkeypress="return solo_letras(event);" id="apem_trabajador" maxlength="40" placeholder="apellido materno">
                   </div>
                 </div>
 
@@ -56,12 +56,12 @@
                   <label  class="col-sm-2 control-label">Domicilio</label>
 
                   <div class="col-sm-4">
-                    <textarea name="domicilio_alumno" placeholder="domicilio"  style="resize: vertical;"  class="form-control validacion" id="domicilio_alumno" maxlength="240" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_trabajador" placeholder="domicilio"  style="resize: vertical;"  class="form-control validacion" id="domicilio_trabajador" maxlength="240" cols="3" rows="3">Saturno</textarea>
                   </div>
                   <label  class="col-sm-2 control-label">Teléfono</label>
 
                   <div class="col-sm-3">
-                    <input type="text" name="telefono_alumno" onkeypress="return solo_numeros(event);" class="form-control validacion" value="767675" maxlength="20" id="telefono_alumno" placeholder="telefono">
+                    <input type="text" name="telefono_trabajador" onkeypress="return solo_numeros(event);" class="form-control validacion" value="767675" maxlength="20" id="telefono_trabajador" placeholder="telefono">
                   </div>
                 </div>
                 <div class="form-group">
@@ -153,7 +153,7 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_alumno" class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user"  placeholder="Edad" >
+                        <input type="text" name="edad_trabajador" class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user"  placeholder="Edad" >
                         <b>Edad</b>
                      </div>
                 </div>
@@ -161,11 +161,11 @@
                 <div class="form-group">
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_alumno" class="form-control validacion"  value="doombakuryo@gmail.com" id="email_alumno" placeholder="email" maxlength="50">
+                    <input type="email" name="email_trabajador" class="form-control validacion"  value="doombakuryo@gmail.com" id="email_trabajador" placeholder="email" maxlength="50">
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
-                    <input type="password" name="codigo_alumno" class="form-control validacion" value="" id="codigo_alumno" placeholder="codigo alumno" maxlength="10">
+                    <input type="text" name="codigo_trabajador" class="form-control validacion" value="" id="codigo_trabajador" placeholder="codigo" maxlength="10">
                   </div>
                 </div>
 
@@ -174,18 +174,18 @@
 
                   <div class="col-sm-4">
                     <label class="miradio ">
-                      <input type="radio" id="masculino" class="form-control sexo validacion"  name="sexo_alumno" value="M"><!-- por defecto checked-->
+                      <input type="radio" id="masculino" class="form-control sexo validacion"  name="sexo_trabajador" value="M"><!-- por defecto checked-->
                       <span> Masculino </span>
                     </label>
                     <label class="miradio ">
-                      <input type="radio" id="femenino" class="form-control sexo validacion"  name="sexo_alumno" value="F">
+                      <input type="radio" id="femenino" class="form-control sexo validacion"  name="sexo_trabajador" value="F">
                       <span>Femenino </span>
                     </label>
                   </div>
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
-                    <input type="file" data-target="preview_image" class="file-input" id="imagen_alumno" accept="image/*"  name="imagen_alumno" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                    <input type="file" data-target="preview_image" class="file-input" id="imagen_trabajador" accept="image/*"  name="imagen_trabajador" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
+                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_trabajador" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
                       </div>
                   </div>
@@ -199,7 +199,7 @@
                   </div>
                   <label  class="col-sm-2 control-label">Estado</label>
                   <div class="col-sm-4">
-                    <select class="form-control" name="estado_alumno" id="estado_alumno">
+                    <select class="form-control" name="estado_trabajador" id="estado_trabajador">
                       <option value="activo">Activo</option>
                     </select>
                   </div>
@@ -207,7 +207,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
-                <button type="button" onclick="reg_alumno()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
+                <button type="button" onclick="reg_trabajador()" class="btn btn-success btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i>&ensp;   Registrar</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -226,9 +226,8 @@
             <form role="form" id="otraforma">
             <p id="respuesta"></p>
               <div class="box-body">
-                <hr>
                 <div class="form-group">
-                  <label>Imágen de Alumno</label>
+                  <label>Imágen de Usuario</label>
                     </div>
                     <br>
                     <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/avatar.png" alt="imagen" />
@@ -245,8 +244,9 @@
     <!-- /.content -->
 
 
-<script src="html/javascript/reg_alumno.js"></script>
+<script src="html/javascript/reg_trabajador.js"></script>
 <script src="html/javascript/tipo_usuario.js"></script>
+
 
  <script>
 
@@ -258,7 +258,8 @@ $('.file-input').on('change', function() {
 /** cumpleaños **/
 $(".cumple").change(function(){
 
-  var dia = $("#dia option:selected").val();
+
+   var dia = $("#dia option:selected").val();
   var mes = $("#mes option:selected").val();
   var year = $("#year option:selected").val();
 
@@ -272,5 +273,7 @@ $(".cumple").change(function(){
   }
 
 });
+
+
 
 </script>

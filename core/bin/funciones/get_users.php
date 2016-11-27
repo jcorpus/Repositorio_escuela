@@ -6,15 +6,16 @@ function ver_usuarios(){
   $sql = $db->query("call pa_listar_usuario_todo()");
   if ($db->rows($sql) > 0) {
     while($d = $db->recorrer($sql)){
-      $usuarios[$d['id_usuario']] = array(
-        'id_usuario' => $d['id_usuario'],
-        'id_persona' => $d['id_persona'],
-        'usuario' => $d['usuario'],
-        'email' => $d['email'],
-        'nombre' => $d['nombre'],
-        'ape_paterno' => $d['ape_paterno']." ".$d['ape_materno'],
-        'permisos' => $d['permisos'],
-        'nombre_tipo_user' => $d['nombre_tipo_user']
+      $usuarios[$d['idUsuario']] = array(
+        'idUsuario' => $d['idUsuario'],
+        'idPersona' => $d['idPersona'],
+        'Usuario' => $d['Usuario'],
+        'Email' => $d['Email'],
+        'NomPersona' => $d['NomPersona'],
+        'all_apellido' => $d['ApePaterno']." ".$d['ApeMaterno'],
+        'imgUsuario' => $d['imgUsuario'],
+        'idTipoUsuario' => $d['idTipoUsuario'],
+        'DesTipoUsuario' => $d['DesTipoUsuario']
       );
     }
   }else{

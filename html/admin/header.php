@@ -89,7 +89,7 @@
         <div class="pull-left info">
           <?php
           if (isset($_SESSION['app_id'])) {
-                echo '<p>'.strtoupper($usuarios[$_SESSION['app_id']]['ape_paterno']).'</p>';
+                echo '<p>'.strtoupper($usuarios[$_SESSION['app_id']]['all_apellido']).'</p>';
                 //echo '<p>'.$usuarios[$_SESSION['app_id']]['id_usuario'].'</p>';
           }
            ?>
@@ -113,14 +113,25 @@
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Trabajador</span>
+          <a href="#"><i class="fa fa-male fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Usuario</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="?p=registrar"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Trabajador</a></li>
+            <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Usuarios</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Trabajador</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="?p=reg_trabajador"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
+            <li><a href="?p=list_trabajador"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Trabajador</a></li>
           </ul>
         </li>
         <li class="treeview">

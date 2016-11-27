@@ -47,10 +47,10 @@
                     <select class="form-control" id="tipotesis_datos" name="tipotesis_datos">
                     </select>
                   </div>
-                  <label  class="col-sm-1 control-label">Tipo de Doc</label>
+                  <label  class="col-sm-1 control-label">Citación</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name=""  id="" placeholder="tipo de doc">
+                    <input type="text" class="form-control validacion" name="cita_tesis"  id="cita_tesis" placeholder="cita tesis">
                   </div>
                 </div>
 
@@ -70,9 +70,9 @@
                     <select class="form-control" name="filial_datos" id="filial_datos">
                     </select>
                   </div>
-                  <label  class="col-sm-2 control-label">Etiquetas</label>
+                  <label  class="col-sm-2 control-label">Palabras clave</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="etiquetas_tesis" id="etiquetas_tesis" value="">
+                    <input type="text" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
                   </div>
                 </div>
 

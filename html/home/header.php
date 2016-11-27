@@ -45,14 +45,14 @@
                     <li class="dropdown">
                       <?php
                       if (isset($_SESSION['app_id'])) {
-                            echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['usuario']).'&nbsp;<b class="caret"></b></a>';
+                            echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['NomPersona']).'&nbsp;<b class="caret"></b></a>';
                       }
                        ?>
                        <ul class="dropdown-menu">
                          <li>
                            <?php
                            if (isset($_SESSION['app_id'])) {
-                                 echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['nombre_tipo_user']).'</a>';
+                                 echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.strtoupper($usuarios[$_SESSION['app_id']]['DesTipoUsuario']).'</a>';
                            }
                             ?>
                          </li>

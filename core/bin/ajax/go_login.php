@@ -6,7 +6,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
     $user = $db->real_escape_string($_POST['user']);
     $pass = $_POST['pass'];
     //$sql = $db->query("SELECT id_usuario from usuarios WHERE (usuario='$user' OR email='$user') AND password='$pass' LIMIT 1 ");
-    $sql = $db->query("SELECT* FROM usuarios inner join persona on persona.id_persona = usuarios.id_persona WHERE (usuario='$user' OR email='$user') AND password='$pass' LIMIT 1 ");
+    $sql = $db->query("SELECT usuario.idUsuario,persona.Email, usuario.Usuario FROM usuario inner join persona on persona.idPersona = usuario.idPersona WHERE (usuario.Usuario='$user' OR persona.Email='$user') AND usuario.Password='$pass' LIMIT 1 ");
     if($db->rows($sql)>0){
 
     //  ini_set('session_cookie_lifetime', time() + (60*60*24)); //un dia entero

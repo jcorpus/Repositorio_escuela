@@ -107,7 +107,7 @@ function borrar_user(){
 
 /***************lista de tipo usuario***************/
 function listar_tipouser(){
-  $sql = "SELECT id_tipo_user, nombre_tipo_user FROM tipo_usuario";
+  $sql = "SELECT idTipoUsuario, desTipoUsuario FROM tipousuario";
   $consulta = $this->db->query($sql);
   $arreglo = array();
   if($this->db->rows($consulta) > 0){
