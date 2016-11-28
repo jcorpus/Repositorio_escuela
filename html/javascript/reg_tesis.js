@@ -3,6 +3,13 @@ function __(id){
   return document.getElementById(id);
 }
 
+
+$(document).ready(function(){
+
+
+
+});
+
 /****************Validar campos vacios*************/
 function validate () {
     var campos, valido, resp, radioo;
@@ -10,8 +17,7 @@ function validate () {
     // todos los campos .form-control en #campos
     campos = document.querySelectorAll('#formulario_tesis input.validacion');
 
-    valido = true; // es valido hasta demostrar lo contrario
-    // recorremos todos los campos
+    valido = true;
     [].slice.call(campos).forEach(function(campo) {
         //console.log(campo.value.trim());
 
@@ -39,12 +45,15 @@ function validate () {
 
 function reg_tesis(){
 
+
+  //tamaño archivo js http://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
+
   var respuesta = validate();
   console.log("respuesta "+respuesta);
 
   if (respuesta) {
 
-  //var emaill = document.getElementById("get_pass_user").value;
+  //var usuario_id = document.getElementById("user_id").value;
   var formtesis = new FormData($("#formulario_tesis")[0]);
 
   var msjpass;
@@ -69,7 +78,7 @@ function reg_tesis(){
       //alert("se completo el envio");
     },
 		success: function(data){
-
+    //limpiar_datos_tesis();
     document.getElementById('msj_res_tesis').innerHTML = data;
 
     /*
@@ -108,101 +117,24 @@ function reg_tesis(){
 
 
 
+function limpiar_datos_tesis(){
 
-
-/**combos**/
-
-
-$(document).ready(function(){
-
-cargar_grado_academico();
-cargar_estado_publicacion();
-cargar_categoria_tesis();
-
-});
-
-function cargar_grado_academico(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
-
-
+    
+  
+  //$("#codigo").val('');
+  $("#nombre_tesis").val('');
+  $("#autor_tesis").val('');
+  $("#cita_tesis").val('');
+  $("#resumen_tesis").val('');
+  $("#pclaves_tesis").val('');
+  $("#nombre_tesis").val('');
+  
+  
+  
 }
 
-/**estado de publicacion**/
-function cargar_estado_publicacion(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
 
 
-}
-
-/**categoria de tesis**/
-function cargar_categoria_tesis(){
-	$.ajax({
-		url:'controller/controller_filial.php',
-		type:'POST',
-		data:{}
-	}).done(function(data){
-		var valores = JSON.parse(data);
-		//alert(valores.length);
-		if(valores.length>0){
-			var cadena = "";
-			for(var i = 0; i < valores.length;i++){
-				//cadena += "<option>Seleccionar</option>";
-				cadena += "<option value="+valores[i][0]+">"+valores[i][1]+"</option>";
-			}
-			$("#filial_datos").html(cadena);
-		}
-		else{
-			alert("no hay datos en la filial");
-		}
-
-	}).fail(function(XMLHttpRequest,jqXHR, textStatus, errorThrown){
-		alert("ocurrio un error");
-	})
-
-
-}
 
 
 

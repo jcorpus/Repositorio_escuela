@@ -1,61 +1,40 @@
 <?php
 
-include "../core/models/model_conexion.php";
+//require('../core/models/model_conexion.php');
 require ("../model/model_tesis.php");
 
 $nombre_tesis = trim($_POST['nombre_tesis']);
 $autor_tesis = trim($_POST['autor_tesis']);
 $tipotesis_datos = $_POST['tipotesis_datos'];
+$cita_tesis = $_POST['cita_tesis'];
 $resumen_tesis = $_POST['resumen_tesis'];
-$objetivos_tesis = $_POST['objetivos_tesis'];
+//$objetivos_tesis = $_POST['objetivos_tesis'];  ///pude ser
 $filial_datos = $_POST['filial_datos'];
-$etiquetas_tesis = $_POST['etiquetas_tesis'];
-$archivo_tesis = $_POST['archivo_tesis'];
+$pclaves = $_POST['pclaves_tesis']; 
+$grado_academico = $_POST['grado_academico']; 
+$categoria_tesis = $_POST['categoria_tesis']; 
+$estado_tesis = $_POST['estado_tesis'];
 
-/*
-function verificar_email($email_alumno){
-	$db = new Conexion2;
-	$sql = $db->query("SELECT persona.email FROM persona WHERE persona.email = '$email_alumno' LIMIT 1 ");
-	if ($db->rows($sql) == 0) {
-		//$resp = "El exmail ".$email_alumno." no existe";
-		return true;
-	}else{
-		$verificar_email = $db->recorrer($sql)[0];
-		if (strtolower($email_alumno) == strtolower($verificar_email)) {
-			$resp = "el email ".$email_alumno." ya existe";
-			return false;
-		}else{
-			echo "ocurrio un error";
-			return false;
-		}
-
-	}
-	$db->liberar();
-	$db->close();
-}
-*/
+/**************************/
+date_default_timezone_set('America/Lima');
+$fecha_registro = date("Y-m-d");
+$id_usuario = '1';
 
 
-function verificar_datos($nombre_tesis){
-	$db = new Conexion2;
-	$sql = $db->query("SELECT tesis.titulo FROM tesis WHERE tesis.titulo = '$nombre_tesis' LIMIT 1 ");
-
-	if ($db->rows($sql) > 0) {
-		echo '<div class="alert alert-danger alert-dismissible" id="correcto">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-			<i class="icon fa fa-times"></i>&nbsp;Ya se registro una tesis con ese Título<strong style="color:#e8e8e8"> '.$nombre_tesis.' </strong>ya esta registrado...
-			</div>';
-		return false;
-	}else{
-    return true;
-
-	}
-	$db->liberar();
-	$db->close();
+$instancia = new Tesis();
+$comprobar = $instancia->verificar_datos_tesis($nombre_tesis);
+if ($comprobar == false) {
+	echo '<div class="alert alert-danger alert-dismissible" id="correcto">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<i class="icon fa fa-times"></i>&nbsp;Ya se registro una tesis con el Título<strong style="color:#e8e8e8"> '.$nombre_tesis.' </strong>...
+		</div>';
+		$comodin = false;
+}else{
+	$comodin = true;
 }
 
 
-if (verificar_datos($titulo_tesis)) {
+if ($comodin == true) {
 	//echo "toodo correcto";
 	$verificar =$_FILES["archivo_tesis"]['name'];
 	if (!empty($verificar)){
@@ -64,8 +43,20 @@ if (verificar_datos($titulo_tesis)) {
 	$tipo = $_FILES['archivo_tesis']['type']; // tipo de archivo
 	$ruta_tesis = $_FILES['archivo_tesis']['tmp_name']; //donde esta almacenado el archivo
 	$tamano = $_FILES['archivo_tesis']['size']; //tamaño del archivo
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
 	$limite_kb = 100;
   $permitidos = array('application/msword','application/pdf');
+	//application/vnd.openxmlformats-officedocument.wordprocessingml.document
   $limite_bytes = 5242880; //10 MB
   //10MB = 10485760 Bytes
   //5MB = 5242880 Bytes
@@ -81,7 +72,7 @@ if (verificar_datos($titulo_tesis)) {
 			}else if($tamano > 5242880){
 				echo '<div class="alert alert-danger alert-dismissible" id="">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<i class="icon fa fa-times"></i>&nbsp;El tamaño permitido es 5Mb
+					<i class="icon fa fa-times"></i>&nbsp;El tamaño permitido es 10Mb
 					</div>';
 					$valor = false;
 			}else{
@@ -93,12 +84,16 @@ if (verificar_datos($titulo_tesis)) {
 
 		}
 		else{
-			echo "Envia una archivo";
-
+			echo '<div class="alert alert-danger alert-dismissible" id="">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<i class="icon fa fa-times"></i>&nbsp;Debes de enviar un Archivo
+				</div>';
+			$valor = false;
 		}
 
 }else{
 	echo "errorrrr";
+	$valor = false;
 }
 
 //****************GENERAR CODIGO***************
@@ -122,10 +117,15 @@ $codigo_tesis = generarCodigo(8);
 
 if ($valor == true) {
   //procedemos a enviar
-  $instancia = new Tesis();
-  $consulta = $instancia->registro_tesis($nombre_tesis,$autor_tesis,$tipotesis_datos,$resumen_tesis,
-  $objetivos_tesis,$filial_datos,$etiquetas_tesis,$archivo_tesis,$codigo_tesis,$tipo);
-  echo $consulta;
+	
+		$consulta = $instancia->registro_tesis($codigo_tesis ,$nombre_tesis,$autor_tesis,$pclaves,$fecha_registro,$cita_tesis,$resumen_tesis,$tipotesis_datos,
+		$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano);
+		echo $consulta;
+		
+	
+	/*
+
+	*/
 }
 
 

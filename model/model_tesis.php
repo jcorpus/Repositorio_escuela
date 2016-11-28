@@ -7,24 +7,38 @@ public function __construct(){
   $this->db = new Conexion2;
   }
 
-  function registro_tesis($nombre_tesis,$autor_tesis,$tipotesis_datos,$resumen_tesis,
-  $objetivos_tesis,$filial_datos,$etiquetas_tesis,$archivo_tesis,$codigo_tesis,$tipo,$id_usuario){
-    $verificar = $this->db->query("SELECT titulo FROM tesis WHERE titulo='$nombre_tesis' LIMIT 1");
+
+  function verificar_datos_tesis($nombre_tesis){
+  	$sql = $this->db->query("SELECT Titulo FROM tesis WHERE Titulo='$nombre_tesis' LIMIT 1");
+  	if ($this->db->rows($sql) > 0) {
+  		
+  		return false;
+  	}else{
+      return true;
+  	}
+  	$db->liberar();
+  	$db->close();
+  }
+
+  function registro_tesis($codigo_tesis ,$nombre_tesis,$autor_tesis,$pclaves,$fecha_registro,$cita_tesis,$resumen_tesis,$tipotesis_datos,
+	$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano){
+    $verificar = $this->db->query("SELECT Titulo FROM tesis WHERE Titulo='$nombre_tesis' LIMIT 1");
     if ($this->db->rows($verificar) == 0) {
-      $consulta = "INSERT INTO tesis(titulo,autor,id_tipo_tesis,resumen,objetivos,id_filial,etiquetas,tesis_archivo,codigo_tesis,formato,id_usuario)
-        VALUES('$nombre_tesis','$autor_tesis','$tipotesis_datos','$resumen_tesis','$objetivos_tesis',
-        '$filial_datos','$etiquetas_tesis','$archivo_tesis','$codigo_tesis','$tipo','$id_usuario')";
+      $consulta = "INSERT INTO tesis(CodTesis,Titulo,Autor,Palabra_Clave,FechaRegistro,Citacion,Resumen,idTipoTesis,
+        idFilial,idGradoAcademico,idUsuario,idCategoria,idEstadoPublicacion,Archivo,Formato,size_tesis)
+        VALUES('$codigo_tesis','$nombre_tesis','$autor_tesis','$pclaves','$fecha_registro',
+        '$cita_tesis','$resumen_tesis','$tipotesis_datos','$filial_datos','$grado_academico','$id_usuario','$categoria_tesis','$estado_tesis','$ruta_registro','$tipo','$tamano')";
 
       if ($this->db->query($consulta)) {
 
-          echo '<div class="alert alert-success alert-dismissible" id="correcto">
+          echo '<div class="alert alert-success alert-dismissible" id="">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <i class="icon fa fa-check"></i>&nbsp;Tesis registrada correctamente
             </div>';
 
-        return 'ok';
+        return true;
       }else{
-        return 0;
+        return false;
       }
       $this->db->liberar($verificar);
       $this->db->close();
@@ -94,16 +108,15 @@ $inst = new Tesis();
 $imp = $inst->listar_filial();
 print_r($imp);
 */
-
 /*
+
 $instancia = new Tesis();
-if ($instancia->registro_tesis('repositorio de usp','julio corpus','1','lorem impu dolor el resumen aqui','los objetos son:','1','SI, web, php','mitesis.pdf','87757g5gg','PDF','1')) {
+if ($instancia->registro_tesis('3434567','si web de ventas, compras y almacen','julio corpus','web, si, compras, ventas','2016-11-11','cita de tesis','el resumen qui va muchas cosas xd','1','1','1','1','1','1','html_doc_tesis/ejemplo.pdf','PDF','12345kb')) {
   echo "registro correcto";
 }else{
   echo "ocurrio un error";
 }
+
 */
-
-
 
  ?>

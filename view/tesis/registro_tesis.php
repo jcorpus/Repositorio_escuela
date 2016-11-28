@@ -37,7 +37,7 @@
                   <label  class="col-sm-1 control-label">Autor</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="8" size="8" placeholder="Autor">
+                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="30" size="50" placeholder="Autor">
                   </div>
                 </div>
                 <div class="form-group">
@@ -61,21 +61,34 @@
                   </div>
                   <label  class="col-sm-1 control-label">Obetivos</label>
                   <div class="col-sm-4">
-                    <textarea name="objetivos_tesis" style="resize: vertical;" class="form-control validacion" placeholder="Objetivos del Documento" id="objetivos_tesis" cols="3" rows="3"></textarea>
+                    <textarea name="" style="resize: vertical;" class="form-control validacion" placeholder="Objetivos del Documento" id="objetivos_tesis" cols="3" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Filial</label>
-                  <div class="col-sm-3">
+                  <div class="col-sm-4">
                     <select class="form-control" name="filial_datos" id="filial_datos">
                     </select>
                   </div>
-                  <label  class="col-sm-2 control-label">Palabras clave</label>
+                  <label  class="col-sm-1 control-label">Palabras clave</label>
                   <div class="col-sm-4">
                     <input type="text" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
                   </div>
                 </div>
-
+                <div class="form-group">
+                  <label  class="col-sm-1 control-label">grado academico</label>
+                  <div class="col-sm-4">
+                    <select class="form-control" name="grado_academico" id="grado_academico">
+                      <?php  include('controller/grado_academico.php'); ?>
+                    </select>
+                  </div>                  
+                  <label  class="col-sm-1 control-label">Categoria</label>
+                  <div class="col-sm-4">
+                    <select class="form-control" name="categoria_tesis" id="categoria_tesis">
+                      <?php  include('controller/categoria_tesis.php'); ?>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-group">
                   <label class="col-sm-1 control-label">Archivo</label>
                   <div class="col-sm-4">
@@ -84,7 +97,13 @@
                       </span>
                       </div>
                       <p id="nombre_archivo"></p>
-                    </div>
+                  </div>
+                  <label  class="col-sm-1 control-label">Estado Tesis</label>
+                  <div class="col-sm-4">
+                    <select class="form-control" name="estado_tesis" id="estado_tesis">
+                      <?php  include('controller/estado_publicacion.php'); ?>
+                    </select>
+                  </div>
                 </div>
               </div>
               <!-- /.box-body -->

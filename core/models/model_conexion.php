@@ -7,6 +7,8 @@ define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','bd_repos');
 
+date_default_timezone_set('America/Lima');
+
 class Conexion2 extends mysqli{
 
   public function __construct(){

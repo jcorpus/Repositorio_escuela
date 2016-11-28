@@ -34,8 +34,7 @@ echo "<br>";
 /*******************************************/
 
 ///////////////////////////////////////////////
-function generarCodigo($longitud, $tipo=0)
-{
+function generarCodigo($longitud, $tipo=0){
     //creamos la variable codigo
     $codigo = "";
     //caracteres a ser utilizados
@@ -104,5 +103,70 @@ echo $hoy;
 echo "<br>";
 $hora = date("H:i:s");
 echo "la hora es: ".$hora;
+
+
+/**********OTRA COSA********/
+echo "<br>";
+echo "otra fecha";
+echo "<br>";
+//setlocale(LC_TIME,"es_ES");
+//echo strftime("%A %d de %B de %Y");	
+// Monday 28 de November de 2016
+/*
+$zonahoraria = date_default_timezone_get();
+echo 'Zona horaria predeterminada: ' . $zonahoraria;
+*/
+
+date_default_timezone_set('America/Lima');
+echo "la fecha de lima es: ".date("Y-m-d");
+echo "<br>";
+$hora = date("H:i:s");
+echo "la hora es: ".$hora;
+echo "<br>";
+echo "tranformar tamaño de archivos";
+function FileSizeConvert($bytes)
+{
+    $bytes = floatval($bytes);
+        $arBytes = array(
+            0 => array(
+                "UNIT" => "TB",
+                "VALUE" => pow(1024, 4)
+            ),
+            1 => array(
+                "UNIT" => "GB",
+                "VALUE" => pow(1024, 3)
+            ),
+            2 => array(
+                "UNIT" => "MB",
+                "VALUE" => pow(1024, 2)
+            ),
+            3 => array(
+                "UNIT" => "KB",
+                "VALUE" => 1024
+            ),
+            4 => array(
+                "UNIT" => "B",
+                "VALUE" => 1
+            ),
+        );
+
+    foreach($arBytes as $arItem)
+    {
+        if($bytes >= $arItem["VALUE"])
+        {
+            $result = $bytes / $arItem["VALUE"];
+            $result = str_replace(".", "," , strval(round($result, 2)))." ".$arItem["UNIT"];
+            break;
+        }
+    }
+    return $result;
+}
+
+	
+echo "el tamaño de 101500 bytes es: ".FileSizeConvert(10485760);
+
+
+
+
 
  ?>
