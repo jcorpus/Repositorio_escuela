@@ -55,11 +55,31 @@ public function __construct(){
   }
 
 
-function list_repositorio(){
 
-
+/*****************Listar tesis registradas********************/
+function listar_tesis_registradas($valor, $inicio=FALSE,$limite=FALSE){
+  if ($inicio!==FALSE && $limite!==FALSE) {
+    $sql = "SELECT t.idTesis,t.Titulo,t.Autor,t.idEstadoPublicacion, est.DesEstadoPublicacion, fl.DesFilial FROM tesis t INNER JOIN estadopublicacion est ON est.idEstadoPublicacion = t.idEstadoPublicacion INNER JOIN filial fl ON fl.idFilial = t.idFilial
+     WHERE t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%' ORDER BY t.idTesis DESC LIMIT $inicio,$limite";
+  }else{
+    $sql = "SELECT t.idTesis,t.Titulo,t.Autor,t.idEstadoPublicacion, est.DesEstadoPublicacion, fl.DesFilial FROM tesis t INNER JOIN estadopublicacion est ON est.idEstadoPublicacion = t.idEstadoPublicacion INNER JOIN filial fl ON fl.idFilial = t.idFilial
+     WHERE t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%' ORDER BY t.idTesis DESC";
+  }
+  $resultado = $this->db->query($sql);
+  $arreglo = array();
+  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+    $arreglo[] = $re;
+  }
+  return $arreglo;
+  $this->db->liberar($sql);
+  $this->db->close();
 
 }
+
+
+
+
+
 
 /***************lista de filial***************/
 function listar_filial(){
@@ -102,10 +122,9 @@ function listar_tipotesis(){
 
 
 }
-
 /*
 $inst = new Tesis();
-$imp = $inst->listar_filial();
+$imp = $inst->listar_tesis_registradas('julio');
 print_r($imp);
 */
 /*

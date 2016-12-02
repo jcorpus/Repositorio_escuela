@@ -33,13 +33,17 @@ else if ($_GET['p'] == 'list_trabajador') {
 	$titulo = 'Lista de Trabajador';
 	$contenido = 'view/trabajador/lista_trabajador.php';
 }
+else if ($_GET['p'] == 'public_tesis') {
+	$titulo = 'Publicar Tesis';
+	$contenido = 'view/tesis/publicar_tesis.php';
+}
 else if ($_GET['p'] == 'reportes') {
 	$titulo = 'Reportes PDF';
 	$contenido = 'view/reporte-pdf/report_alumno.php';
 }
 else if ($_GET['p'] == 'graficos') {
 	$titulo = 'Gráficos';
-	$contenido = 'view/alumno/lista_alumno.php';
+	$contenido = 'view/alumno/G_alumno_edad.php';
 }
 else{
 	$titulo = 'ERROR 404';

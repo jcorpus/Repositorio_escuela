@@ -17,28 +17,28 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Usuario</h3>
+              <h3 class="box-title">Datos del Trabajador</h3>
             </div>
 
               <div class="form-group">
                   <label class="col-sm-2 control-label">Buscar</label>
                     <div class="col-sm-4">
-                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_usuario" placeholder="buscar usuario por Apellido o DNI">
+                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_trabajador" placeholder="buscar usuario por Apellido o DNI">
                     </div>
                     <div class="col-sm-2">
-                      <button type="button" onclick="buscar_user();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                      <button type="button" onclick="buscar_trabajador();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                     </div>
               </div>
             <br>
             <br>
           <!-- /.box -->
           <div class="box-body">
-              <div id="listar" class="icon-loading">
-                <i id="loading_user" style="margin:auto;display:block; margin-top:60px;"></i>
+              <div id="listar_trabajador" class="icon-loading">
+                <i id="loading_trabajador" style="margin:auto;display:block; margin-top:60px;"></i>
                 <div id="nodatos"></div>
               </div>
-              <p id="paginador_usuarios" class="mi_paginador"></p>
-            </div>
+              <p id="paginador_trabajador" class="mi_paginador"></p>
+          </div>
           <!-- /.box -->
           </div>
         </div>
@@ -52,7 +52,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Modificar Usuario</h4>
+          <h4 class="modal-title">Modificar Trabajador</h4>
         </div>
           <!--AQUI DATOS DEL MODAL-->
 <section class="content">
@@ -60,14 +60,14 @@
     <div class="col-md-9">
       <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Datos del Usuario</h3>
+          <h3 class="box-title">Datos del Trabajador</h3>
         </div>
         <form class="form-horizontal" id="mod_user">
             <div class="box-body">
                 <!--Mensaje de registro-->
                 <div class="alert alert-success alert-dismissible" style="display:none" id="correcto">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    Alumno Modificado Correctamente &nbsp;<i class="icon fa fa-check"></i>
+                    Trabajador Modificado Correctamente &nbsp;<i class="icon fa fa-check"></i>
                 </div>
                 <!--Mensaje de registro-->
                 <div class="alert alert-warning alert-dismissible" style="display:none" id="error">
@@ -78,37 +78,35 @@
                   <label  class="col-sm-2 control-label">Nombres</label>
 
                   <div class="col-sm-4">
-                    <input type="hidden" id="id_user" name="id_user">
-                    <input type="hidden" id="id_user2" name="user">
+                    <input type="hidden" id="id_trabajador" name="id_trabajador">
+                    <input type="hidden" id="id_trabajador2" name="id_trabajador2">
                     <input type="text" name="nombre_user2" onkeypress="return solo_letras(event);" class="form-control" id="nombre_user2" placeholder="nombres">
                   </div>
                   <label  class="col-sm-2 control-label">DNI</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" onkeypress="return solo_numeros(event);"  maxlength="8"  name="dni_user2" id="dni_user2"  placeholder="DNI">
+                    <input type="text" class="form-control" onkeypress="return solo_numeros(event);"  maxlength="8"  name="dni_trabajador2" id="dni_trabajador2"  placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Ape Paterno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apep_user2" onkeypress="return solo_letras(event);" id="apep_user2" placeholder="apellido paterno">
+                    <input type="text" class="form-control" name="apep_trabajador2" onkeypress="return solo_letras(event);" id="apep_trabajador2" placeholder="apellido paterno">
                   </div>
                   <label  class="col-sm-2 control-label">Ape Materno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" name="apem_user2" onkeypress="return solo_letras(event);" id="apem_user2" placeholder="apellido materno">
+                    <input type="text" class="form-control" name="apem_trabajador2" onkeypress="return solo_letras(event);" id="apem_trabajador2" placeholder="apellido materno">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Domicilio</label>
-
                   <div class="col-sm-4">
-                    <textarea name="domicilio_user2" placeholder="domicilio"  style="resize: none;"  class="form-control" id="domicilio_user2" maxlength="230" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_trabajador2" placeholder="domicilio"  style="resize: none;"  class="form-control" id="domicilio_trabajador2" maxlength="230" cols="3" rows="3">Saturno</textarea>
                   </div>
                   <label  class="col-sm-2 control-label">Teléfono</label>
-
                   <div class="col-sm-4">
                     <input type="text" name="telefono_user2" maxlength="9" class="form-control" onkeypress="return solo_numeros(event);"  id="telefono_user2" placeholder="telefono">
                   </div>
@@ -117,7 +115,7 @@
               <div class="form-group">
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_user2" class="form-control" id="email_user2" placeholder="email">
+                    <input type="email" name="email_trabajador2" class="form-control" id="email_trabajador2" placeholder="email">
                   </div>
                   <label  class="col-sm-2 control-label">Imágen</label>
                   <div class="col-sm-4">
@@ -134,18 +132,18 @@
                   <label class="col-sm-2 control-label">Sexo</label>
                   <div class="col-sm-4">
                     <label class="miradio "><!--checked-->
-                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_user" value="M" >
+                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_trabajador" value="M" >
                     <span> Masculino </span>
                     </label>
                     <label class="miradio ">
-                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_user" value="F">
+                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_trabajador" value="F">
                     <span>Femenino </span>
                     </label>
                     <input style="display:none" type="text" name="fecha_registro" class="form-control" id="fecha_registro">
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control"  name="codigo_alumno2" id="codigo_alumno2" placeholder="codigo">
+                    <input type="text" class="form-control"  name="codigo_trabajador" id="codigo_trabajador" placeholder="codigo">
                   </div>
               </div>
 
@@ -196,4 +194,4 @@
 
 </style>
 
-  <script src="html/javascript/usuario_list.js"></script>
+  <script src="html/javascript/trabajador_list.js"></script>

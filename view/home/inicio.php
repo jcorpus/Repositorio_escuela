@@ -54,11 +54,18 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Buscar</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                        </span>
+                    <div class="" id="respuesta_tesis">
+                    </div>
+                    <div class="">
+                      <form action="busqueda_tesis.php" method="GET" class="sidebar-form">
+                        <div class="input-group">
+                          <input type="text" name="busqueda" id="busqueda_tesis" class="form-control" placeholder="Buscar...">
+                              <span class="input-group-btn">
+                                <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                        </div>
+                      </form>  
                     </div>
                     <!-- /.input-group -->
                 </div>

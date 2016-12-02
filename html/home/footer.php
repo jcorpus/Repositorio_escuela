@@ -13,7 +13,8 @@
 </div>
 <!-- /.container -->
 
-<!-- jQuery -->
+<!-- scripts -->
+<script src="html/javascript/buscar_tesis.js"></script>
 <script src="site_media/js/no-recargar.js"></script>
 <script src="site_media/js/preview_img.js"></script>
 <script src="site_media/js/mensaje_consola.js"></script>

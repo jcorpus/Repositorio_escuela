@@ -28,7 +28,7 @@ $email_rec2 = trim($email_rec);
 function enviar_datos($email_rec2){
   
   $db = new Conexion2;
-  $sql = $db->query("SELECT p.nombre, p.ape_paterno, u.password, p.email FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona WHERE  p.email= '$email_rec2' LIMIT 1 ");
+  $sql = $db->query("SELECT p.NomPersona,p.ApePaterno,u.Password,p.Email FROM usuario u INNER JOIN persona p on u.idPersona = p.idPersona WHERE p.Email='$email_rec2' LIMIT 1 ");
   if ($db->rows($sql) > 0) {
     $data = $db->recorrer($sql);
     $nombre = $data[0];
@@ -68,9 +68,9 @@ function enviar_datos($email_rec2){
     //Tenemos que usar gmail autenticados, así que esto a TRUE
     $mail->SMTPAuth   = true;
     //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-    $mail->Username   = "@gmail.com";
+    $mail->Username   = "jsuproc@gmail.com";
     //Introducimos nuestra contraseña de gmail
-    $mail->Password   = "contraqui";
+    $mail->Password   = "c.sbakuryowolfbk";
     //Definimos el remitente (dirección y, opcionalmente, nombre)
     $mail->SetFrom($email_rec2, 'Repositorio - contraseña olvidada');
     //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)

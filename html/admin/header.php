@@ -10,7 +10,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Panel&ensp;</b>Admin</span>
     </a>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -29,7 +29,14 @@
               <!-- The user image in the navbar-->
               <img  src="site_media/img/logo.png"  class="user-image"  alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">jcorpus</span>
+              <span class="hidden-xs">
+                <?php
+                
+                      echo $usuarios[$_SESSION['app_id']]['all_apellido'];
+                
+                ?>
+                
+              </span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -119,7 +126,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?p=registrar"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
             <li><a href="?p=listar"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Usuarios</a></li>
           </ul>
         </li>
@@ -154,17 +160,7 @@
           <ul class="treeview-menu">
             <li><a href="?p=reg_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
             <li><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-calculator fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Otra cosa</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar </a></li>
+            <li><a href="?p=public_tesis"><i class="fa fa-check" aria-hidden="true"></i>&ensp;Publicar</a></li>
           </ul>
         </li>
         <li class="treeview">

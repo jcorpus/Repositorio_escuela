@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Inicio</a>
+                <a class="navbar-brand" href="home.php"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Inicio</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -78,3 +78,5 @@
     </nav>
     <!-- Page Content -->
     <div class="container">
+    
+      

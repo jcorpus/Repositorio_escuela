@@ -23,10 +23,10 @@
               <div class="form-group">
                   <label class="col-sm-2 control-label">Buscar</label>
                     <div class="col-sm-4">
-                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_usuario" placeholder="buscar usuario por Apellido o DNI">
+                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_alumno" placeholder="buscar alumno por Apellido o DNI">
                     </div>
                     <div class="col-sm-2">
-                      <button type="button" onclick="buscar_user();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                      <button type="button" onclick="buscar_alumno();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                     </div>
               </div>
             <br>
@@ -34,10 +34,10 @@
           <!-- /.box -->
           <div class="box-body">
               <div id="listar" class="icon-loading">
-                <i id="loading_user" style="margin:auto;display:block; margin-top:60px;"></i>
+                <i id="loading_alumno" style="margin:auto;display:block; margin-top:60px;"></i>
                 <div id="nodatos"></div>
               </div>
-              <p id="paginador_usuarios" class="mi_paginador"></p>
+              <p id="paginador_alumno" class="mi_paginador"></p>
             </div>
           <!-- /.box -->
           </div>
@@ -196,4 +196,4 @@
 
 </style>
 
-  <script src="html/javascript/usuario_list.js"></script>
+  <script src="html/javascript/alumno_list.js"></script>

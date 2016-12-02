@@ -2,6 +2,7 @@
 
 //require('../core/models/model_conexion.php');
 require ("../model/model_tesis.php");
+require("../core/bin/funciones/get_size_archivo.php");
 
 $nombre_tesis = trim($_POST['nombre_tesis']);
 $autor_tesis = trim($_POST['autor_tesis']);
@@ -42,18 +43,9 @@ if ($comodin == true) {
 	$nombre =uniqid()."-".$_FILES['archivo_tesis']['name']; //archivo que subi
 	$tipo = $_FILES['archivo_tesis']['type']; // tipo de archivo
 	$ruta_tesis = $_FILES['archivo_tesis']['tmp_name']; //donde esta almacenado el archivo
-	$tamano = $_FILES['archivo_tesis']['size']; //tamaño del archivo
-	
-
-
-	
-	
-	
-	
-	
-	
-	
-	
+	$tamano2 = $_FILES['archivo_tesis']['size']; //tamaño del archivo
+	$tamano = convertir_size_file($tamano2);
+		
 	$limite_kb = 100;
   $permitidos = array('application/msword','application/pdf');
 	//application/vnd.openxmlformats-officedocument.wordprocessingml.document
@@ -69,14 +61,16 @@ if ($comodin == true) {
 				<i class="icon fa fa-times"></i>&nbsp;Archivo no permitido
 				</div>';
 				$valor = false;
-			}else if($tamano > 5242880){
+			}else if($tamano2 > 5242880){
 				echo '<div class="alert alert-danger alert-dismissible" id="">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<i class="icon fa fa-times"></i>&nbsp;El tamaño permitido es 10Mb
+					<i class="icon fa fa-times"></i>&nbsp;El tamaño permitido es 5 Mb
 					</div>';
 					$valor = false;
 			}else{
-				$ruta_copia = '../html/doc_server/'.$nombre;
+				//iconv("UTF-8",'ISO-8859-1//TRANSLIT',$nombre)
+				//$ruta_copia = '../html/doc_server/'.$nombre;
+				$ruta_copia = '../html/doc_server/'.iconv("UTF-8",'ISO-8859-1//TRANSLIT',$nombre);
 				$ruta_registro = 'html/doc_server/'.$nombre;
 				move_uploaded_file($ruta_tesis,$ruta_copia);
         $valor = true;
