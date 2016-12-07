@@ -5,7 +5,7 @@
                     <small>Informatica y de sistemas</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="home.php">Home</a>
                     </li>
                     <li class="active">Blog Home One</li>
                 </ol>

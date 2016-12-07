@@ -158,51 +158,55 @@ function listar_tesis(valor,pagina){
 
 
 function publicar_tesis(datos){
-
+	
 	var valores_tesis = datos.split("*");
 	console.log(valores_tesis[3]);
-	$("#id_tesis_p").val(valores_tesis[3]);
-	$("#id_tesis_").val(valores_tesis[3]);
+	$("#id_tesis").val(valores_tesis[0]);
+	$("#id_estado_tesis").val(valores_tesis[3]);
 	$("#nombre_tesis_p").html(valores_tesis[1]);
-	
+
 }
 
 function public_tesis_id(){
 	
-	var hola  = $("#id_tesis_p").val();
+	var id_estado_tesis = $("#id_estado_tesis").val();
+	var id_tesis = $("#id_tesis").val();
+	//alert("el id es: "+id_tesis+" y el id estado_ "+id_estado_tesis);
 	
-	alert("el id es: ".hola);
+	/////////////////
 	
+
+
+	$.ajax({
+		url:'controller/controller_public_tesis.php',
+		type: 'POST',
+		data:'id_estado_tesis='+ id_estado_tesis + '&id_tesis='+id_tesis,
+		beforeSend: function(){
+
+		},
+		complete: function(){
+			//alert("se completo el envio");
+		},
+		success: function(data){
+			alert(data);
+			msjpass = '<div class="alert alert-dismissible alert-warning"> ';
+			msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+			msjpass += ' <p> Tesis Publicada Correctamente</p>'
+			msjpass += '</div>';
+		//	document.getElementById('msj_res_tesis').innerHTML = msjpass;
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown, jqXHR){
+			alert("SE PRODUJO UN ERROR, vuelve a recargar la pagina");
+		}
+
+	});
+	
+
 }
 
 
 
 
-function mostrar_tesis(datos){
-
-	var valores=datos.split("*");
-	//alert(d.length);
-	$("#id_tesis2").val(valores[0]);
-  	//document.getElementById('preview_image').src = valores[13];
-  	//$("#imagen").attr("src","http://i.imgur.com/nTfaQnw.png");
-  $("#preview_image2").attr("src",valores[14]);
-  //$("#image_oculta").val(valores[11]);
-
-  $("#id_persona2").val(valores[10]);
-  	//document.getElementById("year2").selectedIndex = 2; //2016-08-15
-  	var sexo2 = valores[8];
-		console.log("el sexo es: "+valores[8]);
-	if(sexo2==='F'){
-	  document.getElementById('femenino2').checked = true;
-	}
-	else{
-	  document.getElementById('masculino2').checked = true;
-	}
-  	//$("radio[name=sexo_tesis2]").attr("checked",true);
-
-  	//document.getElementsByClassName('sexo_tesis2').checked = true;
-
-}
 
 //****************IMAGEN PREVIEW**************/
  $('.file-input').on('change', function() {

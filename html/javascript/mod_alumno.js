@@ -1,29 +1,6 @@
-
-function __(id){
-  return document.getElementById(id);
-}
-
-function validar_email_alumno(){
-    var email = $("#email_alumno");
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (email.val() == '' || !re.test(email.val()))
-    {
-      $("#email_alumno").addClass('error_email');
-      $("#email_alumno").removeClass('email_valido');
-      $(".mail_incorrecto").html("Email incorrecto");
-      return false;
-    }
-     else{
-       $("#email_alumno").removeClass('error_email');
-       $("#email_alumno").addClass('email_valido');
-       $(".mail_incorrecto").html("");
-       return true;
-     }
-
-}
 /******************validar radio*********************/
-function radio_validate(){
-  var opciones = document.getElementsByName("sexo_alumno");
+function radio_validate2(){
+  var opciones = document.getElementsByName("sexo_alumno2");
   radioo = false;
   for (var i = 0; i < opciones.length; i++) {
     if(opciones[i].checked){
@@ -39,11 +16,11 @@ function radio_validate(){
 }
 
 /****************Validar campos vacios*************/
-function validate () {
+function validate2 () {
     var campos, valido, resp, radioo;
 
     // todos los campos .form-control en #campos
-    campos = document.querySelectorAll('#formulario_alumno input.validacion');
+    campos = document.querySelectorAll('#mod_alumno input.validacion');
 
     valido = true; // es valido hasta demostrar lo contrario
     // recorremos todos los campos
@@ -72,23 +49,22 @@ function validate () {
 
 /********************************************************/
 
-function reg_alumno(){
-  var validar_email =validar_email_alumno();
-  console.log("el email trae: "+validar_email);
-  var respuesta2 = radio_validate();
-  var respuesta = validate();
+function mod_alumno(){
+
+  var respuesta2 = radio_validate2();
+  var respuesta = validate2();
   console.log("respuesta2 "+respuesta2);
   console.log("respuesta "+respuesta);
 
-  if (validar_email && respuesta && respuesta2) {
+  if (respuesta && respuesta2) {
 
   //var emaill = document.getElementById("get_pass_user").value;
-  var formalumno = new FormData($("#formulario_alumno")[0]);
+  var formalumno = new FormData($("#mod_alumno")[0]);
 
   var msjpass;
   /// metodos de ajax aqui http://www.w3schools.com/jquery/ajax_ajaxsetup.asp
 	$.ajax({
-		url:'controller/controller_alumno.php',
+		url:'controller/controller_mod_alumno.php',
 		type: 'POST',
     data: formalumno,
     cache:false,  //si el navegador debe almacenar en cache la pagina solicitada
@@ -99,7 +75,7 @@ function reg_alumno(){
     msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     msjpass += ' <p> Enviando .....</p>'
     msjpass += '</div>';
-    document.getElementById('msj_res_alumno').innerHTML = msjpass;
+    document.getElementById('msj_mod_alumno').innerHTML = msjpass;
 
 		},
     complete: function(){
@@ -108,22 +84,7 @@ function reg_alumno(){
     },
 		success: function(data){
 
-    document.getElementById('msj_res_alumno').innerHTML = data;
-
-    /*
-
-			if(respuesta.length>0){
-        msjpass = '<div class="alert alert-dismissible alert-success"> ';
-        msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-        msjpass += ' <p> Enviado Correctamente</p>'
-        msjpass += '</div>';
-        document.getElementById('msj_get_pass').innerHTML = msjpass;
-
-			}else{
-
-
-			}
-      */
+    document.getElementById('msj_mod_alumno').innerHTML = data;
 
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown, jqXHR){
@@ -139,7 +100,7 @@ function reg_alumno(){
   msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
   msjpass += ' <p> Faltan Datos </p>'
   msjpass += '</div>';
-  document.getElementById('msj_res_alumno').innerHTML = msjpass;
+  document.getElementById('msj_mod_alumno').innerHTML = msjpass;
 }
 
 }

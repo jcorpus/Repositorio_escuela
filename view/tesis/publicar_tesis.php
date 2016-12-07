@@ -63,14 +63,14 @@
             </div>
             <div class="modal-body">
               <p>Estas seguro de publicar la Tesis:</p>
-              <input type="text" id="id_tesis_p" name="id_tesis_p" class="">
-              <input type="text" id="id_tesis_" name="id_tesis_" class="">
+              <input type="text" name="id_tesis" id="id_tesis" value="">
+              <input type="text" id="id_estado_tesis" name="id_estado_tesis" class="">
               <p id="nombre_tesis_p"></p>
             </div>
             <div class="modal-footer">
               <div class="text-center">
-              <button type="button" onclick="public_tesis_id();"  data-dismiss="modal" class="btn btn-danger">Publicar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+              <button type="button" onclick="public_tesis_id();" id="public_tesis_id" data-dismiss="modal" class="btn btn-success">Publicar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
           </div>

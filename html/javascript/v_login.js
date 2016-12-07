@@ -12,7 +12,7 @@ function __(id) {
 
 function go_login(){
   var conectar, form, respuesta, resultado, user, pass, sesion;
-  
+
   user = __("user_email").value;
   pass = __("user_password").value;
   sesion = __("sesion_login").checked ? true : false; //if compacto

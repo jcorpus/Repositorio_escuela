@@ -65,7 +65,15 @@
                        </ul>
                     </li>
                     <li>
-                        <a href="admin.php" target="_blank">Administrar</a>
+                      <?php 
+                      $tipo_usuario = $usuarios[$_SESSION['app_id']]['DesTipoUsuario'];
+                      if ($tipo_usuario == "Administrador") {
+                        echo '<a href="admin.php" target="_blank">Administrar</a>';
+                      }
+                      
+                      
+                       ?>
+                        
                     </li>
                     <li>
                         <a href="?view=salir">Salir</a>

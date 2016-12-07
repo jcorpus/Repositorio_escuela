@@ -32,13 +32,14 @@
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Titulo</label>
                   <div class="col-sm-4">
+                    <input type="hidden" name="id_usuario_t" value="<?php echo $usuarios[$_SESSION['app_id']]['idUsuario']; ?>">
                     <input type="text" name="nombre_tesis" class="form-control validacion"  id="nombre_tesis" placeholder="Titulo">
                   </div>
                   <label  class="col-sm-1 control-label">Autor</label>
-
-                  <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="30" size="50" placeholder="Autor">
+                  <div class="col-sm-3">
+                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="50" size="50" placeholder="Autor">
                   </div>
+                    <button type="button" name="buscar" id="buscar"  class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal_buscar_alumno">Buscar&ensp;<span class="glyphicon glyphicon-search"></span></button>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Tipo de Tesis</label>
@@ -120,7 +121,52 @@
 
 </section>
     <!-- /.content -->
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="modal fade " id="myModal_buscar_alumno" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Seleccionar Alumno</h4>
+          </div>
+          <form class="form-horizontal" id="mod_alumno">
+              <div class="box-body">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label">Nombre o Apellido</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" name="datos_alumno" onkeypress="return solo_letras(event);" id="datos_alumno" placeholder="nombre o apellido">
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" onclick="busca_alumno_tesis();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div id="listar_t" class="icon-loading">
+                      <i id="loading_alumno2" style="margin:auto;display:block; margin-top:60px;"></i>
+                      <div id="nodatos"></div>
+                    </div>
+                      <p id="paginador_alumno_t" class="mi_paginador"></p>
+                  </div>
+                </div>
+              </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close <span class="glyphicon glyphicon-remove"></span></button>
+              </div>
+        
+      </div>
+    </div>
+  </div>
+    
+    
  <script src="html/javascript/reg_tesis.js"></script>
+ <script src="html/javascript/buscar_alumno_tesis.js"></script>
  <script src="html/javascript/list_filial.js"></script>
  <script>
 

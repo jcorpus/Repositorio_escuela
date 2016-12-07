@@ -6,7 +6,7 @@ $email_rec = $_POST['emaill'];
 $valor_captcha = trim($_POST['valor_captcha']);
 $email_rec2 = trim($email_rec);
 
-
+echo "el valor de la llave es: ".$_SESSION['key'];
   if (!empty($valor_captcha) && !empty($email_rec2)) {
     if ($valor_captcha == $_SESSION['key']) {  
       enviar_datos($email_rec2);
@@ -86,7 +86,7 @@ function enviar_datos($email_rec2){
       echo "Error aqui: " . $mail->ErrorInfo;
       echo '<div class="alert alert-dismissible alert-danger">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
-         <p>Ocurrió un ERROR, revisa tu conección.</p>
+         <p>Ocurrió un ERROR, revisa tu conexión.</p>
          </div>';
     } else {
       echo '<div class="alert alert-dismissible alert-success">

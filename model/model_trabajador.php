@@ -41,7 +41,7 @@ $estado_trabajador,$tipo_usuario){
             </div>';
       }
         
-      return true;
+    // return true;
     }else{
       return 0;
     }
@@ -55,8 +55,9 @@ $estado_trabajador,$tipo_usuario){
         <i class="icon fa fa-times"></i>&nbsp;El email ya esta registradoop
         </div>';
     }
+    $this->db->close();
   }
-  $this->db->close();
+  
 }
 
 

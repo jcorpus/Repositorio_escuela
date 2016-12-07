@@ -1,8 +1,11 @@
 <?php 
 require 'core/bin/funciones/funciones_tesis.php';
-require 'core/models/model_conexion.php';
+//require 'core/models/model_conexion.php';
+require('core/core.php');
+$usuarios = ver_usuarios();
 
-$conexion = new Conexion2();
+
+$conexion = new Conexion();
 
 $id_tesis =id_tesis($_GET['id']);
 

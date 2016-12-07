@@ -1,4 +1,11 @@
 
+ $(document).ready(function(){
+    listar_alumnos('','1');
+    $(".oculto").hide();
+
+  });
+
+
 function buscar_alumno(){
 	var bus = $("#buscar_alumno").val();
 	listar_alumnos(bus,'1');
@@ -28,7 +35,6 @@ function listar_alumnos(valor,pagina){
 			var datos = resp.split("*"); //separamos el json de el numero de filas que hay en la TABLA
 			var valores = eval(datos[0]); //me trae solo los datos menos el numero de filas
 			//alert("los valores son: "+valores.length); //son 5
-
 			var cadena = "";
 			cadena += "<table class='table table-bordered table-hover '>";
 			cadena += "<thead class=''>";
@@ -39,15 +45,16 @@ function listar_alumnos(valor,pagina){
 			cadena += "<th>Ape M</th>";
 			cadena += "<th>DNI</th>";
 			cadena += "<th>Código</th>";
-			cadena += "<th>Email</th>";
+			cadena += "<th>Telefono</th>";
 			cadena += "<th>Sexo</th>";
+			cadena += "<th>Email</th>";
 			cadena += "<th>Acción</th>";
 			cadena += "</tr>";
 			cadena += "</thead>";
 			cadena += "<tbody>";
 
 			for(var i = 0 ; i<valores.length; i++){
-				datos_array =valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9];
+				datos_array =valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9]+"*"+valores[i][10];
 				cadena += "<tr>";
 				/*cadena += "<td>"+(i+1)+"</td>";*/
 				cadena += "<td>"+valores[i][0]+"</td>";
@@ -56,9 +63,10 @@ function listar_alumnos(valor,pagina){
 				cadena += "<td>"+valores[i][3]+"</td>";
 				cadena += "<td>"+valores[i][4]+"</td>";
 				cadena += "<td>"+valores[i][5]+"</td>";
+				cadena += "<td>"+valores[i][10]+"</td>";
 				cadena += "<td>"+valores[i][7]+"</td>";
-				cadena += "<td>"+valores[i][8]+"</td>";
-				cadena += "<td><div class='btn-group'> <button type='button' class='btn btn-success ' data-toggle='dropdown' aria-expanded='false'>Acción <span class='glyphicon glyphicon-cog'></span></button> <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-expanded='false'> <span class='caret'></span></button> <ul class='dropdown-menu' role='menu'> <li><a href='#' data-toggle='modal' data-target='#myModal_modificar' onclick='mostrar_usuario("+'"'+datos_array+'"'+");'>Modificar</a></li> <li class='divider'></li> <li><a href='#' data-toggle='modal' data-target='#myModal_eliminar'  onclick='eliminar_alumno("+'"'+datos_array+'"'+");' >Eliminar</a></li> </ul> </div></td>";
+				cadena += "<td>"+valores[i][6]+"</td>";
+				cadena += "<td><div class='btn-group'> <button type='button' class='btn btn-success ' data-toggle='dropdown' aria-expanded='false'>Acción <span class='glyphicon glyphicon-cog'></span></button> <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-expanded='false'> <span class='caret'></span></button> <ul class='dropdown-menu' role='menu'> <li><a href='#' data-toggle='modal' data-target='#myModal_modificar' onclick='mostrar_alumno("+'"'+datos_array+'"'+");'>Modificar</a></li> <li class='divider'></li> <li><a href='#' data-toggle='modal' data-target='#myModal_eliminar'  onclick='eliminar_alumno("+'"'+datos_array+'"'+");' >Eliminar</a></li> </ul> </div></td>";
 				cadena += "</tr>";
 
 			}
@@ -139,10 +147,8 @@ function listar_alumnos(valor,pagina){
 			}
 			else{
 				var nodatos = " NO HAY DATOS QUE MOSTRAR";
-        $("#nodatos").html(nodatos);
       	alert(nodatos);
 				console.log(notados);
-
 			}
 
 
@@ -165,55 +171,27 @@ function listar_alumnos(valor,pagina){
 
 
 
-
-
-
-function eliminar_usuario(datos){
-	var valores=datos.split("*");
-	var id_cliente2 = valores[0];
-	$("#idusuario").val(valores[0]);
-	$("#eusuario").text(valores[1]+" "+valores[2]);
-	//alert("el id de la fila es:"+id_cliente2);
-	//data:'email='+email+'&password='+password+"&boton=ingresar"
-	/*
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_eliminar">Eliminar cliente</button>
-	*/
-
-	/*
-	//onclick="load_div('contenido','Views/clientes.php')"
-	*/
-
-}
-
-//"+'"'+valores[i][0]+'"'+"
-
-//Controller/controller_eliminar_cliente.php'
-
-function mostrar_usuario(datos){
-
+function mostrar_alumno(datos){
 	var valores=datos.split("*");
 	//alert(d.length);
-	$("#id_user2").val(valores[0]);
-	$("#nombre_user2").val(valores[1]);
-	$("#apep_user2").val(valores[2]);
-	$("#apem_user2").val(valores[3]);
-	$("#dni_user2").val(valores[4]);
-	$("#domicilio_user2").val(valores[5]);
-	$("#telefono_user2").val(valores[6]);
-	$("#email_user2").val(valores[7]);
-	$("#edad_user2").val(valores[9]);
-	$("#id_usuario2").val(valores[10]);
-	$("#nombre_usuario2").val(valores[11]);
-	$("#imagen_user2").val(valores[14]);
-  	//document.getElementById('preview_image').src = valores[13];
+	$("#id_alumno2").val(valores[0]);
+	$("#nombre_alumno2").val(valores[1]);
+	$("#ape_paterno2").val(valores[2]);
+	$("#ape_materno2").val(valores[3]);
+	$("#domicilio_alumno2").val(valores[9]);
+	$("#dni_alumno2").val(valores[4]);
+	$("#telefono_alumno2").val(valores[10]);
+	$("#email_alumno2").val(valores[6]);
+	$("#codigo_alumno2").val(valores[5]);
+  $("#imagen_oculta").val(valores[8]);
+	console.log("imagen aqui: "+valores[8]);
+		//document.getElementById('preview_image').src = valores[13];
   	//$("#imagen").attr("src","http://i.imgur.com/nTfaQnw.png");
-  $("#preview_image2").attr("src",valores[14]);
-  //$("#image_oculta").val(valores[11]);
-
-  $("#id_persona2").val(valores[10]);
+  $("#preview_image2").attr("src",valores[8]);
+  
   	//document.getElementById("year2").selectedIndex = 2; //2016-08-15
-  	var sexo2 = valores[8];
-		console.log("el sexo es: "+valores[8]);
+  	var sexo2 = valores[7];
+		console.log("el sexo es: "+valores[7]);
 	if(sexo2==='F'){
 	  document.getElementById('femenino2').checked = true;
 	}
@@ -226,6 +204,7 @@ function mostrar_usuario(datos){
 
 }
 
+
 //****************IMAGEN PREVIEW**************/
  $('.file-input').on('change', function() {
     previewImage(this);
@@ -233,8 +212,3 @@ function mostrar_usuario(datos){
 
 
 
- $(document).ready(function(){
-    listar_alumnos('','1');
-    $(".oculto").hide();
-
-  });

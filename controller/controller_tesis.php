@@ -19,7 +19,7 @@ $estado_tesis = $_POST['estado_tesis'];
 /**************************/
 date_default_timezone_set('America/Lima');
 $fecha_registro = date("Y-m-d");
-$id_usuario = '1';
+$id_usuario = $_POST['id_usuario_t'];
 
 
 $instancia = new Tesis();
@@ -89,6 +89,8 @@ if ($comodin == true) {
 	echo "errorrrr";
 	$valor = false;
 }
+
+
 
 //****************GENERAR CODIGO***************
 function generarCodigo($longitud, $tipo=0){

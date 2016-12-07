@@ -47,7 +47,7 @@ function verificar_datos($email_alumno,$dni_alumno){
 				</div>';
 			return false;
 		}else{
-			//echo  "se insetaron los datos";
+			//echo  "no repetido";
 			return true;
 		}
 

@@ -26,7 +26,7 @@ function rec_password(){
 
 		},
     complete: function(){
-      $("#loading_user").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
+      
 
     },
 		success: function(respuesta){
@@ -51,6 +51,9 @@ function rec_password(){
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown, jqXHR){
 			alert("SE PRODUJO UN ERROR");
+      console.log(textStatus);
+      console.log(errorThrown);
+      console.log(jqXHR);
 
 
 		}

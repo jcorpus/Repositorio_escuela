@@ -162,6 +162,7 @@
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
                     <input type="email" name="email_trabajador" class="form-control validacion"  value="doombakuryo@gmail.com" id="email_trabajador" placeholder="email" maxlength="50">
+                    <small class="mail_incorrecto"></small>
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
@@ -242,8 +243,6 @@
 
 </section>
     <!-- /.content -->
-
-
 <script src="html/javascript/reg_trabajador.js"></script>
 <script src="html/javascript/tipo_usuario.js"></script>
 

@@ -60,10 +60,10 @@ public function __construct(){
 function listar_tesis_registradas($valor, $inicio=FALSE,$limite=FALSE){
   if ($inicio!==FALSE && $limite!==FALSE) {
     $sql = "SELECT t.idTesis,t.Titulo,t.Autor,t.idEstadoPublicacion, est.DesEstadoPublicacion, fl.DesFilial FROM tesis t INNER JOIN estadopublicacion est ON est.idEstadoPublicacion = t.idEstadoPublicacion INNER JOIN filial fl ON fl.idFilial = t.idFilial
-     WHERE t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%' ORDER BY t.idTesis DESC LIMIT $inicio,$limite";
+     WHERE t.idEstadoPublicacion = 2 AND (t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%')  ORDER BY t.idTesis DESC LIMIT $inicio,$limite";
   }else{
     $sql = "SELECT t.idTesis,t.Titulo,t.Autor,t.idEstadoPublicacion, est.DesEstadoPublicacion, fl.DesFilial FROM tesis t INNER JOIN estadopublicacion est ON est.idEstadoPublicacion = t.idEstadoPublicacion INNER JOIN filial fl ON fl.idFilial = t.idFilial
-     WHERE t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%' ORDER BY t.idTesis DESC";
+     WHERE t.idEstadoPublicacion = 2 AND  (t.Titulo LIKE '%".$valor."%' OR t.Autor LIKE '%".$valor."%')  ORDER BY t.idTesis DESC";
   }
   $resultado = $this->db->query($sql);
   $arreglo = array();
@@ -76,6 +76,11 @@ function listar_tesis_registradas($valor, $inicio=FALSE,$limite=FALSE){
 
 }
 
+function publicar_tesis($id_estado_tesis,$id_tesis){
+	$sql = "UPDATE tesis SET idEstadoPublicacion = $id_estado_tesis WHERE idTesis = $id_tesis";
+  $consulta = $this->db->query($sql);
+	
+}
 
 
 

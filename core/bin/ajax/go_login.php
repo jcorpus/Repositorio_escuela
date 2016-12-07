@@ -21,8 +21,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
         <button type="button" class="close" data-dismiss="alert">&times;</button>
           <strong>Los datos no coinciden</strong>
       </div>';
-
-
+  
     }
     $db->liberar($sql);
   $db->close();

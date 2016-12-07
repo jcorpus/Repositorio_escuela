@@ -162,10 +162,11 @@
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
                     <input type="email" name="email_alumno" class="form-control validacion"  value="doombakuryo@gmail.com" id="email_alumno" placeholder="email" maxlength="50">
+                    <small class="mail_incorrecto"></small>
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
-                    <input type="password" name="codigo_alumno" class="form-control validacion" value="" id="codigo_alumno" placeholder="codigo alumno" maxlength="10">
+                    <input type="text" name="codigo_alumno" class="form-control validacion" value="" id="codigo_alumno" placeholder="codigo alumno" maxlength="10">
                   </div>
                 </div>
 

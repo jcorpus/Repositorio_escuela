@@ -36,9 +36,9 @@ $estado_alumno,$tipo_usuario){
             </div>';
       }
         
-      return true;
+    //  return true;
     }else{
-      return 0;
+      return false;
     }
     $this->db->liberar($verificar);
     $this->db->close();
@@ -50,20 +50,72 @@ $estado_alumno,$tipo_usuario){
         <i class="icon fa fa-times"></i>&nbsp;El email ya esta registradoop
         </div>';
     }
+    $this->db->close();
   }
-  $this->db->close();
+  
 }
-
+function modificar_alumno($id_alumno,$nom_alumno,$apep_alumno,$apem_alumno,$dni_alumno,$direccion_alumno,$telefono_alumno,$email_alumno,$codigo_alumno,$ruta_registro){
+$sql = "UPDATE alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona 
+SET p.NomPersona = '$nom_alumno',p.ApePaterno = '$apep_alumno', p.ApeMaterno = '$apem_alumno',p.DNI = '$dni_alumno',a.UspCodAlu = '$codigo_alumno',
+p.Email = '$email_alumno',u.imgUsuario = '$ruta_registro',p.Direccion = '$direccion_alumno',p.Telefono = '$telefono_alumno' WHERE a.idAlumno = $id_alumno";
+  
+if ($this->db->query($sql)) {
+  echo '<div class="alert alert-success alert-dismissible" id="correcto">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <i class="icon fa fa-times"></i>&nbsp;Modificado correctamente
+    </div>';
+}else{
+  echo '<div class="alert alert-danger alert-dismissible" id="correcto">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <i class="icon fa fa-times"></i>&nbsp;Ocurrio un Error
+    </div>';
+}
+//$this->db->liberar($sql);  
+$this->db->close();
+}
 
 function listar_alumno($valor, $inicio=FALSE,$limite=FALSE){
   if ($inicio!==FALSE && $limite!==FALSE) {
-    $sql = "SELECT p.idPersona, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,a.idAlumno,p.Email, p.Sexo
-     FROM persona p inner JOIN alumno a ON p.idPersona = a.idPersona WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC LIMIT $inicio,$limite";
+    $sql = "SELECT a.idAlumno, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,p.Email, p.Sexo, u.imgUsuario, p.Direccion, p.Telefono FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona
+     WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC LIMIT $inicio,$limite";
   }else{
-    $sql = "SELECT p.idPersona, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,a.idAlumno,p.Email, p.Sexo
-     FROM persona p inner JOIN alumno a ON p.idPersona = a.idPersona WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC";
+    $sql = "SELECT a.idAlumno, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,p.Email, p.Sexo, u.imgUsuario, p.Direccion, p.Telefono FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona
+     WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC";
   }
   $resultado = $this->db->query($sql);
+  
+  /*
+  if ($this->db->rows($resultado) > 0) {
+    echo "no datos ";
+  }
+
+*/
+  $arreglo = array();
+  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+    $arreglo[] = $re;
+  }
+  return $arreglo;
+  $this->db->liberar($sql);
+  $this->db->close();
+
+}
+
+function listar_alumno2($valor, $inicio=FALSE,$limite=FALSE){
+  if ($inicio!==FALSE && $limite!==FALSE) {
+    $sql = "SELECT a.idAlumno, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,p.Email, FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona
+     WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC LIMIT $inicio,$limite";
+  }else{
+    $sql = "SELECT a.idAlumno, p.NomPersona, p.ApePaterno, p.ApeMaterno, p.DNI, a.UspCodAlu,p.Email, FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona
+     WHERE p.ApePaterno LIKE '%".$valor."%'OR p.DNI LIKE '%".$valor."%' ORDER BY a.idAlumno DESC";
+  }
+  $resultado = $this->db->query($sql);
+  
+  /*
+  if ($this->db->rows($resultado) > 0) {
+    echo "no datos ";
+  }
+
+*/
   $arreglo = array();
   while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
     $arreglo[] = $re;
@@ -75,18 +127,22 @@ function listar_alumno($valor, $inicio=FALSE,$limite=FALSE){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
+
+/*
+$mod_alumno = new Alumno();
+if ($mod_alumno->modificar_alumno('16','mod','mod','mod','66666666','address','666666','666@gmail.com','99999','66666.png')) {
+  echo "correcto";
+}else{
+  echo "error";
+}
+*/
+
+
+
+
+
+
 
 /*
 $instancia = new Alumno();

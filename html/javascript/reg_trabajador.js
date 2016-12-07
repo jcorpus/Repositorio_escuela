@@ -2,7 +2,24 @@
 function __(id){
   return document.getElementById(id);
 }
+function validar_email_trabajador(){
+    var email = $("#email_trabajador");
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (email.val() == '' || !re.test(email.val()))
+    {
+      $("#email_trabajador").addClass('error_email');
+      $("#email_trabajador").removeClass('email_valido');
+      $(".mail_incorrecto").html("Email incorrecto");
+      return false;
+    }
+     else{
+       $("#email_trabajador").removeClass('error_email');
+       $("#email_trabajador").addClass('email_valido');
+       $(".mail_incorrecto").html("");
+       return true;
+     }
 
+}
 /******************validar radio*********************/
 function radio_validate_trab(){
   var opciones = document.getElementsByName("sexo_trabajador");
@@ -41,11 +58,7 @@ function validate_trab () {
       //alert("validoo");
       valido = true;
     } else {
-      resp = '<div class="alert alert-warning alert-dismissible" id="">';
-      resp += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
-      resp += 'Faltan Datos &nbsp;<i class="icon fa fa-times"></i>';
-      resp += '</div>';
-      //__("msj_res_alumno").innerHTML = resp;
+
       valido = false;
       //document.getElementsByClassName("resp_c") = resp;
     }
@@ -55,13 +68,14 @@ function validate_trab () {
 /********************************************************/
 
 function reg_trabajador(){
-
+  var validar_email =validar_email_trabajador();
+  console.log("el email trae: "+validar_email);
   var respuesta2 = radio_validate_trab();
   var respuesta = validate_trab();
   console.log("respuesta2 "+respuesta2);
   console.log("respuesta "+respuesta);
 
-  if (respuesta && respuesta2) {
+  if (validar_email && respuesta && respuesta2) {
 
   //var emaill = document.getElementById("get_pass_user").value;
   var formalumno = new FormData($("#formulario_trabajador")[0]);
