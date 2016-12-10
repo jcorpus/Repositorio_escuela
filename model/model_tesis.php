@@ -33,7 +33,7 @@ public function __construct(){
 
           echo '<div class="alert alert-success alert-dismissible" id="">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <i class="icon fa fa-check"></i>&nbsp;Tesis registrada correctamente
+            <i class="icon fa fa-check"></i>&nbsp;Tesis Registrada Correctamente. 
             </div>';
 
         return true;
@@ -82,9 +82,136 @@ function publicar_tesis($id_estado_tesis,$id_tesis){
 	
 }
 
+/********registro tipo user*********/
 
+function reg_tipo_user($tipo_usuario){
+  $verificar = $this->db->query("SELECT DesTipoUsuario FROM tipousuario WHERE DesTipoUsuario = '$tipo_usuario' LIMIT 1");
+  $sql = "INSERT INTO tipousuario(DesTipoUsuario) VALUES('$tipo_usuario')";
+  if ($this->db->rows($verificar) == 0) {
+    if ($this->db->query($sql)) {
+      echo '<div class="alert alert-success alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i>&nbsp;Tipo Usuario registrado Correctamente.
+        </div>';
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-times"></i>&nbsp;Ocurrió un Error
+        </div>';
+    }
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ya existe un Tipo de Usuario: <strong>'.$tipo_usuario.'</strong>
+      </div>';
+  }
+  $this->db->liberar($verificar,$sql);
+  $this->db->close();
+}
 
+function reg_tipo_tesis($tipo_tesis){
+  $verificar = $this->db->query("SELECT DesTipoTesis FROM tipotesis WHERE DesTipoTesis = '$tipo_tesis' LIMIT 1");
+  $sql = "INSERT INTO tipotesis(DesTipoTesis) VALUES('$tipo_tesis')";
+  if ($this->db->rows($verificar) == 0) {
+    if ($this->db->query($sql)) {
+      echo '<div class="alert alert-success alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i>&nbsp;Tipo Tesis registrado Correctamente.
+        </div>';
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-times"></i>&nbsp;Ocurrió un Error
+        </div>';
+    }
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ya existe un Tipo de Tesis: <strong>'.$tipo_tesis.'</strong>
+      </div>';
+  }
+  $this->db->liberar($verificar,$sql);
+  $this->db->close();
+}
 
+/*****grado academico ****/
+
+function reg_grado_academico($grado_academico){
+  $verificar = $this->db->query("SELECT DesGradoAcademico FROM gradoacademico WHERE DesGradoAcademico = '$grado_academico' LIMIT 1");
+  $sql = "INSERT INTO gradoacademico(DesGradoAcademico) VALUES('$grado_academico')";
+  if ($this->db->rows($verificar) == 0) {
+    if ($this->db->query($sql)) {
+      echo '<div class="alert alert-success alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i>&nbsp;Grado Académico registrado Correctamente.
+        </div>';
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-times"></i>&nbsp;Ocurrió un Error
+        </div>';
+    }
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ya existe un Grado Académico: <strong>'.$grado_academico.'</strong>
+      </div>';
+  }
+  $this->db->liberar($verificar,$sql);
+  $this->db->close();
+}
+
+/*****filial tesis******/
+function reg_filial($filial_e){
+  $verificar = $this->db->query("SELECT DesFilial FROM filial WHERE DesFilial = '$filial_e' LIMIT 1");
+  $sql = "INSERT INTO filial(DesFilial) VALUES('$filial_e')";
+  if ($this->db->rows($verificar) == 0) {
+    if ($this->db->query($sql)) {
+      echo '<div class="alert alert-success alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i>&nbsp;Filial registrada Correctamente.
+        </div>';
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-times"></i>&nbsp;Ocurrió un Error
+        </div>';
+    }
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ya existe una Filial: <strong>'.$filial_e.'</strong>
+      </div>';
+  }
+  $this->db->liberar($verificar,$sql);
+  $this->db->close();
+}
+
+/*****categoria tesis******/
+function reg_categoria_tesis($categoria_o){
+  $verificar = $this->db->query("SELECT DesCategoria FROM categoria WHERE DesCategoria = '$categoria_o' LIMIT 1");
+  $sql = "INSERT INTO categoria(DesCategoria) VALUES('$categoria_o')";
+  if ($this->db->rows($verificar) == 0) {
+    if ($this->db->query($sql)) {
+      echo '<div class="alert alert-success alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-check"></i>&nbsp;Categoria registrada Correctamente.
+        </div>';
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible" id="">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <i class="icon fa fa-times"></i>&nbsp;Ocurrió un Error
+        </div>';
+    }
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ya existe una Categoria: <strong>'.$categoria_o.'</strong>
+      </div>';
+  }
+  $this->db->liberar($verificar,$sql);
+  $this->db->close();
+}
 
 /***************lista de filial***************/
 function listar_filial(){
@@ -125,8 +252,19 @@ function listar_tipotesis(){
 
 
 
-
 }
+
+
+/*
+$instancia = new Tesis();
+if ($instancia->reg_tipo_tesis('julooio')) {
+  echo "correcto";
+}else{
+  echo "error";
+}
+*/
+
+
 /*
 $inst = new Tesis();
 $imp = $inst->listar_tesis_registradas('julio');

@@ -1,12 +1,4 @@
 
-
-function buscar_tesis(){
-  
-  alert("funciona");
-}
-
-
-
 function buscar_tesis(){
 
   var busqueda = document.getElementById("busqueda_tesis").value;

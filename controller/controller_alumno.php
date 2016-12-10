@@ -3,6 +3,7 @@
 
 include "../core/models/model_conexion.php";
 require ("../model/model_alumno.php");
+require ("../core/bin/funciones/encriptar_pass.php");
 
 /*nacimiento*/
 $dia = $_POST['dia'];
@@ -20,11 +21,11 @@ $apem_alumno = $_POST['apem_alumno'];
 $domicilio_alumno = $_POST['domicilio_alumno'];
 $telefono_alumno = $_POST['telefono_alumno'];
 $sexo_alumno = $_POST['sexo_alumno'];
-$password_alumno = $_POST['codigo_alumno'];
+$password_alumno = encriptar2($_POST['codigo_alumno']);
 $codigo_alumno = $_POST['codigo_alumno'];
 $nombre_usuario = $_POST['codigo_alumno'];
 $estado_alumno = $_POST['estado_alumno'];
-$tipo_usuario = $_POST['tipousuario_datos'];
+$tipo_usuario = $_POST['tipousuario_a'];
 
 
 

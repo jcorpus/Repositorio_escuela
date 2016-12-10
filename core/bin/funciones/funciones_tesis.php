@@ -57,58 +57,6 @@ function solo_year($fecha_tesis2){
   
 }
 
-function ver_usuarios2($conexion){
-
-  //$sql = $db->query("SELECT * FROM usuarios");
-  //$sql = $db->query("SELECT* FROM usuarios inner join persona on persona.id_persona = usuarios.id_persona ");
-  $sql = $conexion->query("call pa_listar_usuario_todo()");
-  if ($conexion->rows($sql) > 0) {
-    while($d = $conexion->recorrer($sql)){
-      $usuarios[$d['idUsuario']] = array(
-        'idUsuario' => $d['idUsuario'],
-        'idPersona' => $d['idPersona'],
-        'Usuario' => $d['Usuario'],
-        'Email' => $d['Email'],
-        'NomPersona' => $d['NomPersona'],
-        'all_apellido' => $d['ApePaterno']." ".$d['ApeMaterno'],
-        'imgUsuario' => $d['imgUsuario'],
-        'idTipoUsuario' => $d['idTipoUsuario'],
-        'DesTipoUsuario' => $d['DesTipoUsuario']
-      );
-    }
-  }else{
-    $usuarios = false;
-  }
-  $conexion->liberar($sql);
-  $conexion->close();
-
-  return $usuarios;
-}
-
-
-
-
-/*
-
-$resultado = $this->db->query($sql);
-  $arreglo = array();
-  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
-    $arreglo[] = $re;
-  }
-  return $arreglo;
-
-*/
-
-
-
-
-
-
-
-
-
-
-
 
 
  ?>

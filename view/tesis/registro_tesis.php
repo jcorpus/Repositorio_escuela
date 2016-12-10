@@ -37,7 +37,8 @@
                   </div>
                   <label  class="col-sm-1 control-label">Autor</label>
                   <div class="col-sm-3">
-                    <input type="text" class="form-control validacion" name="autor_tesis"  id="autor_tesis" maxlength="50" size="50" placeholder="Autor">
+                    <input type="hidden" onkeypress="return solo_letras(event);" class="form-control validacion" name="autor_tesis"  id="autor_tesis">
+                    <input type="text" onkeypress="return solo_letras(event);" class="form-control validacion" name="autor_tesis_2" disabled  id="autor_tesis_2" maxlength="70" size="70" placeholder="Autor">
                   </div>
                     <button type="button" name="buscar" id="buscar"  class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal_buscar_alumno">Buscar&ensp;<span class="glyphicon glyphicon-search"></span></button>
                 </div>
@@ -73,7 +74,7 @@
                   </div>
                   <label  class="col-sm-1 control-label">Palabras clave</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
+                    <input type="text" onkeypress="return solo_letras(event);" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
                   </div>
                 </div>
                 <div class="form-group">
@@ -141,7 +142,7 @@
                   <div class="form-group">
                     <label  class="col-sm-2 control-label">Nombre o Apellido</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control" name="datos_alumno" onkeypress="return solo_letras(event);" id="datos_alumno" placeholder="nombre o apellido">
+                      <input type="text" class="form-control" onkeypress="return solo_letras(event);" name="datos_alumno" onkeypress="return solo_letras(event);" id="datos_alumno" placeholder="nombre o apellido">
                     </div>
                     <div class="col-sm-2">
                       <button type="button" onclick="busca_alumno_tesis();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>

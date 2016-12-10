@@ -37,6 +37,10 @@ else if ($_GET['p'] == 'public_tesis') {
 	$titulo = 'Publicar Tesis';
 	$contenido = 'view/tesis/publicar_tesis.php';
 }
+else if ($_GET['p'] == 'otros_datos') {
+	$titulo = 'Otros Datos';
+	$contenido = 'view/otros/otros_datos.php';
+}
 else if ($_GET['p'] == 'reportes') {
 	$titulo = 'Reportes PDF';
 	$contenido = 'view/reporte-pdf/report_alumno.php';

@@ -23,7 +23,7 @@
               <div class="form-group">
                   <label class="col-sm-2 control-label">Buscar</label>
                     <div class="col-sm-4">
-                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_usuario" placeholder="buscar usuario por Apellido o DNI">
+                      <input type="text" name="buscar_usuario"  class="form-control" id="buscar_usuario" placeholder="buscar usuario por Código">
                     </div>
                     <div class="col-sm-2">
                       <button type="button" onclick="buscar_user();" class="btn btn-block btn-primary btn-sm">Buscar&ensp;<i class="fa fa-search fa-lg" aria-hidden="true"></i></button>

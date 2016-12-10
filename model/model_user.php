@@ -84,11 +84,11 @@ SELECT * FROM persona ORDER BY persona.id_persona DESC
 
   function listar_user($valor, $inicio=FALSE,$limite=FALSE){
     if ($inicio!==FALSE && $limite!==FALSE) {
-      $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo,p.edad, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
-      WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC LIMIT $inicio,$limite";
+      $sql = "SELECT u.idUsuario,u.Usuario,p.NomPersona,p.ApePaterno,p.ApeMaterno,u.EstadoUsuario,u.fecha_reg_user,tp.DesTipoUsuario,p.Email FROM usuario u INNER JOIN persona p ON u.idPersona = p.idPersona INNER JOIN tipousuario tp ON u.idTipoUsuario = tp.idTipoUsuario
+      WHERE u.Usuario LIKE '%".$valor."%' ORDER BY u.idUsuario DESC LIMIT $inicio,$limite";
     }else{
-      $sql = "SELECT p.id_persona, p.nombre, p.ape_paterno, p.ape_materno, p.dni, p.domicilio,p.telefono,p.email, p.sexo, u.id_usuario, u.usuario, u.password, u.permisos, u.img_usuario FROM usuarios u INNER JOIN persona p on u.id_usuario = p.id_persona
-      WHERE p.ape_paterno LIKE '%".$valor."%' OR p.dni LIKE '%".$valor."%' ORDER BY u.id_usuario DESC";
+      $sql = "SELECT u.idUsuario,u.Usuario,p.NomPersona,p.ApePaterno,p.ApeMaterno,u.EstadoUsuario,u.fecha_reg_user,tp.DesTipoUsuario,p.Email FROM usuario u INNER JOIN persona p ON u.idPersona = p.idPersona INNER JOIN tipousuario tp ON u.idTipoUsuario = tp.idTipoUsuario
+      WHERE u.Usuario LIKE '%".$valor."%' ORDER BY u.idUsuario DESC";
     }
     $resultado = $this->db->query($sql);
     $arreglo = array();

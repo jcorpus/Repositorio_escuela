@@ -2,6 +2,7 @@
 
 include "../core/models/model_conexion.php";
 require ("../model/model_trabajador.php");
+require ("../core/bin/funciones/encriptar_pass.php");
 
 /*nacimiento*/
 $dia = $_POST['dia'];
@@ -19,7 +20,7 @@ $apem_trabajador = $_POST['apem_trabajador'];
 $domicilio_trabajador = $_POST['domicilio_trabajador'];
 $telefono_trabajador = $_POST['telefono_trabajador'];
 $sexo_trabajador = $_POST['sexo_trabajador'];
-$password_trabajador = $_POST['codigo_trabajador'];
+$password_trabajador = encriptar2($_POST['codigo_trabajador']);
 $codigo_trabajador = $_POST['codigo_trabajador'];
 $nombre_usuario = $_POST['codigo_trabajador'];
 $estado_trabajador = $_POST['estado_trabajador'];

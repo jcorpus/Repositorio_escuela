@@ -171,6 +171,7 @@ function seleccionar_alumno(datos){
 	var valores=datos.split("*");
 	//alert(d.length);
 	$("#autor_tesis").val(valores[1]+" "+valores[2]+" "+valores[3]);
+  $("#autor_tesis_2").val(valores[1]+" "+valores[2]+" "+valores[3]);
 
 }
 

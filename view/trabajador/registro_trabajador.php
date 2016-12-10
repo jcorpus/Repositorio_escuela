@@ -153,7 +153,7 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_trabajador" class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user"  placeholder="Edad" >
+                        <input type="text" name="edad_trabajador" disabled class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user"  placeholder="Edad" >
                         <b>Edad</b>
                      </div>
                 </div>
@@ -228,7 +228,7 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                  <label>Imágen de Usuario</label>
+                  <label>Imágen de Trabajador</label>
                     </div>
                     <br>
                     <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/avatar.png" alt="imagen" />

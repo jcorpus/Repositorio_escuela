@@ -1,10 +1,11 @@
 <?php
+require('core/bin/funciones/encriptar_pass.php');
 
 if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
     $db = new Conexion();
     $user = $db->real_escape_string($_POST['user']);
-    $pass = $_POST['pass'];
+    $pass = encriptar2($_POST['pass']);
     //$sql = $db->query("SELECT id_usuario from usuarios WHERE (usuario='$user' OR email='$user') AND password='$pass' LIMIT 1 ");
     $sql = $db->query("SELECT usuario.idUsuario,persona.Email, usuario.Usuario FROM usuario inner join persona on persona.idPersona = usuario.idPersona WHERE (usuario.Usuario='$user' OR persona.Email='$user') AND usuario.Password='$pass' LIMIT 1 ");
     if($db->rows($sql)>0){

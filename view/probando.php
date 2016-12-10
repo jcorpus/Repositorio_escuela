@@ -15,11 +15,16 @@ function encriptar2($cadena){
   $llave = "huhygtfrtgytghyt";
   $encriptar = base64_encode($cadena);
   return $encriptar;
-
 }
+function desencriptar2($cadena){
+  $desencriptar = base64_decode($cadena);
+  return $desencriptar;
+}
+
 echo "cesar encriptado es: ".encriptar2("cesar");
 echo "<br>";
-
+echo "cesar desencriptado es: ".desencriptar2('Nzc3Njg1NDg1NA==');
+echo "<br>";
 
 
 $encriptarr = encriptar('julioó');

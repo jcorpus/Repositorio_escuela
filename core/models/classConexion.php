@@ -2,7 +2,7 @@
 
 ///http://php.net/manual/es/mysqli.construct.php
 
-
+date_default_timezone_set('America/Lima');
 class Conexion extends mysqli{
   public function __construct(){
     parent::__construct(DB_HOST,DB_USER,DB_PASS,DB_NAME);

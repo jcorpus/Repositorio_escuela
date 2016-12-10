@@ -68,7 +68,7 @@ function reg_tesis(){
 		beforeSend: function(){
     msjpass = '<div class="alert alert-dismissible alert-warning"> ';
     msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-    msjpass += ' <p> Enviando .....</p>'
+    msjpass += ' <p> Registrando... &nbsp<i class="fa fa-cog fa-spin fa-2x"></i> .....</p>'
     msjpass += '</div>';
     document.getElementById('msj_res_tesis').innerHTML = msjpass;
 

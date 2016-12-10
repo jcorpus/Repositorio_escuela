@@ -153,7 +153,7 @@
                     </select>
                   </div>
                      <div class="col-sm-2">
-                        <input type="text" name="edad_alumno" class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user"  placeholder="Edad" >
+                        <input type="text" name="edad_alumno" class="form-control validacion"  onkeypress="return solo_numeros(event);" id="edad_user" disabled placeholder="Edad" >
                         <b>Edad</b>
                      </div>
                 </div>
@@ -194,8 +194,8 @@
                 <div class="form-group">
                 <label  class="col-sm-2 control-label">Tipo de Usuario</label>
                   <div class="col-sm-4">
-                    <select class="form-control"id="tipousuario_datos" name="tipousuario_datos">
-                      
+                    <select class="form-control"id="tipousuario_a" name="tipousuario_a">
+                      <?php  include('controller/tipo_usuario.php'); ?>
                     </select>
                   </div>
                   <label  class="col-sm-2 control-label">Estado</label>
@@ -227,7 +227,6 @@
             <form role="form" id="otraforma">
             <p id="respuesta"></p>
               <div class="box-body">
-                <hr>
                 <div class="form-group">
                   <label>Imágen de Alumno</label>
                     </div>
