@@ -7,14 +7,13 @@ if(!isset($_GET['view'])){
 }else if ($_GET['view'] == 'salir') {
 	include('core/controller/salirController.php');
 }
-else if($_GET['view'] == 'registrar'){
-	$titulo = 'Registro';
-	$contenido_home = 'view/usuario/registro_usuario.php';
-	#$script = 'html/javascript/image_cumple.js';
+else if($_GET['view'] == 'perfil'){
+	$titulo = 'Perfil';
+	$contenido_home = 'view/home/perfil_user.php';
 }
-else if($_GET['view'] == 'view_tesis'){
-	$titulo = 'Tesis';
-	$contenido_home = 'view/home/tesis_view.php';
+else if($_GET['view'] == 'faq'){
+	$titulo = 'FAQ';
+	$contenido_home = 'view/home/faq.php';
 }
 
 else{

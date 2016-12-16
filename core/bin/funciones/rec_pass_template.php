@@ -6,7 +6,7 @@ $mensaje = '
 <body>
   <h2>Olvidaste tu Contraseña</h2>
   <p>Hola '.$user.' </p>
-  <p>Tu clave es: '.$pass_gato.' </p>
+  <p>Tu clave es: '.desencriptar2($pass_gato).' </p>
 
   <footer>
     <p>Equipo de Soporte</p>

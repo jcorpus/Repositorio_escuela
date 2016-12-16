@@ -29,17 +29,23 @@ $tipo_usuario = $_POST['tipousuario_a'];
 
 
 
-function verificar_datos($email_alumno,$dni_alumno){
+function verificar_datos($email_alumno,$dni_alumno,$codigo_alumno){
 	$db = new Conexion2;
 	$sql = $db->query("SELECT persona.Email FROM persona WHERE persona.Email = '$email_alumno' LIMIT 1 ");
-
+  $sql3 = $db->query("SELECT a.UspCodAlu FROM alumno a WHERE  a.UspCodAlu = '$codigo_alumno' LIMIT 1 ");
 	if ($db->rows($sql) > 0) {
 		echo '<div class="alert alert-danger alert-dismissible" id="correcto">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			<i class="icon fa fa-times"></i>&nbsp;El email<strong style="color:#e8e8e8"> '.$email_alumno.' </strong>ya esta registrado...
 			</div>';
 		return false;
-	}else{
+	}else if($db->rows($sql3) > 0){
+    echo '<div class="alert alert-danger alert-dismissible" id="correcto">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;El Código<strong style="color:#e8e8e8"> '.$codigo_alumno.' </strong>ya esta registrado...
+      </div>';
+    return false;
+  }else{
 		$sql2 = $db->query("SELECT persona.DNI FROM persona WHERE persona.DNI = '$dni_alumno' LIMIT 1 ");
 		if ($db->rows($sql2) > 0) {
 			echo '<div class="alert alert-danger alert-dismissible" id="correcto">
@@ -58,7 +64,7 @@ function verificar_datos($email_alumno,$dni_alumno){
 }
 
 
-if (verificar_datos($email_alumno,$dni_alumno)) {
+if (verificar_datos($email_alumno,$dni_alumno,$codigo_alumno)) {
 	//echo "toodo correcto";
 	$verificar =$_FILES["imagen_alumno"]['name'];
 	if (!empty($verificar)){

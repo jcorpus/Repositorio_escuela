@@ -23,22 +23,13 @@
             <!--MENU AGREGADO -->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Otras Paginas <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="full-width.html">Full Width Page</a>
+                              <a href="home.php?view=faq">FAQ</a>
                             </li>
                             <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
+                              <a href="config.php">Configuración</a>
                             </li>
                         </ul>
                     </li>
@@ -57,10 +48,10 @@
                             ?>
                          </li>
                          <li>
-                           <a href="?view=perfil">Perfil</a>
+                           <a href="home.php?view=perfil">Perfil</a>
                          </li>
                          <li>
-                           <a href="?view=salir">Cerrar Sesion</a>
+                           <a href="home.php?view=salir">Cerrar Sesion</a>
                          </li>
                        </ul>
                     </li>
@@ -76,7 +67,7 @@
                         
                     </li>
                     <li>
-                        <a href="?view=salir">Salir</a>
+                        <a href="home.php?view=salir">Salir</a>
                     </li>
                 </ul>
             </div>

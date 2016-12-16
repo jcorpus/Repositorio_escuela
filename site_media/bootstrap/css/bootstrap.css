@@ -5689,9 +5689,9 @@ button.list-group-item-danger.active:focus {
   border-color: #ddd;
 }
 .panel-default > .panel-heading {
-  color: #333;
-  background-color: #f5f5f5;
-  border-color: #ddd;
+  color: #f5f5f5;/*333*/
+  background-color: #20539c;/*f5f5f5*/
+  border-color: #ddd;/*ddd*/
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
@@ -5740,12 +5740,12 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #d6e9c6;
 }
 .panel-info {
-  border-color: #bce8f1;
+  border-color: #20539c;/*bce8f1*/
 }
 .panel-info > .panel-heading {
-  color: #31708f;/*#31708f*/
-  background-color: #d9edf7; /*#d9edf7*/
-  border-color: #bce8f1;/*#bce8f1*/
+  color: #f5f5f5;/*#31708f*/
+  background-color: #20539c; /*#d9edf7*/
+  border-color: #ddd;/*#bce8f1*/
 }
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #bce8f1;

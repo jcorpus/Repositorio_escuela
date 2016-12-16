@@ -15,7 +15,8 @@ function ver_usuarios(){
         'all_apellido' => $d['ApePaterno']." ".$d['ApeMaterno'],
         'imgUsuario' => $d['imgUsuario'],
         'idTipoUsuario' => $d['idTipoUsuario'],
-        'DesTipoUsuario' => $d['DesTipoUsuario']
+        'DesTipoUsuario' => $d['DesTipoUsuario'],
+        'Password_user' =>$d['Password']
       );
     }
   }else{

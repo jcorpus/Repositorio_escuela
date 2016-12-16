@@ -31,7 +31,7 @@ $tipo_usuario = $_POST['tipousuario_datos'];
 function verificar_datos($email_trabajador,$dni_trabajador){
 	$db = new Conexion2;
 	$sql = $db->query("SELECT persona.Email FROM persona WHERE persona.Email = '$email_trabajador' LIMIT 1 ");
-
+	
 	if ($db->rows($sql) > 0) {
 		echo '<div class="alert alert-danger alert-dismissible" id="correcto">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

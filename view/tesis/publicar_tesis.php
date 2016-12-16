@@ -32,6 +32,8 @@
             <br>
             <!-- /.box -->
             <div class="box-body">
+              <div class="" id="msj_ptesis">
+              </div>
             <div id="listar_tesis" class="icon-loading">
               <i id="loading_tesis" style="margin:auto;display:block; margin-top:60px;"></i>
             </div>

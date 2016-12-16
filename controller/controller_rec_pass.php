@@ -1,6 +1,7 @@
 <?php
 include '../core/models/model_conexion.php';
 require('../core/bin/funciones/rec_pass_template.php');
+require ('../core/bin/funciones/encriptar_pass.php');
 session_start();
 $email_rec = $_POST['emaill'];
 $valor_captcha = trim($_POST['valor_captcha']);
@@ -13,13 +14,13 @@ echo "el valor de la llave es: ".$_SESSION['key'];
     }else{
       echo '<div class="alert alert-dismissible alert-danger">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
-         <p> Captcha Erroneo</p>
+         <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp; Captcha Erroneo </p>
          </div>';
     }
   }else{
     echo '<div class="alert alert-dismissible alert-danger">
        <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <p> Faltan Datos...</p>
+       <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Faltan Datos...</p>
        </div>';
   }  
 
@@ -62,15 +63,15 @@ function enviar_datos($email_rec2){
     //Ahora definimos gmail como servidor que aloja nuestro SMTP
     $mail->Host       = 'smtp.gmail.com';
     //El puerto será el 587 ya que usamos encriptación TLS
-    $mail->Port       = 587;
+    $mail->Port       = 465; //587
     //Definmos la seguridad como TLS
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = 'ssl'; //tls
     //Tenemos que usar gmail autenticados, así que esto a TRUE
     $mail->SMTPAuth   = true;
     //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-    $mail->Username   = "@gmail.com";
+    $mail->Username   = "jsuproc@gmail.com";
     //Introducimos nuestra contraseña de gmail
-    $mail->Password   = "contraseña";
+    $mail->Password   = "c.sbakuryowolfbk";
     //Definimos el remitente (dirección y, opcionalmente, nombre)
     $mail->SetFrom($email_rec2, 'Repositorio - contraseña olvidada');
     //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)
@@ -86,12 +87,12 @@ function enviar_datos($email_rec2){
       echo "Error aqui: " . $mail->ErrorInfo;
       echo '<div class="alert alert-dismissible alert-danger">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
-         <p>Ocurrió un ERROR, revisa tu conexión.</p>
+         <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Ocurrió un ERROR, revisa tu conexión.</p>
          </div>';
     } else {
       echo '<div class="alert alert-dismissible alert-success">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
-         <p>Correcto!.. Revisa tu correo Electrónico </p>
+         <p><i class="fa fa-check" aria-hidden="true"></i> Correcto!.. Revisa tu correo Electrónico </p>
          </div>';
     }
 
@@ -101,7 +102,7 @@ function enviar_datos($email_rec2){
   }else{
     echo '<div class="alert alert-dismissible alert-danger">
        <button type="button" class="close" data-dismiss="alert">&times;</button>
-       <p> El email <strong>'.$email_rec2.' no se encuentra en el sistema </strong></p>
+       <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> El email <strong>'.$email_rec2.' no se encuentra en el sistema </strong></p>
        </div>';
 
   }

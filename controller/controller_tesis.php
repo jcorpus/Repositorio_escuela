@@ -20,7 +20,7 @@ $estado_tesis = $_POST['estado_tesis'];
 date_default_timezone_set('America/Lima');
 $fecha_registro = date("Y-m-d");
 $id_usuario = $_POST['id_usuario_t'];
-
+$fecha_tesis = $_POST['fecha_tesis'];
 
 $instancia = new Tesis();
 $comprobar = $instancia->verificar_datos_tesis($nombre_tesis);
@@ -115,7 +115,7 @@ if ($valor == true) {
   //procedemos a enviar
 	
 		$consulta = $instancia->registro_tesis($codigo_tesis ,$nombre_tesis,$autor_tesis,$pclaves,$fecha_registro,$cita_tesis,$resumen_tesis,$tipotesis_datos,
-		$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano);
+		$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano,$fecha_tesis);
 		echo $consulta;
 		
 	

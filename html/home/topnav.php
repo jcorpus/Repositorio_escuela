@@ -10,10 +10,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Repositorio</title>
+    <title>Repositorio</title><!-- printf($titulo) -->
 
     <!-- Bootstrap Core CSS -->
-    <link href="site_media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="site_media/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="site_media/css/modern-business.css" rel="stylesheet">

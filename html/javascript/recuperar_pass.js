@@ -20,7 +20,7 @@ function rec_password(){
 		beforeSend: function(){
     msjpass = '<div class="alert alert-dismissible alert-warning"> ';
     msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-    msjpass += ' <p> Procesandooooo.....</p>'
+    msjpass += ' <h5> Procesandooooo..... <i class="fa fa-spinner fa-pulse fa-lg fa-fw"></i></h5>'
     msjpass += '</div>';
     document.getElementById('msj_get_pass').innerHTML = msjpass;
 

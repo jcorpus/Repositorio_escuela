@@ -36,6 +36,16 @@ function obtener_datos_tesis($conexion,$id_tesis){
   
 }
 
+function contador_filial($db,$id_filial){
+  $resultado =$db->query("call pa_contar_filial($id_filial)");
+  while ($fila = $db->recorrer($resultado)) {
+    $contar = $fila['contador']; 
+  }
+  return $contar;
+  $db->liberar($resultado);
+  $db->close();
+}
+
 function formato_fecha($fecha_tesis){
   $fecha_registro = strtotime($fecha_tesis);
   $meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];

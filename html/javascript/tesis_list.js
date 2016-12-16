@@ -168,15 +168,11 @@ function publicar_tesis(datos){
 }
 
 function public_tesis_id(){
-	
+	var msj_ptesis;
 	var id_estado_tesis = $("#id_estado_tesis").val();
 	var id_tesis = $("#id_tesis").val();
 	//alert("el id es: "+id_tesis+" y el id estado_ "+id_estado_tesis);
 	
-	/////////////////
-	
-
-
 	$.ajax({
 		url:'controller/controller_public_tesis.php',
 		type: 'POST',
@@ -188,12 +184,15 @@ function public_tesis_id(){
 			//alert("se completo el envio");
 		},
 		success: function(data){
-			alert(data);
-			msjpass = '<div class="alert alert-dismissible alert-warning"> ';
-			msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-			msjpass += ' <p> Tesis Publicada Correctamente</p>'
-			msjpass += '</div>';
-		//	document.getElementById('msj_res_tesis').innerHTML = msjpass;
+			//alert(data);
+			/*
+			msj_ptesis = '<div class="alert alert-dismissible alert-success"> ';
+			msj_ptesis += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+			msj_ptesis += ' <p> Tesis Publicada Correctamente</p>'
+			msj_ptesis += '</div>';
+			*/
+			listar_tesis('','1');
+			document.getElementById('msj_ptesis').innerHTML = data;
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown, jqXHR){
 			alert("SE PRODUJO UN ERROR, vuelve a recargar la pagina");

@@ -21,6 +21,29 @@ function validar_email_alumno(){
      }
 
 }
+/******************validar select **************/
+function validar_cumple() {
+/*
+var selec_cumple = document.getElementById('mes');
+if(!selec_cumple.value) {  
+    window.alert('debes selecionar un mes');  
+    //securityQuestionElement.value = 'm'
+    return false;  
+}
+*/
+var dia = document.getElementById("dia").selectedIndex;
+  var valll = false;
+  if (dia ==null || dia==0) {
+    alert("falta el dia");
+    vall = false;
+  }else{
+    vall = true;
+  }
+  
+}
+
+
+
 /******************validar radio*********************/
 function radio_validate(){
   var opciones = document.getElementsByName("sexo_alumno");
@@ -73,6 +96,7 @@ function validate () {
 /********************************************************/
 
 function reg_alumno(){
+
   var validar_email =validar_email_alumno();
   console.log("el email trae: "+validar_email);
   var respuesta2 = radio_validate();

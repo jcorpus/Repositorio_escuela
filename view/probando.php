@@ -21,7 +21,7 @@ function desencriptar2($cadena){
   return $desencriptar;
 }
 
-echo "cesar encriptado es: ".encriptar2("cesar");
+echo "cesar encriptado es: ".encriptar2("1125455425");
 echo "<br>";
 echo "cesar desencriptado es: ".desencriptar2('Nzc3Njg1NDg1NA==');
 echo "<br>";

@@ -118,7 +118,7 @@
       <ul class="sidebar-menu">
         <li class="header">Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+
         <li class="treeview">
           <a href="#"><i class="fa fa-male fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Usuario</span>
             <span class="pull-right-container">

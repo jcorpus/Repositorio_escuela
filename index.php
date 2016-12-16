@@ -14,6 +14,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="site_media/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="site_media/font-awesome-4.6.3/css/font-awesome.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="site_media/css/AdminLTE.css">
   <!--style log in-->
@@ -27,7 +28,7 @@ if (isset($_SESSION['app_id'])) { //esta definida app_id
 <body class="login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="index.php"><b>Repositorio</b>Escuela</a>
+      <a href="index.php"><b>Repositorio</b>USP</a>
     </div>
             <div class="alerta" id="ajax_login" ></div>
             <div class="card card-container">

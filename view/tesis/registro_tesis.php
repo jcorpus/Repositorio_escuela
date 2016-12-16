@@ -43,7 +43,7 @@
                     <button type="button" name="buscar" id="buscar"  class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal_buscar_alumno">Buscar&ensp;<span class="glyphicon glyphicon-search"></span></button>
                 </div>
                 <div class="form-group">
-                  <label  class="col-sm-1 control-label">Tipo de Tesis</label>
+                  <label  class="col-sm-1 control-label">Tipo de Investigación</label>
 
                   <div class="col-sm-4">
                     <select class="form-control" id="tipotesis_datos" name="tipotesis_datos">
@@ -105,6 +105,12 @@
                     <select class="form-control" name="estado_tesis" id="estado_tesis">
                       <?php  include('controller/estado_publicacion.php'); ?>
                     </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-1 control-label">Fecha de Tesis</label>
+                  <div class="col-sm-4">
+                    <input type="date" class="form-control validacion" name="fecha_tesis" id="fecha_tesis" value="">
                   </div>
                 </div>
               </div>

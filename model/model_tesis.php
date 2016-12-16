@@ -21,13 +21,13 @@ public function __construct(){
   }
 
   function registro_tesis($codigo_tesis ,$nombre_tesis,$autor_tesis,$pclaves,$fecha_registro,$cita_tesis,$resumen_tesis,$tipotesis_datos,
-	$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano){
+	$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano,$fecha_tesis){
     $verificar = $this->db->query("SELECT Titulo FROM tesis WHERE Titulo='$nombre_tesis' LIMIT 1");
     if ($this->db->rows($verificar) == 0) {
       $consulta = "INSERT INTO tesis(CodTesis,Titulo,Autor,Palabra_Clave,FechaRegistro,Citacion,Resumen,idTipoTesis,
-        idFilial,idGradoAcademico,idUsuario,idCategoria,idEstadoPublicacion,Archivo,Formato,size_tesis)
+        idFilial,idGradoAcademico,idUsuario,idCategoria,idEstadoPublicacion,Archivo,Formato,size_tesis,fecha_tesis)
         VALUES('$codigo_tesis','$nombre_tesis','$autor_tesis','$pclaves','$fecha_registro',
-        '$cita_tesis','$resumen_tesis','$tipotesis_datos','$filial_datos','$grado_academico','$id_usuario','$categoria_tesis','$estado_tesis','$ruta_registro','$tipo','$tamano')";
+        '$cita_tesis','$resumen_tesis','$tipotesis_datos','$filial_datos','$grado_academico','$id_usuario','$categoria_tesis','$estado_tesis','$ruta_registro','$tipo','$tamano','$fecha_tesis')";
 
       if ($this->db->query($consulta)) {
 
@@ -78,8 +78,18 @@ function listar_tesis_registradas($valor, $inicio=FALSE,$limite=FALSE){
 
 function publicar_tesis($id_estado_tesis,$id_tesis){
 	$sql = "UPDATE tesis SET idEstadoPublicacion = $id_estado_tesis WHERE idTesis = $id_tesis";
-  $consulta = $this->db->query($sql);
-	
+  if($this->db->query($sql)){
+    echo '<div class="alert alert-success alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-check"></i>&nbsp;Tesis Publicada Correctamente.
+      </div>';
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ocurrio Un ERROR.
+      </div>';
+  }
+
 }
 
 /********registro tipo user*********/
