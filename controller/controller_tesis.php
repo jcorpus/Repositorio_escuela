@@ -1,8 +1,10 @@
 <?php
-
+session_start();
 //require('../core/models/model_conexion.php');
 require ("../model/model_tesis.php");
 require("../core/bin/funciones/get_size_archivo.php");
+
+
 
 $nombre_tesis = trim($_POST['nombre_tesis']);
 $autor_tesis = trim($_POST['autor_tesis']);
@@ -19,7 +21,7 @@ $estado_tesis = $_POST['estado_tesis'];
 /**************************/
 date_default_timezone_set('America/Lima');
 $fecha_registro = date("Y-m-d");
-$id_usuario = $_POST['id_usuario_t'];
+$id_usuario = $_SESSION['app_id'];
 $fecha_tesis = $_POST['fecha_tesis'];
 
 $instancia = new Tesis();
@@ -61,10 +63,10 @@ if ($comodin == true) {
 				<i class="icon fa fa-times"></i>&nbsp;Archivo no permitido
 				</div>';
 				$valor = false;
-			}else if($tamano2 > 5242880){
+			}else if($tamano2 > 10485760){
 				echo '<div class="alert alert-danger alert-dismissible" id="">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<i class="icon fa fa-times"></i>&nbsp;El tamaño permitido es 5 Mb
+					<i class="icon fa fa-times"></i>&nbsp;El tamaño máximo permitido es 5 Mb
 					</div>';
 					$valor = false;
 			}else{
@@ -80,7 +82,7 @@ if ($comodin == true) {
 		else{
 			echo '<div class="alert alert-danger alert-dismissible" id="">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-				<i class="icon fa fa-times"></i>&nbsp;Debes de enviar un Archivo
+				<i class="icon fa fa-times"></i>&nbsp;Debes enviar un Archivo
 				</div>';
 			$valor = false;
 		}

@@ -28,13 +28,13 @@
                 </div>
                 <!-- agregaro -->
                 <div class="ds-option-set" id="ds-search-option">
-                <form method="post" class="" id="ds-search-form" action="/discover">
+                <form method="GET"  class="" id="ds-search-form" action="busqueda_tesis.php">
                 <fieldset>
                 <div class="input-group">
-                <input placeholder="Search" type="text" class="ds-text-field form-control" name="query"><span class="input-group-btn"><button title="Go" class="ds-button-field btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></span>
+                <input placeholder="Search" type="text" class="ds-text-field form-control" name="busqueda"><span class="input-group-btn"><button title="Go" class="ds-button-field btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></span>
                 </div>
                 </fieldset>
-                <a href="/discover">Advanced Search</a>
+                
                 </form>
                 </div>
               
@@ -102,8 +102,8 @@
                         <ul class="list-group">
                           <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="#">Chimbote</a></li>
                           <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="#">Huaraz </a></li>
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="#">Lima</a></li>
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="#">Huacho</a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="#">Lima</a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="#">Huacho</a></li>
                         </ul>
                       </div>
                       <!--Filiales-->

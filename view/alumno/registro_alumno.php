@@ -155,7 +155,7 @@
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
-                    <input type="text" name="codigo_alumno" class="form-control validacion" value="" id="codigo_alumno" placeholder="codigo alumno" maxlength="10">
+                    <input type="text" name="codigo_alumno" onkeypress="return solo_numeros(event);" class="form-control validacion" value="" id="codigo_alumno" placeholder="codigo alumno" maxlength="10">
                   </div>
                 </div>
 
@@ -172,10 +172,10 @@
                       <span>Femenino </span>
                     </label>
                   </div>
-                  <label  class="col-sm-2 control-label">Imágen</label>
+                  <label  class="col-sm-2 control-label">Imagen</label>
                   <div class="col-sm-4">
                     <input type="file" data-target="preview_image" class="file-input" id="imagen_alumno" accept="image/*"  name="imagen_alumno" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imagen</label>
                       </span>
                       </div>
                   </div>
@@ -217,7 +217,7 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                  <label>Imágen de Alumno</label>
+                  <label>Imagen de Alumno</label>
                     </div>
                     <br>
                     <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/avatar.png" alt="imagen" />

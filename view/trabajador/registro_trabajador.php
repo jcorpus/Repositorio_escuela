@@ -169,7 +169,7 @@
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
                   <div class="col-sm-4">
-                    <input type="text" name="codigo_trabajador" class="form-control validacion" value="" id="codigo_trabajador" placeholder="codigo" maxlength="10">
+                    <input type="text" name="codigo_trabajador" onkeypress="return solo_numeros(event);" class="form-control validacion" value="" id="codigo_trabajador" placeholder="codigo" maxlength="10">
                   </div>
                 </div>
 
@@ -186,10 +186,10 @@
                       <span>Femenino </span>
                     </label>
                   </div>
-                  <label  class="col-sm-2 control-label">Imágen</label>
+                  <label  class="col-sm-2 control-label">Imagen</label>
                   <div class="col-sm-4">
                     <input type="file" data-target="preview_image" class="file-input" id="imagen_trabajador" accept="image/*"  name="imagen_trabajador" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
-                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_trabajador" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
+                      <div class="bootstrap-filestyle input-group" data-toggle="tooltip" data-placement="right" title="No obligatorio" ><span class="group-span-filestyle " tabindex="0"><label for="imagen_trabajador" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imagen</label>
                       </span>
                       </div>
                   </div>
@@ -231,7 +231,7 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                  <label>Imágen de Trabajador</label>
+                  <label>Imagen de Trabajador</label>
                     </div>
                     <br>
                     <img id="preview_image" class="imagenpreview" width="170" src="site_media/img/avatar.png" alt="imagen" />

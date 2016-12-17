@@ -4,8 +4,8 @@
         Registro de Tesis
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Tesis</a></li>
+        <li class="active">Registro</li>
       </ol>
 
 </section>
@@ -18,7 +18,7 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos del Tesis</h3>
+              <h3 class="box-title">Datos de Tesis</h3>
             </div>
 
             <!-- /.box-header -->
@@ -32,7 +32,7 @@
                 <div class="form-group">
                   <label  class="col-sm-1 control-label">Titulo</label>
                   <div class="col-sm-4">
-                    <input type="hidden" name="id_usuario_t" value="<?php echo $usuarios[$_SESSION['app_id']]['idUsuario']; ?>">
+                    
                     <input type="text" name="nombre_tesis" class="form-control validacion"  id="nombre_tesis" placeholder="Titulo">
                   </div>
                   <label  class="col-sm-1 control-label">Autor</label>
@@ -74,7 +74,7 @@
                   </div>
                   <label  class="col-sm-1 control-label">Palabras clave</label>
                   <div class="col-sm-4">
-                    <input type="text" onkeypress="return solo_letras(event);" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
+                    <input type="text" class="form-control validacion" name="pclaves_tesis" id="pclaves_tesis" value="">
                   </div>
                 </div>
                 <div class="form-group">

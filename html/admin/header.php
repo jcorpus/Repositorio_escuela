@@ -6,7 +6,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.php" class="logo">
+    <a href="admin.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -25,54 +25,13 @@
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img  src="site_media/img/logo.png"  class="user-image"  alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+            <a href="home.php" target="_blank">
+              <i class="fa fa-home fa-lg"></i>
               <span class="hidden-xs">
-                <?php
-                
-                      echo $usuarios[$_SESSION['app_id']]['all_apellido'];
-                
-                ?>
-                
+                Home          
               </span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="site_media/img/logo.png" class="img-circle" alt="User Image">
 
-                <p>
-                  Jcorpus - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
@@ -91,7 +50,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="site_media/img/logo.png"  class="img-circle" alt="User Image">
+          <img src="<?php echo $usuarios[$_SESSION['app_id']]['imgUsuario']; ?>"  class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <?php
@@ -101,8 +60,7 @@
           }
            ?>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-          
+          <a href="javascript:void(0)"><i class="fa fa-circle text-success"></i> <?php echo $usuarios[$_SESSION['app_id']]['DesTipoUsuario']; ?></a>
         </div>
       </div>
 
@@ -164,7 +122,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-book fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Otros Datos</span>
+          <a href="#"><i class="fa fa-tags fa-lg" aria-hidden="true"></i>&ensp;&ensp; <span>Otros Datos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

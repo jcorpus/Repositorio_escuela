@@ -130,9 +130,9 @@ function reg_trabajador(){
 	});
 
 }else{
-  msjpass = '<div class="alert alert-dismissible alert-warning"> ';
+  msjpass = '<div class="alert alert-dismissible alert-danger"> ';
   msjpass += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-  msjpass += ' <p> Faltan Datos </p>'
+  msjpass += ' <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Faltan Datos...</p>'
   msjpass += '</div>';
   document.getElementById('msj_res_trabajador').innerHTML = msjpass;
 }

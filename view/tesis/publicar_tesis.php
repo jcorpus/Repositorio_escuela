@@ -65,9 +65,9 @@
             </div>
             <div class="modal-body">
               <p>Estas seguro de publicar la Tesis:</p>
-              <input type="text" name="id_tesis" id="id_tesis" value="">
-              <input type="text" id="id_estado_tesis" name="id_estado_tesis" class="">
-              <p id="nombre_tesis_p"></p>
+              <input type="hidden" name="id_tesis" id="id_tesis" value="">
+              <input type="hidden" id="id_estado_tesis" name="id_estado_tesis" class="">
+              <strong><p id="nombre_tesis_p"></p></strong>
             </div>
             <div class="modal-footer">
               <div class="text-center">

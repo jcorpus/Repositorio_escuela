@@ -101,8 +101,20 @@ SELECT * FROM persona ORDER BY persona.id_persona DESC
 
   }
 
-function borrar_user(){
-
+function mod_user_perfil($password_user,$id_user_perfil){
+  $sql = "UPDATE usuario SET usuario.Password = '$password_user' WHERE usuario.idUsuario =$id_user_perfil";
+  if ($this->db->query($sql)) {
+    echo '<div class="alert alert-success alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-check"></i>&nbsp;Contraseña Modificada Correctamente.
+      </div>';
+  }else{
+    echo '<div class="alert alert-danger alert-dismissible" id="">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <i class="icon fa fa-times"></i>&nbsp;Ocurrió un ERROR.
+      </div>';
+  }
+  
 }
 
 /***************lista de tipo usuario***************/
