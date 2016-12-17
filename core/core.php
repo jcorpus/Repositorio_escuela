@@ -18,6 +18,7 @@
   #estructura
   require('core/models/classConexion.php');
   require('core/bin/funciones/get_users.php');
+  require('core/bin/funciones/contador_admin.php');//contador de alumnos
   //require('controller/categoria_tesis.php');
 
   #obtener toda la info del usuario, nombre, email, etc
