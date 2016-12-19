@@ -58,13 +58,13 @@ $(function () {
           data: [
 							<?php 
 							 $db = new Conexion2();
-							 $sql = $db->query("SELECT DesFilial FROM filial");
+							 $sql = $db->query("SELECT idFilial, DesFilial FROM filial");
 							 while ($registros = $db->recorrer($sql))
 							 {
 							 ?>
 						 		{
 									name: '<?php echo $registros["DesFilial"]; ?>',
-									y: 16.33
+									y: <?php echo $registros["idFilial"] ?>,
 								},
 							 <?php
 						 	}
@@ -72,48 +72,7 @@ $(function () {
 							 
 						
 						]
-        }],
-        drilldown: {
-            series: [{
-                name: 'Microsoft Internet Explorer',
-                id: 'Microsoft Internet Explorer',
-                data: [
-                    [
-                        'v11.0',
-                        24.13
-                    ],
-                    [
-                        'v8.0',
-                        17.2
-                    ],
-                    [
-                        'v7.0',
-                        0.5
-                    ]
-                ]
-            },  {
-                name: 'Opera',
-                id: 'Opera',
-                data: [
-                    [
-                        'v12.x',
-                        0.34
-                    ],
-                    [
-                        'v28',
-                        0.24
-                    ],
-                    [
-                        'v27',
-                        0.17
-                    ],
-                    [
-                        'v29',
-                        0.16
-                    ]
-                ]
-            }]
-        }
+        }]
     });
 });
 		</script>

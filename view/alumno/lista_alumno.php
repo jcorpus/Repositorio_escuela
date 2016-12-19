@@ -106,13 +106,9 @@
                 </div>
 
               <div class="form-group">
-                <label  class="col-sm-2 control-label">Email</label>
+                  <label  class="col-sm-2 control-label">Imagen</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_alumno2" class="form-control validacion" id="email_alumno2" placeholder="email">
-                  </div>
-                  <label  class="col-sm-2 control-label">Imágen</label>
-                  <div class="col-sm-4">
-                  <input type="text" id="imagen_oculta" name="imagen_oculta">
+                  <input type="hidden" id="imagen_oculta" name="imagen_oculta">
                     <input type="file" data-target="preview_image2" class="file-input" id="imagen_alumno2" name="imagen_alumno2" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" />
                       <div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="imagen_alumno2" class="btn btn-primary "><span class="glyphicon glyphicon-folder-open "></span>&ensp;Escoger Imágen</label>
                       </span>
@@ -120,27 +116,7 @@
 
                   </div>
               </div>
-
-              <div class="form-group">
-                  <label class="col-sm-2 control-label">Sexo</label>
-                  <div class="col-sm-4">
-                    <label class="miradio "><!--checked-->
-                    <input type="radio" id="masculino2" class="form-control sexo2"  name="sexo_alumno2" value="M" >
-                    <span> Masculino </span>
-                    </label>
-                    <label class="miradio ">
-                    <input type="radio" id="femenino2" class="form-control sexo2"  name="sexo_alumno2" value="F">
-                    <span>Femenino </span>
-                    </label>
-                    <input style="display:none" type="text" name="fecha_registro" class="form-control" id="fecha_registro">
-                  </div>
-                  <label  class="col-sm-2 control-label">Codigo</label>
-                  <div class="col-sm-4">
-                    <input type="text" class="form-control"  name="codigo_alumno2" id="codigo_alumno2" placeholder="codigo">
-                    
-                  </div>
-              </div>
-
+              
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
@@ -157,7 +133,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Imágen Alumno</h3>
+              <h3 class="box-title">Imagen Alumno</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -165,7 +141,7 @@
             <p id="respuesta"></p>
               <div class="box-body">
                 <div class="form-group">
-                    <img id="preview_image2"  class="imagenpreview" width="170" src="" alt="imagen" />
+                    <img id="preview_image2"  class="imagenpreview" width="170"  alt="imagen" />
                 </div>
               </div>
             </form>
@@ -177,7 +153,7 @@
 </section>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close <span class="glyphicon glyphicon-remove"></span></button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar <span class="glyphicon glyphicon-remove"></span></button>
       </div>
     </div>
   </div>

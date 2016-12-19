@@ -11,13 +11,23 @@ function contar_alumnos(){
   $db->close();
 }
 
-function contar_tesis(){
+function contar_tesis_registradas(){
   $db = new Conexion();
-  $query =$db->query("SELECT COUNT(*) as total_tesis FROM tesis");
+  $query =$db->query("SELECT COUNT(t.idTesis) as registrado FROM tesis t WHERE t.idEstadoPublicacion = 2");
   $resultado = mysqli_fetch_assoc($query);
-  echo $resultado['total_tesis'];
+  echo $resultado['registrado'];
   $db->liberar($query);
   $db->close();
+}
+
+function contar_tesis_publicadas(){
+  $db = new Conexion();
+  $query = $db->query("SELECT COUNT(t.idTesis) as publicado FROM tesis t WHERE t.idEstadoPublicacion = 1");
+  $resultado = mysqli_fetch_assoc($query);
+  echo $resultado['publicado'];
+  $db->liberar($query);
+  $db->close();
+  
 }
 
 function contar_trabajadores(){

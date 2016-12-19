@@ -9,13 +9,13 @@ $nom_alumno = $_POST['nombre_alumno2'];
 $apep_alumno = $_POST['ape_paterno2'];
 $apem_alumno = $_POST['ape_materno2'];
 $direccion_alumno = $_POST['domicilio_alumno2'];
-$dni_alumno = $_POST['dni_alumno2'];
+//$dni_alumno = $_POST['dni_alumno2'];
 $telefono_alumno = $_POST['telefono_alumno2'];
-$email_alumno = $_POST['email_alumno2'];
-$codigo_alumno = $_POST['codigo_alumno2'];
+//$email_alumno = $_POST['email_alumno2'];
+//$codigo_alumno = $_POST['codigo_alumno2'];
 //$imagen_alumno = $_POST['imagen_alumno2'];
 
-
+/*
 function verificar_datos($email_alumno,$dni_alumno,$codigo_alumno){
 	$db = new Conexion2;
 	$sql = $db->query("SELECT persona.Email FROM persona WHERE persona.Email = '$email_alumno' LIMIT 1 ");
@@ -49,9 +49,9 @@ function verificar_datos($email_alumno,$dni_alumno,$codigo_alumno){
 	//$db->liberar();
 	$db->close();
 }
-
-
-if (verificar_datos($email_alumno,$dni_alumno,$codigo_alumno)) {
+*/
+//verificar_datos($email_alumno,$dni_alumno,$codigo_alumno)
+if (true) {
 	//echo "toodo correcto";
 	$verificar =$_FILES["imagen_alumno2"]['name'];
 	if (!empty($verificar)){
@@ -117,7 +117,7 @@ if (verificar_datos($email_alumno,$dni_alumno,$codigo_alumno)) {
 /****** enviando  ****/
 if ($valor) {
 	$instancia = new Alumno();
-	$consulta = $instancia->modificar_alumno($id_alumno,$nom_alumno,$apep_alumno,$apem_alumno,$direccion_alumno,$dni_alumno,$telefono_alumno,$email_alumno,$codigo_alumno,$ruta_registro);
+	$consulta = $instancia->modificar_alumno($id_alumno,$nom_alumno,$apep_alumno,$apem_alumno,$direccion_alumno,$telefono_alumno,$ruta_registro);
 	echo $consulta;
 }else{
 	echo "ocurrio un error en el controlador";

@@ -5,10 +5,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Todo lo que quieras
+      USP
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Escuela Ing USP</a>.</strong> Derechos Reservados.
+    <strong>Copyright &copy; 2016 <a href="javascript:void(0)">Escuela de Ing Informática y de Sistemas </a>.</strong> Derechos Reservados.
     <?php printf(YEAR_APLICACION);  ?>
   </footer>
 

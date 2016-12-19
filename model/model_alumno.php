@@ -54,15 +54,14 @@ $estado_alumno,$tipo_usuario){
   }
   
 }
-function modificar_alumno($id_alumno,$nom_alumno,$apep_alumno,$apem_alumno,$dni_alumno,$direccion_alumno,$telefono_alumno,$email_alumno,$codigo_alumno,$ruta_registro){
+function modificar_alumno($id_alumno,$nom_alumno,$apep_alumno,$apem_alumno,$direccion_alumno,$telefono_alumno,$ruta_registro){
 $sql = "UPDATE alumno a INNER JOIN persona p ON a.idPersona = p.idPersona INNER JOIN usuario u ON u.idPersona = a.idPersona 
-SET p.NomPersona = '$nom_alumno',p.ApePaterno = '$apep_alumno', p.ApeMaterno = '$apem_alumno',p.DNI = '$dni_alumno',a.UspCodAlu = '$codigo_alumno',
-p.Email = '$email_alumno',u.imgUsuario = '$ruta_registro',p.Direccion = '$direccion_alumno',p.Telefono = '$telefono_alumno' WHERE a.idAlumno = $id_alumno";
+SET p.NomPersona = '$nom_alumno',p.ApePaterno = '$apep_alumno', p.ApeMaterno = '$apem_alumno',u.imgUsuario = '$ruta_registro',p.Direccion = '$direccion_alumno',p.Telefono = '$telefono_alumno' WHERE a.idAlumno = $id_alumno";
   
 if ($this->db->query($sql)) {
   echo '<div class="alert alert-success alert-dismissible" id="correcto">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <i class="icon fa fa-times"></i>&nbsp;Modificado correctamente
+    <i class="icon fa fa-check"></i>&nbsp;Modificado correctamente
     </div>';
 }else{
   echo '<div class="alert alert-danger alert-dismissible" id="correcto">

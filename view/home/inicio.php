@@ -29,9 +29,10 @@
                 <!-- agregaro -->
                 <div class="ds-option-set" id="ds-search-option">
                 <form method="GET"  class="" id="ds-search-form" action="busqueda_tesis.php">
+                <small>Busqueda</small>
                 <fieldset>
                 <div class="input-group">
-                <input placeholder="Search" type="text" class="ds-text-field form-control" name="busqueda"><span class="input-group-btn"><button title="Go" class="ds-button-field btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></span>
+                <input placeholder="Buscar" type="text" class="ds-text-field form-control" name="busqueda"><span class="input-group-btn"><button title="Go" class="ds-button-field btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></span>
                 </div>
                 </fieldset>
                 
@@ -66,6 +67,33 @@
                   </table>
                 </div>
                 <hr>
+                <!-- EJEMPLO -->
+
+                <ul class="ds-artifact-list list-unstyled">
+                  <?php include 'tesis_recientes2.php';  ?>
+                  
+                </ul>
+
+                <ul class="pagination">
+                	<li class="disabled"><a href="javascript:void(0)">«</a></li>
+                	<li class="disabled"><a href="javascript:void(0)">Anterior</a></li>
+                	<li class="active"><a href="javascript:void(0)">1</a></li>
+                	<li><a href="">2</a></li><li><a href="javascript:void(0)">Siguiente</a></li>
+                	<li><a href="javascript:void(0)">»</a></li>
+                </ul>
+                
+                <!--
+                <li>
+                  <h4>
+                      <a href="blog-post.html">Sistema Informatico Web de Compras ventas y almacén para la Empresa SAC</a>
+                  </h4>
+                  <p><strong clas="">Julio Corpus, Daniel Narvaez</strong><span> Chimbote</span> <span>Noviembre 12 de 2016</span></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <hr>
+                -->
+                
+                <!-- EJEMPLO -->
             </div>
             <!-- cold-sm-3 -->
             <div class="col-md-3">

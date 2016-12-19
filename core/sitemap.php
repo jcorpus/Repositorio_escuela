@@ -43,7 +43,7 @@ else if ($_GET['p'] == 'otros_datos') {
 }
 else if ($_GET['p'] == 'reportes') {
 	$titulo = 'Reportes PDF';
-	$contenido = 'view/reporte-pdf/report_alumno.php';
+	$contenido = 'view/reporte-pdf/reportes.php';
 }
 else if ($_GET['p'] == 'graficos') {
 	$titulo = 'Gráficos';

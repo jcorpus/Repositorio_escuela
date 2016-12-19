@@ -16,12 +16,26 @@
     <div class="row">
         <div class="col-md-12">
           
-          <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php contar_tesis(); ?></h3>
+              <h3><?php contar_tesis_registradas(); ?></h3>
               <p>Tesis Registradas</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            </div>
+            <a href="admin.php?p=public_tesis" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3><?php contar_tesis_publicadas(); ?></h3>
+              <p>Tesis Publicadas</p>
             </div>
             <div class="icon">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -41,7 +55,7 @@
             <div class="icon">
               <i class="fa fa-graduation-cap" aria-hidden="true"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="admin.php?p=list_alumno" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         
@@ -56,7 +70,7 @@
             <div class="icon">
               <i class="fa fa-users" aria-hidden="true"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="admin.php?p=list_trabajador" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!--  
@@ -76,6 +90,10 @@
           <div class="">
               <h4>Grafico de Barras</h4>
           </div>
+          
+          <iframe src="html/graficos/grafico_barras/colum-drill.php" width="100%" height="500px" frameborder="0"></iframe>
+          
+          
         </div>
         
         

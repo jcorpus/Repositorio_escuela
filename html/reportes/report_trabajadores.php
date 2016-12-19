@@ -10,7 +10,7 @@ class PDF extends FPDF{
       $this->SetFont('Arial','B',16); ////el B es en negrita
       //$this->setFillColor(64,224,208);
       $this->SetTextColor(66,73,61);
-      $this->Cell(0,35,'Alumnos Registrados',0,1,'C');///el cero indica que la celda ocupa el ancho de la pagina
+      $this->Cell(0,35,'Trabajadores Registrados',0,1,'C');///el cero indica que la celda ocupa el ancho de la pagina
       ////el true, en el Cell indica que el fondo se dibuja, si se omite es false
       ///datos de la empresa
       $this->SetXY(10, 25);
@@ -46,7 +46,7 @@ class PDF extends FPDF{
     $db = new Conexion2;
     //$this->set_charset("utf8");
     //echo "conexion valio ".$db->host_info;
-    $sql = $db->query("SELECT * FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona");
+    $sql = $db->query("SELECT * FROM trabajador t INNER JOIN persona p ON t.idPersona = p.idPersona");
 
 //$pdf->Cell(ancho, alto, contenido, borde , alineación); //Alineación L Izquierda, C Centrado, R Derecha
         $pdf->SetXY(25,50);///posicion del titulo
@@ -67,8 +67,8 @@ class PDF extends FPDF{
         $pdf->SetFont('Arial','',10);
         $pdf->SetX(25);////posicion de los datos
         //$pdf->Cell(10,6,  utf8_decode($row["nombres"]),1,0,'C'); //por siaca las tildes
-        $pdf->Cell(15,6,$row["idAlumno"],1,0,'C');
-        $pdf->Cell(30,6,$row["UspCodAlu"],1,0,'C');
+        $pdf->Cell(15,6,$row["idTrabajador"],1,0,'C');
+        $pdf->Cell(30,6,$row["UspCodTra"],1,0,'C');
         $pdf->Cell(30,6,$row["NomPersona"],1,0,'C');
         $pdf->Cell(30,6,$row["ApeMaterno"],1,0,'C');
         $pdf->Cell(25,6,$row["DNI"],1,0,'C');

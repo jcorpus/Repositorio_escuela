@@ -10,14 +10,14 @@ class PDF extends FPDF{
       $this->SetFont('Arial','B',16); ////el B es en negrita
       //$this->setFillColor(64,224,208);
       $this->SetTextColor(66,73,61);
-      $this->Cell(0,35,'Alumnos Registrados',0,1,'C');///el cero indica que la celda ocupa el ancho de la pagina
+      $this->Cell(0,35,'Usuarios Registrados',0,1,'C');///el cero indica que la celda ocupa el ancho de la pagina
       ////el true, en el Cell indica que el fondo se dibuja, si se omite es false
       ///datos de la empresa
       $this->SetXY(10, 25);
       $this->SetFont('Arial','',10);
       $this->Cell(5,20,'Repositorio Escuela');
       $this->SetXY(10, 25);
-      $this->Cell(15,29,'R.U.C: 236437309');
+      //$this->Cell(15,29,'R.U.C: 236437309');
       $this->SetXY(10, 25);
       $this->Cell(15,38,'USP');
       $this->Ln();
@@ -46,20 +46,20 @@ class PDF extends FPDF{
     $db = new Conexion2;
     //$this->set_charset("utf8");
     //echo "conexion valio ".$db->host_info;
-    $sql = $db->query("SELECT * FROM alumno a INNER JOIN persona p ON a.idPersona = p.idPersona");
+    $sql = $db->query("SELECT * FROM usuario u INNER JOIN persona p ON u.idPersona = p.idPersona INNER JOIN tipousuario tp ON u.idTipoUsuario = tp.idTipoUsuario");
 
 //$pdf->Cell(ancho, alto, contenido, borde , alineación); //Alineación L Izquierda, C Centrado, R Derecha
         $pdf->SetXY(25,50);///posicion del titulo
         $pdf->SetFont('Arial','B',11);
         $pdf->SetFillColor(60,168,245);//Fondo azul de celda
         $pdf->Cell(15,6,'ID',1,0,'C',1);
-        $pdf->Cell(30,6,utf8_decode('Código'),1,0,'C',1);//el ultimo parametro se rellena la celda
-        $pdf->Cell(30,6,'ape p',1,0,'C',1);
-        $pdf->Cell(30,6,'ape m',1,0,'C',1);
-        $pdf->Cell(25,6,'dni',1,0,'C',1);
-        $pdf->Cell(50,6,'direccion',1,0,'C',1);
-        $pdf->Cell(25,6,'Sexo',1,0,'C',1);
-        $pdf->Cell(25,6,'Fecha',1, 1,'C',1);
+        $pdf->Cell(25,6,utf8_decode('Código'),1,0,'C',1);//el ultimo parametro se rellena la celda
+        $pdf->Cell(37,6,'Tipo User',1,0,'C',1);
+        $pdf->Cell(30,6,'Apellidos',1,0,'C',1);
+        $pdf->Cell(25,6,'Reg User',1,0,'C',1);
+        $pdf->Cell(60,6,'Email',1,0,'C',1);
+        $pdf->Cell(25,6,'DNI',1,0,'C',1);
+        $pdf->Cell(20,6,'Estado',1, 1,'C',1);
 
     while ($row = $db->recorrer($sql)) {
         # code...
@@ -67,14 +67,14 @@ class PDF extends FPDF{
         $pdf->SetFont('Arial','',10);
         $pdf->SetX(25);////posicion de los datos
         //$pdf->Cell(10,6,  utf8_decode($row["nombres"]),1,0,'C'); //por siaca las tildes
-        $pdf->Cell(15,6,$row["idAlumno"],1,0,'C');
-        $pdf->Cell(30,6,$row["UspCodAlu"],1,0,'C');
-        $pdf->Cell(30,6,$row["NomPersona"],1,0,'C');
+        $pdf->Cell(15,6,$row["idUsuario"],1,0,'C');
+        $pdf->Cell(25,6,$row["Usuario"],1,0,'C');
+        $pdf->Cell(37,6,$row["DesTipoUsuario"],1,0,'C');
         $pdf->Cell(30,6,$row["ApeMaterno"],1,0,'C');
+        $pdf->Cell(25,6,$row["fecha_reg_user"],1,0,'C');
+        $pdf->Cell(60,6,$row["Email"],1,0,'C');
         $pdf->Cell(25,6,$row["DNI"],1,0,'C');
-        $pdf->Cell(50,6,$row["Direccion"],1,0,'C');
-        $pdf->Cell(25,6,$row["Sexo"],1,0,'C');
-        $pdf->Cell(25,6,$row["FechaNacimmiento"],1,1,'C');
+        $pdf->Cell(20,6,$row["EstadoUsuario"],1,1,'C');
     }
     //liberando memoria
   $db->liberar($sql);

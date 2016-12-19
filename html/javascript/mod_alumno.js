@@ -51,12 +51,12 @@ function validate2 () {
 
 function mod_alumno(){
 
-  var respuesta2 = radio_validate2();
+  //var respuesta2 = radio_validate2();
   var respuesta = validate2();
   console.log("respuesta2 "+respuesta2);
   console.log("respuesta "+respuesta);
 
-  if (respuesta && respuesta2) {
+  if (respuesta) {
 
   //var emaill = document.getElementById("get_pass_user").value;
   var formalumno = new FormData($("#mod_alumno")[0]);

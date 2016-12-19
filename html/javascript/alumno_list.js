@@ -191,6 +191,7 @@ function mostrar_alumno(datos){
   
   	//document.getElementById("year2").selectedIndex = 2; //2016-08-15
   	var sexo2 = valores[7];
+/*
 		console.log("el sexo es: "+valores[7]);
 	if(sexo2==='F'){
 	  document.getElementById('femenino2').checked = true;
@@ -198,6 +199,7 @@ function mostrar_alumno(datos){
 	else{
 	  document.getElementById('masculino2').checked = true;
 	}
+  */
   	//$("radio[name=sexo_alumno2]").attr("checked",true);
 
   	//document.getElementsByClassName('sexo_alumno2').checked = true;

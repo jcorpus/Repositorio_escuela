@@ -92,7 +92,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
   echo "Palabra Clave: ".$post_tesis[4]."<br>";
   echo "Fecha de Registro: ".formato_fecha($post_tesis[5])."<br>";
   echo "Citacion: ".$post_tesis[6]."<br>";
-  echo "Resumen: ".$post_tesis[7]."<br>";
+  echo "Resumen: ".nl2br($post_tesis[7])."<br>";
   echo "Tipo de Tesis: ".$post_tesis[9]."<br>";
   echo "Filial: ".$post_tesis[11]."<br>";
   echo "Grado academico: ".$post_tesis[13]."<br>";
