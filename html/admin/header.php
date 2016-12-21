@@ -117,7 +117,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="?p=reg_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
-            <li><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Listar Tesis</a></li>
+            <li><a href="?p=listar_tesis"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Reporte Tesis por Filiales</a></li>
             <li><a href="?p=public_tesis"><i class="fa fa-check" aria-hidden="true"></i>&ensp;Publicar</a></li>
           </ul>
         </li>

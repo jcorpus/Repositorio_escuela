@@ -2,6 +2,10 @@
 function __(id){
   return document.getElementById(id);
 }
+
+///////////////////
+
+
 function validar_email_trabajador(){
     var email = $("#email_trabajador");
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -100,11 +104,20 @@ function reg_trabajador(){
     complete: function(){
       //$("#loading_user").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
       //alert("se completo el envio");
+      
     },
 		success: function(data){
-
+      
     document.getElementById('msj_res_trabajador').innerHTML = data;
-
+    $("#nombre_trabajador").val('');
+    $("#apep_trabajador").val('');
+    $("#apem_trabajador").val('');
+    $("#domicilio_trabajador").val('');
+    $("#telefono_trabajador").val('');
+    $("#email_trabajador").val('');
+    $("#codigo_trabajador").val('');
+    $("#dni_trabajador").val('');
+  
     /*
 
 			if(respuesta.length>0){
@@ -116,10 +129,10 @@ function reg_trabajador(){
 
 			}else{
 
-
+      
 			}
       */
-
+      
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown, jqXHR){
 			alert("SE PRODUJO UN ERROR, vuelve a recargar la pagina");
@@ -138,3 +151,16 @@ function reg_trabajador(){
 }
 
 }
+
+
+
+///////////////
+function limpiar_trabajador(){
+  
+
+
+  
+  
+}
+
+

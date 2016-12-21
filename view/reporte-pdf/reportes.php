@@ -27,34 +27,34 @@
                     <label class="col-sm-3 control-label">Reporte de Usuarios</label>
                     <div class="col-sm-8">
                      <button type="button" class="btn btn-success" id="reporte_usuarios"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Visualizar PDF</button>
-                     <a target="_blank" class="btn btn-danger " href="javascript:reportePDF();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
+                     
                      </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Reporte de Alumnos</label>
                     <div class="col-sm-8">
                      <button type="button" class="btn btn-success" id="reporte_alumnos"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Visualizar PDF</button>
-                     <a target="_blank" class="btn btn-danger " href="javascript:reporteAlumnos();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
+                     
                      </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Reporte de Trabajadores</label>
                     <div class="col-sm-8">
                      <button type="button" class="btn btn-success" id="reporte_trabajador"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Visualizar PDF</button>
-                     <a target="_blank" class="btn btn-danger " href="javascript:reportePDF();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
+                     
                      </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label">Reporte de Tesis</label>
                     <div class="col-sm-8">
                      <button type="button" class="btn btn-success" id="reporte_tesis"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Visualizar PDF</button>
-                     <a target="_blank" class="btn btn-danger " href="javascript:reportePDF();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
+                     
                      </div>
                   </div><div class="form-group">
                     <label class="col-sm-3 control-label">Reporte de Filiales</label>
                     <div class="col-sm-8">
                      <button type="button" class="btn btn-success" id="reporte_filiales"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Visualizar PDF</button>
-                     <a target="_blank" class="btn btn-danger " href="javascript:reportePDF();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
+                     <a class="btn btn-danger " href="javascript:reportePDF();"><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i> Descargar <i class="fa fa-download fa-lg" aria-hidden="true"></i></a>
                      </div>
                   </div>
                   

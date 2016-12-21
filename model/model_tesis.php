@@ -20,6 +20,23 @@ public function __construct(){
   	$db->close();
   }
 
+
+  function Buscar_tesis_filial($_par_filial){
+			
+  $sql = "SELECT idTesis,Autor,Titulo  from tesis INNER JOIN filial on filial.idFilial=tesis.idFilial where filial.DesFilial='$_par_filial'";		
+	$resultado = $this->db->query($sql);
+  $arreglo = array();
+  while ($consulta_MC = mysqli_fetch_array($resultado)) {
+					$arreglo[] = $consulta_MC;
+				}
+  return $arreglo;
+  $this->db->liberar($sql);
+  $this->db->close();
+	}
+
+
+
+
   function registro_tesis($codigo_tesis ,$nombre_tesis,$autor_tesis,$pclaves,$fecha_registro,$cita_tesis,$resumen_tesis,$tipotesis_datos,
 	$filial_datos,$grado_academico,$id_usuario,$categoria_tesis,$estado_tesis,$ruta_registro,$tipo,$tamano,$fecha_tesis){
     $verificar = $this->db->query("SELECT Titulo FROM tesis WHERE Titulo='$nombre_tesis' LIMIT 1");
@@ -36,7 +53,7 @@ public function __construct(){
             <i class="icon fa fa-check"></i>&nbsp;Tesis Registrada Correctamente. 
             </div>';
 
-        return true;
+        //return true;
       }else{
         return false;
       }
@@ -51,7 +68,7 @@ public function __construct(){
           </div>';
       }
     }
-    $this->db->close();
+    
   }
 
 

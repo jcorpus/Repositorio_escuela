@@ -7,7 +7,8 @@ require("../core/bin/funciones/get_size_archivo.php");
 
 
 $nombre_tesis = trim($_POST['nombre_tesis']);
-$autor_tesis = trim($_POST['autor_tesis']);
+$autor_tesis = $_POST['autor_tesis'];//id autor 1
+
 $tipotesis_datos = $_POST['tipotesis_datos'];
 $cita_tesis = $_POST['cita_tesis'];
 $resumen_tesis = $_POST['resumen_tesis'];
@@ -66,7 +67,7 @@ if ($comodin == true) {
 			}else if($tamano2 > 10485760){
 				echo '<div class="alert alert-danger alert-dismissible" id="">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<i class="icon fa fa-times"></i>&nbsp;El tamaño máximo permitido es 5 Mb
+					<i class="icon fa fa-times"></i>&nbsp;El tamaño máximo permitido es 10 Mb
 					</div>';
 					$valor = false;
 			}else{

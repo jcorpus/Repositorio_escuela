@@ -48,13 +48,13 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
 
   echo ' <table class="table itemDisplayTable">
      <tbody>
-     <tr><td class="">Codigo:&nbsp;</td><td class="">'.$post_tesis[1].'</td></tr>
+     <tr><td class="" style="width: 93px;">Codigo:&nbsp;</td><td class="">'.$post_tesis[1].'</td></tr>
      <tr><td class="">Titulo:&nbsp;</td><td class="">'.$post_tesis[2].'</td></tr>
      <tr><td class="">Autor:&nbsp;</td><td class="">'.$post_tesis[3].'</td></tr>
      <tr><td class="">Palabra Clave:&nbsp;</td><td class="">'.$post_tesis[4].'</td></tr>
      <tr><td class="">Fecha Registro:&nbsp;</td><td class="">'.formato_fecha($post_tesis[5]).'</td></tr>
      <tr><td class="">Citacion:&nbsp;</td><td class="">'.$post_tesis[6].'</td></tr>
-     <tr><td class="">Resumen:&nbsp;</td><td class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td></tr>
+     <tr><td class="">Resumen:&nbsp;</td><td class="">'.nl2br($post_tesis[7]).'</td></tr>
      <tr><td class="">Tipo de Tesis:&nbsp;</td><td class="">'.$post_tesis[9].'</td></tr>
      <tr><td class="">Filial:</td><td class=""><a href="'.$post_tesis[10].'">'.$post_tesis[11].'</a><br></td></tr>
      <tr><td class="">Grado Academico:&nbsp;</td><td class="">'.$post_tesis[13].'</td></tr>

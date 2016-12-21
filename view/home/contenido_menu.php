@@ -63,20 +63,26 @@ while ($fila= $db->recorrer($sql)) {
                     <!--Filiales-->
                     <div id="" class="panel panel-default">
                     <div class="panel-heading"><h5>Filiales</h5></div>
-                    <ul class="list-group">
-                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="busqueda_tesis.php?filial=Chimbote">Chimbote</a></li>
-                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="busqueda_tesis.php?filial=Huaraz">Huaraz </a></li>
-                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="busqueda_tesis.php?filial=Lima">Lima</a></li>
-                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="busqueda_tesis.php?filial=Huacho">Huacho</a></li>
-                    </ul>
+                      <ul class="list-group">
+                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="busqueda_tesis.php?filial=Chimbote">Chimbote</a></li>
+                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="busqueda_tesis.php?filial=Huaraz">Huaraz </a></li>
+                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="busqueda_tesis.php?filial=Lima">Lima</a></li>
+                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="busqueda_tesis.php?filial=Huacho">Huacho</a></li>
+                      </ul>
                     </div>
                     <!--Filiales-->
-                    <!-- Side Widget Well -->
-                    <div class="well">
-                        <h4>Side Widget Well</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    <!--otros repositorios-->
+                    <div id="" class="panel panel-default">
+                    <div class="panel-heading"><h5>Otros Repositorios</h5></div>
+                      <ul class="list-group">
+                        <li class="list-group-item"><a href="http://tesis.pucp.edu.pe/" target="_blank">PUCP</a></li>
+                        <li class="list-group-item"><a href="http://repositorioacademico.upc.edu.pe/upc/" target="_blank">UPC</a></li>
+                        <li class="list-group-item"><a href="http://repositorio.up.edu.pe/" target="_blank">Universidad del Pacifico</a></li>
+                        <li class="list-group-item"><a href="https://pirhua.udep.edu.pe/" target="_blank">Universidad de Piura</a></li>
+                        <li class="list-group-item"><a href="http://repositorio.esan.edu.pe/handle/esan/1" target="_blank">Universidad ESAN</a></li>
+                        
+                      </ul>
                     </div>
-
                 </div>
         </div>
         <!-- /.container -->  

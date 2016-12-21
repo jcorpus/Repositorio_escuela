@@ -69,9 +69,9 @@ function enviar_datos($email_rec2){
     //Tenemos que usar gmail autenticados, así que esto a TRUE
     $mail->SMTPAuth   = true;
     //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-    $mail->Username   = "jsuproc@gmail.com";
+    $mail->Username   = "email@gmail.com";
     //Introducimos nuestra contraseña de gmail
-    $mail->Password   = "c.sbakuryowolfbk";
+    $mail->Password   = "tuclave";
     //Definimos el remitente (dirección y, opcionalmente, nombre)
     $mail->SetFrom($email_rec2, 'Repositorio - contraseña olvidada');
     //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)

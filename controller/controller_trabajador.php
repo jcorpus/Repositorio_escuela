@@ -117,7 +117,7 @@ if (verificar_datos($email_trabajador,$dni_trabajador,$codigo_trabajador)) {
 					
 				$ruta_registro = "html/img_server/user-default.png";
 				$valor = true;
-				echo "no enviaste una imagen";
+				//echo "no enviaste una imagen";
 
 		}
 
@@ -136,7 +136,7 @@ if ($valor) {
 	$estado_trabajador,$tipo_usuario);
 	echo $consulta;
 }else{
-	echo "ocurrio un error en el controlador";
+	//echo "ocurrio un error en el controlador";
 }
 
 

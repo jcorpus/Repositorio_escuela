@@ -17,22 +17,11 @@
             <!--MENU AGREGADO -->
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Ayuda</a>
+                        <a href="home.php?view=faq">FAQ</a>
                     </li>
                 </ul>
             <!--MENU AGREGADO -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Otras Paginas <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                              <a href="home.php?view=faq">FAQ</a>
-                            </li>
-                            <li>
-                              <a href="config.php">Configuración</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="dropdown">
                       <?php
                       if (isset($_SESSION['app_id'])) {

@@ -32,23 +32,23 @@
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Nombres</label>
                   <div class="col-sm-4">
-                    <input type="text" name="nombre_alumno" onkeypress="return solo_letras(event);" class="form-control validacion" value="bakuryo" id="nombre_alumno" placeholder="nombres" maxlength="40">
+                    <input type="text" name="nombre_alumno" onkeypress="return solo_letras(event);" class="form-control validacion" value="" id="nombre_alumno" placeholder="nombres" maxlength="40">
                   </div>
                   <label  class="col-sm-2 control-label">DNI</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" onkeypress="return solo_numeros(event);" name="dni_alumno" value="12345678" id="dni_alumno" maxlength="8" size="8" placeholder="DNI">
+                    <input type="text" class="form-control validacion" onkeypress="return solo_numeros(event);" name="dni_alumno" value="" id="dni_alumno" maxlength="8" size="8" placeholder="DNI">
                   </div>
                 </div>
                 <div class="form-group">
                   <label  class="col-sm-2 control-label">Ape Paterno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="apep_alumno" value="corpus" onkeypress="return solo_letras(event);" id="apep_alumno" maxlength="40"  placeholder="apellido paterno">
+                    <input type="text" class="form-control validacion" name="apep_alumno" value="" onkeypress="return solo_letras(event);" id="apep_alumno" maxlength="40"  placeholder="apellido paterno">
                   </div>
                   <label  class="col-sm-2 control-label">Ape Materno</label>
 
                   <div class="col-sm-4">
-                    <input type="text" class="form-control validacion" name="apem_alumno" value="mechato" onkeypress="return solo_letras(event);" id="apem_alumno" maxlength="40" placeholder="apellido materno">
+                    <input type="text" class="form-control validacion" name="apem_alumno" value="" onkeypress="return solo_letras(event);" id="apem_alumno" maxlength="40" placeholder="apellido materno">
                   </div>
                 </div>
 
@@ -56,12 +56,12 @@
                   <label  class="col-sm-2 control-label">Domicilio</label>
 
                   <div class="col-sm-4">
-                    <textarea name="domicilio_alumno" placeholder="domicilio"  style="resize: vertical;"  class="form-control validacion" id="domicilio_alumno" maxlength="240" cols="3" rows="3">Saturno</textarea>
+                    <textarea name="domicilio_alumno" placeholder="domicilio"  style="resize: vertical;"  class="form-control validacion" id="domicilio_alumno" maxlength="240" cols="3" rows="3"></textarea>
                   </div>
                   <label  class="col-sm-2 control-label">Teléfono</label>
 
                   <div class="col-sm-3">
-                    <input type="text" name="telefono_alumno" onkeypress="return solo_numeros(event);" class="form-control validacion" value="767675" maxlength="20" id="telefono_alumno" placeholder="telefono">
+                    <input type="text" name="telefono_alumno" onkeypress="return solo_numeros(event);" class="form-control validacion" value="" maxlength="20" id="telefono_alumno" placeholder="telefono">
                   </div>
                 </div>
                 <div class="form-group">
@@ -150,7 +150,7 @@
                 <div class="form-group">
                 <label  class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-4">
-                    <input type="email" name="email_alumno" class="form-control validacion"  value="doombakuryo@gmail.com" id="email_alumno" placeholder="email" maxlength="50">
+                    <input type="email" name="email_alumno" class="form-control validacion"  value="" id="email_alumno" placeholder="email" maxlength="50">
                     <small class="mail_incorrecto"></small>
                   </div>
                   <label  class="col-sm-2 control-label">Codigo</label>
