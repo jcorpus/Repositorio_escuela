@@ -45,6 +45,7 @@
                 <h3>
                     Tesis Publicadas Recientemente
                 </h3>
+                <!--
                 <div class="panel panel-info">
                   <div class="panel-heading">
                   Tesis Publicadas Recientemente
@@ -60,17 +61,21 @@
                       </tr>
                     </tbody>
                     
-                    <?php
-                    require 'core/bin/funciones/funciones_tesis.php'; 
-                    include 'tesis_recientes.php'; 
-                    ?>
+                    
+                    //require 'core/bin/funciones/funciones_tesis.php'; 
+                    //include 'tesis_recientes.php'; 
+                    
                   </table>
                 </div>
+                -->
                 <hr>
                 <!-- EJEMPLO -->
 
                 <ul class="ds-artifact-list list-unstyled">
-                  <?php include 'tesis_recientes2.php';  ?>
+                  <?php
+                  require 'core/bin/funciones/funciones_tesis.php'; 
+                  include 'tesis_recientes2.php'; 
+                  ?>
                   
                 </ul>
 
@@ -117,10 +122,10 @@
                       <div id="" class="panel panel-default">
                       <div class="panel-heading"><h5>Categorias</h5></div>
                         <ul class="list-group">
-                          <li class="list-group-item"><span class="badge">43</span><a href="?view=ejemplo">ejemplo vista</a></li>
-                          <li class="list-group-item"><span class="badge">64</span><a href="#">Administracion de Redes </a></li>
-                          <li class="list-group-item"><span class="badge">64</span><a href="#">Base de Datos</a></li>
-                          <li class="list-group-item"><span class="badge">64</span><a href="#">Sistema Informático</a></li>
+                          <li class="list-group-item"><a href="?view=ejemplo">ejemplo vista</a></li>
+                          <li class="list-group-item"><a href="#">Administracion de Redes </a></li>
+                          <li class="list-group-item"><a href="#">Base de Datos</a></li>
+                          <li class="list-group-item"><a href="#">Sistema Informático</a></li>
                         </ul>
                       </div>
                       <!--otra categoria-->
@@ -128,10 +133,10 @@
                       <div id="" class="panel panel-default">
                       <div class="panel-heading"><h5>Filiales</h5></div>
                         <ul class="list-group">
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="#">Chimbote</a></li>
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="#">Huaraz </a></li>
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="#">Lima</a></li>
-                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="#">Huacho</a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="busqueda_tesis.php?filial=Chimbote">Chimbote</a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="busqueda_tesis.php?filial=Huaraz">Huaraz </a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="busqueda_tesis.php?filial=Lima">Lima</a></li>
+                          <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="busqueda_tesis.php?filial=Huacho">Huacho</a></li>
                         </ul>
                       </div>
                       <!--Filiales-->

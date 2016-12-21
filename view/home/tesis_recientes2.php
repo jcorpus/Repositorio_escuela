@@ -8,7 +8,8 @@ if ($db->rows($sql) > 0) {
       <h4>
           <a href="mostrar.php?id=<?php echo $fila['idTesis'];?>&codigo=<?php echo $fila['CodTesis']; ?>"><?php echo $fila['Titulo']; ?></a>
       </h4>
-      <p><strong clas=""><?php echo $fila['Autor']; ?></strong><span> <?php echo $fila['DesFilial']; ?></span> <span><?php echo formato_fecha($fila['FechaRegistro']); ?></span></p>
+      <p><strong clas=""><?php echo $fila['Autor']; ?></strong><span> <a href="busqueda_tesis.php?filial=<?php echo $fila['DesFilial']; ?>"><?php echo $fila['DesFilial']; ?></a></span>
+         <span><?php echo formato_fecha($fila['FechaRegistro']); ?></span> <span><a href="busqueda_tesis.php?especialidad_tesis=<?php echo $fila['DesCategoria']; ?>"><?php echo $fila['DesCategoria']; ?></a></span></p>
       <p><?php echo $fila['Resumen'] ?></p>
     </li>
 
