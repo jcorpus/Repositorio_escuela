@@ -17,10 +17,12 @@
             <!-- Blog Entries Column -->
             <div class="col-md-9">
                 <!-- Third Blog Post -->
-                <h2>
-                    <a href="#">Sobre el Repositorio</a>
-                </h2>
+                <!--
+                <h3>
+                    <a href="javascript:void(0)">Sobre el Repositorio</a>
+                </h3>
                 <hr>
+                -->
                 <div class="alert alert-success alert-dismissible">
                   <h4><i class="fa fa-graduation-cap" aria-hidden="true"></i> Sobre el Repositorio</h4>
                   Este repositorio Institucional de la Escuela Informática y de Sistemas es una herramienta virtual que tiene por objeto almacenar, conservar y difundir la creación científico-intelectual
@@ -122,10 +124,7 @@
                       <div id="" class="panel panel-default">
                       <div class="panel-heading"><h5>Categorias</h5></div>
                         <ul class="list-group">
-                          <li class="list-group-item"><a href="?view=ejemplo">ejemplo vista</a></li>
-                          <li class="list-group-item"><a href="#">Administracion de Redes </a></li>
-                          <li class="list-group-item"><a href="#">Base de Datos</a></li>
-                          <li class="list-group-item"><a href="#">Sistema Informático</a></li>
+                          <?php require('view/home/categoria_tesis.php'); ?>
                         </ul>
                       </div>
                       <!--otra categoria-->

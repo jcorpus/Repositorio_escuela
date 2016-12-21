@@ -56,22 +56,19 @@ while ($fila= $db->recorrer($sql)) {
                     <div id="" class="panel panel-default">
                     <div class="panel-heading"><h5>Categorias</h5></div>
                       <ul class="list-group">
-                        <li class="list-group-item"><span class="badge">43</span><a href="?view=ejemplo">ejemplo vista</a></li>
-                        <li class="list-group-item"><span class="badge">64</span><a href="#">Administracion de Redes </a></li>
-                        <li class="list-group-item"><span class="badge">64</span><a href="#">Base de Datos</a></li>
-                        <li class="list-group-item"><span class="badge">64</span><a href="#">Sistema Informático</a></li>
+                        <?php require('view/home/categoria_tesis.php'); ?>
                       </ul>
                     </div>
                     <!--otra categoria-->
                     <!--Filiales-->
                     <div id="" class="panel panel-default">
                     <div class="panel-heading"><h5>Filiales</h5></div>
-                      <ul class="list-group">
-                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="#">Chimbote</a></li>
-                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="#">Huaraz </a></li>
-                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="#">Lima</a></li>
-                        <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="#">Huacho</a></li>
-                      </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="busqueda_tesis.php?filial=Chimbote">Chimbote</a></li>
+                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="busqueda_tesis.php?filial=Huaraz">Huaraz </a></li>
+                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="busqueda_tesis.php?filial=Lima">Lima</a></li>
+                      <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="busqueda_tesis.php?filial=Huacho">Huacho</a></li>
+                    </ul>
                     </div>
                     <!--Filiales-->
                     <!-- Side Widget Well -->

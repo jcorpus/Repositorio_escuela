@@ -58,13 +58,13 @@ $(function () {
           data: [
 							<?php 
 							 $db = new Conexion2();
-							 $sql = $db->query("SELECT idFilial, DesFilial FROM filial");
+							 $sql = $db->query("SELECT COUNT(*) as contador, filial.DesFilial FROM tesis INNER JOIN filial ON filial.idFilial = tesis.idFilial GROUP BY filial.DesFilial");
 							 while ($registros = $db->recorrer($sql))
 							 {
 							 ?>
 						 		{
 									name: '<?php echo $registros["DesFilial"]; ?>',
-									y: <?php echo $registros["idFilial"] ?>,
+									y: <?php echo $registros["contador"] ?>,
 								},
 							 <?php
 						 	}

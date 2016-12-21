@@ -9,7 +9,7 @@
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="site_media/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="shortcut icon" type="image/png" href="site_media/img/32favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="site_media/img/ea.png"/>
   <link rel="stylesheet" href="site_media/font-awesome-4.6.3/css/font-awesome.css">
   <!-- Theme style -->
   <!-- jQuery 2.2.3 -->

@@ -19,6 +19,7 @@
     <link href="site_media/css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
+    <link rel="shortcut icon" type="image/png" href="site_media/img/ea.png"/>
     <link href="site_media/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="site_media/css/home_style.css" rel="stylesheet" type="text/css">
     <script src="site_media/plugins/jQuery/jquery-2.2.3.min.js"></script>

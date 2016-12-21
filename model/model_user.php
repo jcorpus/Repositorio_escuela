@@ -119,7 +119,7 @@ function mod_user_perfil($password_user,$id_user_perfil){
 
 /***************lista de tipo usuario***************/
 function listar_tipouser(){
-  $sql = "SELECT idTipoUsuario, desTipoUsuario FROM tipousuario";
+  $sql = "SELECT * from tipousuario where tipousuario.DesTipoUsuario !='alumno'";
   $consulta = $this->db->query($sql);
   $arreglo = array();
   if($this->db->rows($consulta) > 0){

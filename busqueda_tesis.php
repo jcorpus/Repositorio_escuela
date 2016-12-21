@@ -26,7 +26,7 @@
                   <ol class="breadcrumb">
                       <li><a href="home.php">Home</a>
                       </li>
-                      <li class="active">Blog Home One</li>
+                      <li class="active">Busqueda</li>
                   </ol>
               </div>
           </div>';
@@ -292,7 +292,7 @@
                     <th id="t1">Fecha:</th>
                     <th id="t2">Titulo</th>
                     <th id="t3">Autor</th>
-                    <th id="t4">Tipo</th>
+                    <th id="t4">Especialidad</th>
                     <th id="t5">Filial</th>
                   </tr>
                   ';
@@ -315,7 +315,7 @@
                     <!-- Blog Search Well -->
                     <div class="well">
                         <h4>Buscar</h4>
-                        <div class="" id="respuesta_tesis">
+                        <div class="" id="">
                         </div>
                         <div class="">
                           <form action="busqueda_tesis.php" method="GET" class="sidebar-form"><!-- busqueda_tesis.php -->
@@ -391,12 +391,7 @@
 
 
 
-
-
   require 'html/home/footer.php';
-
-
-
 
 
 
