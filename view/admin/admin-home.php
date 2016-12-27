@@ -88,7 +88,7 @@
         </div>
         <div class="col-md-12">
           <div class="">
-              <h4>Grafico de Barras</h4>
+              <h4>Tesis por Filial</h4>
           </div>
           
           <iframe src="html/graficos/grafico_barras/colum-drill.php" width="100%" height="500px" frameborder="0"></iframe>

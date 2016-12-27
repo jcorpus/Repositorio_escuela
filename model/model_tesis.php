@@ -93,9 +93,13 @@ function listar_tesis_registradas($valor, $inicio=FALSE,$limite=FALSE){
 
 }
 
-function publicar_tesis($id_estado_tesis,$id_tesis){
+function publicar_tesis($id_estado_tesis,$id_tesis,$fecha_cambio,$hora_cambio,$usuario_mod,$estado_tesis){
 	$sql = "UPDATE tesis SET idEstadoPublicacion = $id_estado_tesis WHERE idTesis = $id_tesis";
+  $query_insert = "INSERT INTO detalle_public_tesis(idTesis,fecha_public_tesis,hora_cambio_estado, usuario_mod,estado_public) 
+  VALUES('$id_tesis','$fecha_cambio','$hora_cambio','$usuario_mod','$estado_tesis')";
+  
   if($this->db->query($sql)){
+    $this->db->query($query_insert);
     echo '<div class="alert alert-success alert-dismissible" id="">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <i class="icon fa fa-check"></i>&nbsp;Tesis Publicada Correctamente.

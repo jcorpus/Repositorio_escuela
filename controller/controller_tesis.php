@@ -50,9 +50,9 @@ if ($comodin == true) {
 	$tamano = convertir_size_file($tamano2);
 		
 	$limite_kb = 100;
-  $permitidos = array('application/msword','application/pdf');
+  $permitidos = array('application/pdf','application/msword');
 	//application/vnd.openxmlformats-officedocument.wordprocessingml.document
-  $limite_bytes = 5242880; //10 MB
+  $limite_bytes = 10485760; //10 MB
   //10MB = 10485760 Bytes
   //5MB = 5242880 Bytes
   //1MB == 1048576 bytes
@@ -61,7 +61,7 @@ if ($comodin == true) {
 		if (!in_array($tipo,$permitidos)) {
 			echo '<div class="alert alert-danger alert-dismissible" id="">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-				<i class="icon fa fa-times"></i>&nbsp;Archivo no permitido
+				<i class="icon fa fa-times"></i>&nbsp;Tipo de Archivo no permitido
 				</div>';
 				$valor = false;
 			}else if($tamano2 > 10485760){

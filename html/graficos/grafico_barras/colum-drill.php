@@ -58,8 +58,9 @@ $(function () {
           data: [
 							<?php 
 							 $db = new Conexion2();
-							 $sql = $db->query("SELECT COUNT(*) as contador, filial.DesFilial FROM tesis INNER JOIN filial ON filial.idFilial = tesis.idFilial GROUP BY filial.DesFilial");
-							 while ($registros = $db->recorrer($sql))
+							 //$sql = $db->query("SELECT COUNT(*) as contador, filial.DesFilial FROM tesis INNER JOIN filial ON filial.idFilial = tesis.idFilial GROUP BY filial.DesFilial");
+							 $sql = $db->query("CALL pa_report_tesisfilial");
+               while ($registros = $db->recorrer($sql))
 							 {
 							 ?>
 						 		{
