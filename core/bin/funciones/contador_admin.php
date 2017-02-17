@@ -13,7 +13,8 @@ function contar_alumnos(){
 
 function contar_tesis_registradas(){
   $db = new Conexion();
-  $query =$db->query("SELECT COUNT(t.idTesis) as registrado FROM tesis t WHERE t.idEstadoPublicacion = 2");
+  //$query =$db->query("SELECT COUNT(t.idTesis) as registrado FROM tesis t WHERE t.idEstadoPublicacion = 2");
+  $query =$db->query("SELECT COUNT(t.idTesis) as registrado FROM tesis t");
   $resultado = mysqli_fetch_assoc($query);
   echo $resultado['registrado'];
   $db->liberar($query);

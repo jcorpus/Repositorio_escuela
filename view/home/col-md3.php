@@ -27,10 +27,7 @@
           <div id="" class="panel panel-default">
           <div class="panel-heading"><h5>Filiales</h5></div>
             <ul class="list-group">
-              <li class="list-group-item"><span class="badge"><?php require('controller/contar_filial.php'); ?></span><a href="busqueda_tesis.php?filial=Chimbote">Chimbote</a></li>
-              <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huaraz.php'); ?></span><a href="busqueda_tesis.php?filial=Huaraz">Huaraz </a></li>
-              <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_lima.php'); ?></span><a href="busqueda_tesis.php?filial=Lima">Lima</a></li>
-              <li class="list-group-item"><span class="badge"><?php require('controller/contar_fil_huacho.php'); ?></span><a href="busqueda_tesis.php?filial=Huacho">Huacho</a></li>
+              <?php require('controller/contar_filial.php'); ?>
             </ul>
           </div>
           <!--Filiales-->

@@ -16,16 +16,16 @@
   <div class="col-md-12">
     <div class="box box-primary">
        
-              <div class="box-body">
-        	<div>
+          <div class="box-body">
         		<div class="form-group">
-        	<label  class="col-sm-1 control-label">Filiales</label>
+        	        <label  class="col-sm-1 control-label">Filiales</label>
                   <div class="col-sm-4">
                     <select class="form-control" name="bus_filial" id="bus_filial">
                       <?php  include('controller/filial.php'); ?>
                     </select>
-                  </div> 	</div>
-        	</div>
+                  </div>
+            </div>
+            <br><br>
         	<div class="col-md-12 col-lg-12 col-xs-12">
         		<table class="table table-bordered">
         			<thead>
@@ -37,7 +37,7 @@
         				</tr>
         			</thead>
         			<tbody id="tbody_lista_tesis">
-        			</tbody>filial
+        			</tbody>
         		</table>
         	</div> 
         	 <div class="form-group">

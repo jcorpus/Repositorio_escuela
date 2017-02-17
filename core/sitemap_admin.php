@@ -41,6 +41,10 @@ else if ($_GET['p'] == 'listar_tesis') {
 	$titulo = 'Reporte de Tesis por Filiales';
 	$contenido = 'view/tesis/listar_tesis.php';
 }
+else if ($_GET['p'] == 'detalle_ptesis') {
+	$titulo = 'Detalle de Publicacion';
+	$contenido = 'view/tesis/detalle_tesis.php';
+}
 else if ($_GET['p'] == 'otros_datos') {
 	$titulo = 'Otros Datos';
 	$contenido = 'view/otros/otros_datos.php';

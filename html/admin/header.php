@@ -119,6 +119,7 @@
             <li><a href="?p=reg_tesis"><i class="fa fa-plus" aria-hidden="true"></i>&ensp;Registrar</a></li>
             <li><a href="?p=listar_tesis"><i class="fa fa-list-ul" aria-hidden="true"></i>&ensp;Reporte Tesis por Filiales</a></li>
             <li><a href="?p=public_tesis"><i class="fa fa-check" aria-hidden="true"></i>&ensp;Publicar</a></li>
+            <li><a href="?p=detalle_ptesis"><i class="fa fa-check" aria-hidden="true"></i>&ensp;Detalle de Publicacion</a></li>
           </ul>
         </li>
         <li class="treeview">

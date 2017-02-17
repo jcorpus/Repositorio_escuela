@@ -281,6 +281,22 @@ function listar_tipotesis(){
   return $arreglo;
 }
 
+/***************detalle de publicacion de tesis***************/
+
+function detalle_p_tesis(){
+  $query = $this->db->query("SELECT dt.id_detalle_public_tesis,t.Titulo,dt.fecha_public_tesis,dt.hora_cambio_estado,dt.usuario_mod,dt.estado_public FROM detalle_public_tesis dt INNER JOIN tesis t ON dt.idTesis = t.idTesis");
+  $arreglo = array();
+  while ($result = $this->db->recorrer($query)) {
+    $arreglo[] = $result;
+  }
+  return $arreglo;
+  
+}
+
+
+
+
+
 
 
 }

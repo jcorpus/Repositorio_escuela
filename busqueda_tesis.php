@@ -180,7 +180,7 @@
               <table align="center" class="table">
                 <tbody>
                   <tr>
-                    <th id="t1">Fecha:</th>
+                    <th id="t1">Año:</th>
                     <th id="t2">Titulo</th>
                     <th id="t3">Autor</th>
                     <th id="t4">Tipo</th>

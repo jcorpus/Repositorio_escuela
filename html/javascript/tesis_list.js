@@ -24,6 +24,7 @@ function listar_tesis(valor,pagina){
       $("#loading_tesis").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
     },
 		success: function(resp){
+			console.log(resp);
 			if(resp.length>0){
 			var datos = resp.split("*"); //separamos el json de el numero de filas que hay en la TABLA
 			var valores = eval(datos[0]); //me trae solo los datos menos el numero de filas
@@ -34,7 +35,7 @@ function listar_tesis(valor,pagina){
 			cadena += "<thead class=''>";
 			cadena += "<tr>";
 			cadena += "<th>#</th>";
-			cadena += "<th>Titulo</th>";
+			cadena += "<th>Tituloo</th>";
 			cadena += "<th>Autor</th>";
 			cadena += "<th>Estado</th>";
 			cadena += "<th>Filial</th>";
@@ -130,12 +131,11 @@ function listar_tesis(valor,pagina){
 
 			//http://codepen.io/Manoz/pen/pydxK
 
-			}
-			else{
+			}else{
 				var nodatos = " NO HAY DATOS QUE MOSTRAR";
-        $("#nodatos").html(nodatos);
+        $("#listar_tesis").html(nodatos);
       	alert(nodatos);
-				console.log(notados);
+				console.log(nodatos);
 
 			}
 

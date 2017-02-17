@@ -2,14 +2,22 @@
 
   $db = new Conexion();
   
-  $id_filial = 1;
-  $sql = $db->query("call pa_contar_filial('$id_filial')");
-  while($row = $db->recorrer($sql)) {
-    echo $row['contador'];
-  }
+  
+  $sql = $db->query("call pa_report_tesisfilial");
+
+  while($row = $db->recorrer($sql)) { ?>
+    
+
+    <li class="list-group-item"><span class="badge"> <?php echo $row['contador'];?> </span><a href="busqueda_tesis.php?filial=Lima"><?php echo $row['DesFilial']; ?></a></li>
+  
+  <?php } 
   $db->liberar($sql);
   $db->close();  
   
+
+
+
+
   /*
   function contar_filial($id_filial_contar){
     $sql = $db->query("call pa_contar_filial('$id_filial_contar')");
@@ -24,4 +32,3 @@
   */
 
  ?>
- 

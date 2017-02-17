@@ -56,7 +56,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
      <tr><td class="">Citacion:&nbsp;</td><td class="">'.$post_tesis[6].'</td></tr>
      <tr><td class="">Resumen:&nbsp;</td><td class="">'.nl2br($post_tesis[7]).'</td></tr>
      <tr><td class="">Tipo de Tesis:&nbsp;</td><td class="">'.$post_tesis[9].'</td></tr>
-     <tr><td class="">Filial:</td><td class=""><a href="'.$post_tesis[10].'">'.$post_tesis[11].'</a><br></td></tr>
+     <tr><td class="">Filial:</td><td class=""><a href="busqueda_tesis.php?filial='.$post_tesis[11].'">'.$post_tesis[11].'</a><br></td></tr>
      <tr><td class="">Grado Academico:&nbsp;</td><td class="">'.$post_tesis[13].'</td></tr>
      <tr><td class="">Categoria:&nbsp;</td><td class="">'.$post_tesis[15].'</td></tr>
      </tbody>
