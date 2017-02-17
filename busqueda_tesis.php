@@ -162,7 +162,7 @@
     
     
   }else if($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['filial'])){
-    //header('Location: home.php');
+    ///header('Location: home.php');
     $filial_tesis = $_GET['filial'];
     $sql = $db->query("SELECT t.FechaRegistro,t.idTesis, t.Titulo, t.Autor,t.CodTesis,tpt.idTipoTesis, tpt.DesTipoTesis,fl.idFilial,fl.DesFilial,est.idEstadoPublicacion, est.DesEstadoPublicacion,ct.idCategoria, ct.DesCategoria FROM tesis t INNER JOIN tipotesis tpt ON tpt.idTipoTesis = t.idTipoTesis INNER JOIN categoria ct ON t.idCategoria = ct.idCategoria INNER JOIN filial fl ON t.idFilial = fl.idFilial INNER JOIN estadopublicacion est ON est.idEstadoPublicacion = t.idEstadoPublicacion WHERE t.idEstadoPublicacion = 1 AND  fl.DesFilial = '$filial_tesis' "); 
     if ($db->rows($sql) > 0) {
