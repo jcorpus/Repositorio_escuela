@@ -6,7 +6,7 @@ class PDF extends FPDF{
 
    function Header(){
       //uso $this porque hago referencia a una funcion que estoy heredando
-      $this->Image('fpdf2/usp.png',10,8,20,20);//x,y,ancho,alto
+      $this->Image('fpdf2/usp.PNG',10,8,20,20);//x,y,ancho,alto
       $this->SetFont('Arial','B',16); ////el B es en negrita
       //$this->setFillColor(64,224,208);
       $this->SetTextColor(66,73,61);

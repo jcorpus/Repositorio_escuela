@@ -92,7 +92,7 @@ SELECT * FROM persona ORDER BY persona.id_persona DESC
     }
     $resultado = $this->db->query($sql);
     $arreglo = array();
-    while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+    while($re =$this->db->recorrer($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
       $arreglo[] = $re;
     }
     return $arreglo;

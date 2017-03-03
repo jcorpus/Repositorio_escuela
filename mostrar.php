@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //require 'core/models/model_conexion.php';
 require('core/core.php');
@@ -12,7 +12,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
   require 'core/bin/funciones/funciones_tesis.php';
 
 
-  
+
   $conexion = new Conexion();
 
   $id_tesis =id_tesis($_GET['id']);
@@ -31,6 +31,45 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
 
   require 'html/home/topnav.php';
   require 'html/home/header.php';
+
+  echo '
+  <script type="text/javascript">
+  $(document).ready(function(){
+    var resumen = $("#resumen").text();
+    var num_word = 50;
+
+    //acortar_texto();
+    //segunda opcion
+    $("#resumen").html(recortar_texto(resumen,num_word)+" ...");
+
+  });
+
+
+  function acortar_texto(){
+    var texto = $("#resumen").text();
+
+    texto = texto.substring(0,340);
+
+    $("#resumen").html(texto+"...");
+    console.log(texto+"...");
+
+  }
+
+  function recortar_texto(texto,palabras){
+    var parrafo, newparrafo;
+    parrafo = texto.split(/\s+/,palabras);
+    newparrafo = parrafo.join(" ");
+    return newparrafo;
+
+  }
+
+
+
+
+  </script>
+
+  ';
+
   echo '<!-- Page Heading/Breadcrumbs -->
           <div class="row">
               <div class="col-lg-12">
@@ -54,7 +93,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
      <tr><td class="">Palabra Clave:&nbsp;</td><td class="">'.$post_tesis[4].'</td></tr>
      <tr><td class="">Fecha Registro:&nbsp;</td><td class="">'.formato_fecha($post_tesis[5]).'</td></tr>
      <tr><td class="">Citacion:&nbsp;</td><td class="">'.$post_tesis[6].'</td></tr>
-     <tr><td class="">Resumen:&nbsp;</td><td class="">'.nl2br($post_tesis[7]).'</td></tr>
+     <tr><td class="">Resumen:&nbsp;</td><td class=""><p id="resumen">'.nl2br($post_tesis[7]).'</p></td></tr>
      <tr><td class="">Tipo de Tesis:&nbsp;</td><td class="">'.$post_tesis[9].'</td></tr>
      <tr><td class="">Filial:</td><td class=""><a href="busqueda_tesis.php?filial='.$post_tesis[11].'">'.$post_tesis[11].'</a><br></td></tr>
      <tr><td class="">Grado Academico:&nbsp;</td><td class="">'.$post_tesis[13].'</td></tr>
@@ -78,7 +117,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
      <td headers="t1" class="standard"><a target="_blank" href="'.$post_tesis[16].'">'.$post_tesis[16].'</a></td>
      <td headers="t2" class="standard">Descripcion aqui</td>
      <td headers="t3" class="standard">'.$post_tesis[18].'</td>
-     <td headers="t4" class="standard">'.$post_tesis[17].'</td>
+     <td headers="t4" class="standard">'.formato_tesis($post_tesis[17]).'</td>
      <td class="standard" align="center"><a class="btn btn-primary" target="_blank" href="'.$post_tesis[16].'">Ver/Abrir</a></td>
    </tr>
   </tbody>
@@ -86,6 +125,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
    </div>  ';
 
   /////contenido aqui
+  /*
   echo "Codigo: ".$post_tesis[1]."<br>";
   echo "Titulo: ".$post_tesis[2]."<br>";
   echo "Autor: ".$post_tesis[3]."<br>";
@@ -100,7 +140,7 @@ if(isset($_SESSION['app_id'])){ //si no esta definida la variable session, el us
   echo "Archivo:<a href=".$post_tesis[16].">".$post_tesis[16]."</a><br>";
   echo "Formato: ".$post_tesis[17]."<br>";
   echo "Tamaño: ".$post_tesis[18]."<br>";
-
+  */
   require 'html/home/footer.php';
 
 

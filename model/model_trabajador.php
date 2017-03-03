@@ -74,7 +74,7 @@ function listar_trabajador($valor, $inicio=FALSE,$limite=FALSE){
   }
   $resultado = $this->db->query($sql);
   $arreglo = array();
-  while($re =$resultado->fetch_array(MYSQL_NUM)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+  while($re =$this->db->recorrer($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
     $arreglo[] = $re;
   }
   return $arreglo;
